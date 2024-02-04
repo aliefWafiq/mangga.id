@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="src/output.css" />
+  </head>
+  <body class="bg-slate-100 h-screen">
+    <header
+      class="bg-white lg:opacity-80  drop-shadow-sm fixed before:absolute top-0 left-0 w-full flex items-center z-30"
+    >
+      <div class="container py-5">
+        <div class="flex justify-between relative">
+          <div class="px-5">
+            <h1 class="font-bold text-xl">Mangga.id</h1>
+          </div>
+          <div class="flex items-center">
+            <button
+              id="hamburger"
+              name="hamburger"
+              type="button"
+              class="block absolute right-4 lg:hidden"
+            >
+              <div class="bungkus space-y-2">
+                <span
+                  class="menu transition duration-300 ease-in-out origin-top-left"
+                ></span>
+                <span class="menu transition duration-300 ease-in-out"></span>
+                <span
+                  class="menu transition duration-300 ease-in-out origin-bottom-left"
+                ></span>
+              </div>
+            </button>
+
+            <nav
+              id="nav-menu"
+              class="lg:block hidden lg:opacity-80 absolute py-10 lg:py-0 lg:static opacity-100 lg:max-w-full top-full right-0 h-screen lg:h-auto bg-white max-w-[250px] w-full"
+            >
+              <ul class="lg:flex block">
+                <li class="lg:mx-5 mx-2 group">
+                  <a
+                    href="#home"
+                    class="group-hover:text-blue-700 flex py-2 mx-8 lg:mx-2 text-lg font-semibold"
+                    >Home</a
+                  >
+                </li>
+                <li class="lg:mx-5 mx-2 group">
+                  <a
+                    href="#about"
+                    class="group-hover:text-blue-700 flex py-2 mx-8 lg:mx-2 text-lg font-semibold"
+                    >About</a
+                  >
+                </li>
+                <li class="lg:mx-5 mx-2 group">
+                  <a
+                    href="#content"
+                    class="group-hover:text-blue-700 flex py-2 mx-8 lg:mx-2 text-lg font-semibold"
+                    >Collection</a
+                  >
+                </li>
+                <li class="lg:mx-5 mx-2 group">
+                  <a href="#" class="group-hover:text-blue-700 flex py-2 mx-8 lg:mx-2 text-lg font-semibold"
+                    >Masuk</a
+                  >
+                </li>
+                <li class="lg:mx-5 mx-2 group">
+                  <a href="#" class="group-hover:text-blue-700 flex py-2 mx-8 lg:mx-2 text-lg font-semibold"
+                    >Daftar</a
+                  >
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section id="home" class="mb-5">
+      <div class="container">
+        <!-- header -->
+        <div class="flex">
+          <div class="lg:w-[25rem]">
+            <div class="hidden lg:block">
+              <div class="flex-wrap flex">
+                <div
+                  class="w-1/2 h-auto relative overflow-hidden block z-10 before:absolute before:inset-0 before:block before:bg-gradient-to-b before:from-slate-600 before:to-white before:opacity-75 before:z[-5]"
+                >
+                  <img src="img/Blue Lock Manga.jpeg" alt="" />
+                </div>
+                <div
+                  class="w-1/2 h-auto relative overflow-hidden block z-10 before:absolute before:inset-0 before:block before:bg-gradient-to-b before:from-slate-600 before:to-white before:opacity-75 before:z[-5]"
+                >
+                  <img src="img/one-piece.jpeg" alt="" />
+                </div>
+                <div
+                  class="w-1/2 h-auto relative overflow-hidden block z-10 before:absolute before:inset-0 before:block before:bg-gradient-to-b before:from-white before:to-slate-100 before:opacity-75 before:z[-5]"
+                >
+                  <img
+                    src="img/Levi says goodbye to his comrades.jpeg"
+                    alt=""
+                  />
+                </div>
+                <div
+                  class="w-1/2 h-auto relative overflow-hidden block z-10 before:absolute before:inset-0 before:block before:bg-gradient-to-b before:from-white before:to-slate-100 before:opacity-75 before:z[-5]"
+                >
+                  <img
+                    src="img/35732eca-7c58-463e-8309-a4d7cf013e66.jpeg"
+                    alt=""
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flex lg:mt-40 mt-40 lg:ml-20 ml-10 lg:w-72 w-44 z-10">
+            <h1 class="text-4xl font-bold lg:text-slate-700 text-white">
+              Mau baca manga tapi gak ada duit buat
+              <span class="bg-red-600 rounded text-white px-1">beli?</span>
+            </h1>
+          </div>
+          <div class="bg-black h-[100%] w-screen absolute lg:hidden">
+            <img
+              src="img/one-piece.jpeg"
+              alt=""
+              class="h-full w-full opacity-50 blur-sm"
+            />
+          </div>
+          <!-- <img src="img/komi-removed.png" alt="" class="w-[27rem] h-96 mt-10"> -->
+        </div>
+        <!-- header end -->
+      </div>
+    </section>
+
+    <!-- introduction -->
+    <section id="about" class="bg-slate-600 h-[100%] lg:pt-36 mt-96 lg:mt-0">
+      <div class="container">
+        <div class="flex flex-warp lg:ml-36 mx-5 lg:mx-0">
+          <div
+            class="lg:w-1/2 lg:h-[100%] self-center h-72 text-white lg:px-20 px-5 pb-36 mt-28 lg:mt-20"
+          >
+            <h1 class="text-4xl font-bold">Baca di xxx aja</h1>
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+              Reprehenderit obcaecati suscipit nisi mollitia laboriosam est quia
+              in ullam natus consectetur eveniet ad tempore, odit cupiditate
+              officia facilis aut explicabo repellat, nulla voluptates esse
+              ipsum. Deleniti magni vero autem ratione. Praesentium?
+            </p>
+          </div>
+          <div class="lg:w-1/2 ml-20 lg:ml-0 hidden lg:block">
+            <img
+              src="img/Kiga.jpeg"
+              alt=""
+              class="lg:w-60 w-40 rotate-12 shadow-2xl"
+            />
+          </div>
+        </div>
+        <div class="ml-44 lg:hidden">
+          <img
+            src="img/Kiga.jpeg"
+            alt=""
+            class="lg:w-60 w-40 rotate-12 shadow-2xl"
+          />
+        </div>
+      </div>
+    </section>
+    <!-- end -->
+
+    <!-- main content -->
+    <section id="content">
+      <div class="container lg:pt-36 pt-20 pb-36">
+        <h1 class="font-bold text-2xl text-center mb-5">
+          Our Manga Collection
+        </h1>
+        <div class="flex justify-center">
+          <div class="relative w-full glide-01">
+            <!-- Slides -->
+            <div class="overflow-hidden" data-glide-el="track">
+              <ul
+                class="relative w-full overflow-hidden p-0 whitespace-no-wrap flex flex-no-wrap [backface-visibility: hidden] [transform-style: preserve-3d] [touch-action: pan-Y] [will-change: transform]"
+              >
+                <li class="flex flex-wrap justify-center">
+                  <div
+                    class="lg:w-48 lg:h-72 w-24 h-40 bg-black ml-5 rounded-2xl"
+                  >
+                    <img
+                      src="img/law.jpeg"
+                      alt=""
+                      class="w-full rounded-2xl h-full"
+                    />
+                  </div>
+                  <div
+                    class="lg:w-48 lg:h-72 w-24 h-40 bg-black ml-5 rounded-2xl"
+                  >
+                    <img
+                      src="img/Kiga.jpeg"
+                      alt=""
+                      class="w-full rounded-2xl h-full"
+                    />
+                  </div>
+                  <div
+                    class="lg:w-48 lg:h-72 w-24 h-40 bg-black ml-5 rounded-2xl"
+                  >
+                    <img
+                      src="img/enen.jpeg"
+                      alt=""
+                      class="w-full rounded-2xl h-full"
+                    />
+                  </div>
+                  <div
+                    class="w-48 h-72 bg-black ml-5 rounded-2xl hidden lg:block"
+                  >
+                    <img
+                      src="img/jjk cover.jpeg"
+                      alt=""
+                      class="w-full rounded-2xl h-full"
+                    />
+                  </div>
+                  <div
+                    class="w-48 h-72 bg-black ml-5 rounded-2xl hidden lg:block"
+                  >
+                    <img
+                      src="img/20th cen.jpeg"
+                      alt=""
+                      class="w-full rounded-2xl h-full"
+                    />
+                  </div>
+                </li>
+                <li class="flex flex-wrap justify-center">
+                  <div
+                    class="lg:w-48 lg:h-72 w-24 h-40 bg-black ml-5 rounded-2xl"
+                  >
+                    <img
+                      src="img/law.jpeg"
+                      alt=""
+                      class="w-full rounded-2xl h-full"
+                    />
+                  </div>
+                  <div
+                    class="lg:w-48 lg:h-72 w-24 h-40 bg-black ml-5 rounded-2xl"
+                  >
+                    <img
+                      src="img/Kiga.jpeg"
+                      alt=""
+                      class="w-full rounded-2xl h-full"
+                    />
+                  </div>
+                  <div
+                    class="lg:w-48 lg:h-72 w-24 h-40 bg-black ml-5 rounded-2xl"
+                  >
+                    <img
+                      src="img/enen.jpeg"
+                      alt=""
+                      class="w-full rounded-2xl h-full"
+                    />
+                  </div>
+                  <div
+                    class="w-48 h-72 bg-black ml-5 rounded-2xl hidden lg:block"
+                  >
+                    <img
+                      src="img/jjk cover.jpeg"
+                      alt=""
+                      class="w-full rounded-2xl h-full"
+                    />
+                  </div>
+                  <div
+                    class="w-48 h-72 bg-black ml-5 rounded-2xl hidden lg:block"
+                  >
+                    <img
+                      src="img/20th cen.jpeg"
+                      alt=""
+                      class="w-full rounded-2xl h-full"
+                    />
+                  </div>
+                </li>
+                <li class="flex flex-wrap justify-center">
+                  <div
+                    class="lg:w-48 lg:h-72 w-24 h-40 bg-black ml-5 rounded-2xl"
+                  >
+                    <img
+                      src="img/law.jpeg"
+                      alt=""
+                      class="w-full rounded-2xl h-full"
+                    />
+                  </div>
+                  <div
+                    class="lg:w-48 lg:h-72 w-24 h-40 bg-black ml-5 rounded-2xl"
+                  >
+                    <img
+                      src="img/Kiga.jpeg"
+                      alt=""
+                      class="w-full rounded-2xl h-full"
+                    />
+                  </div>
+                  <div
+                    class="lg:w-48 lg:h-72 w-24 h-40 bg-black ml-5 rounded-2xl"
+                  >
+                    <img
+                      src="img/enen.jpeg"
+                      alt=""
+                      class="w-full rounded-2xl h-full"
+                    />
+                  </div>
+                  <div
+                    class="w-48 h-72 bg-black ml-5 rounded-2xl hidden lg:block"
+                  >
+                    <img
+                      src="img/jjk cover.jpeg"
+                      alt=""
+                      class="w-full rounded-2xl h-full"
+                    />
+                  </div>
+                  <div
+                    class="w-48 h-72 bg-black ml-5 rounded-2xl hidden lg:block"
+                  >
+                    <img
+                      src="img/20th cen.jpeg"
+                      alt=""
+                      class="w-full rounded-2xl h-full"
+                    />
+                  </div>
+                </li>
+                <li class="flex flex-wrap justify-center">
+                  <div
+                    class="lg:w-48 lg:h-72 w-24 h-40 bg-black ml-5 rounded-2xl"
+                  >
+                    <img
+                      src="img/law.jpeg"
+                      alt=""
+                      class="w-full rounded-2xl h-full"
+                    />
+                  </div>
+                  <div
+                    class="lg:w-48 lg:h-72 w-24 h-40 bg-black ml-5 rounded-2xl"
+                  >
+                    <img
+                      src="img/Kiga.jpeg"
+                      alt=""
+                      class="w-full rounded-2xl h-full"
+                    />
+                  </div>
+                  <div
+                    class="lg:w-48 lg:h-72 w-24 h-40 bg-black ml-5 rounded-2xl"
+                  >
+                    <img
+                      src="img/enen.jpeg"
+                      alt=""
+                      class="w-full rounded-2xl h-full"
+                    />
+                  </div>
+                  <div
+                    class="w-48 h-72 bg-black ml-5 rounded-2xl hidden lg:block"
+                  >
+                    <img
+                      src="img/jjk cover.jpeg"
+                      alt=""
+                      class="w-full rounded-2xl h-full"
+                    />
+                  </div>
+                  <div
+                    class="w-48 h-72 bg-black ml-5 rounded-2xl hidden lg:block"
+                  >
+                    <img
+                      src="img/20th cen.jpeg"
+                      alt=""
+                      class="w-full rounded-2xl h-full"
+                    />
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <!-- Controls -->
+            <div
+              class="absolute left-0 flex items-center justify-between w-full h-0 px-4 top-1/2"
+              data-glide-el="controls"
+            >
+              <button
+                class="inline-flex items-center justify-center w-8 h-8 transition duration-300 border rounded-full lg:w-12 lg:h-12 text-slate-700 border-slate-700 hover:text-slate-900 hover:border-slate-900 focus-visible:outline-none bg-white/20"
+                data-glide-dir="<"
+                aria-label="prev slide"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-5 h-5"
+                >
+                  <title>prev slide</title>
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M6.75 15.75L3 12m0 0l3.75-3.75M3 12h18"
+                  />
+                </svg>
+              </button>
+              <button
+                class="inline-flex items-center justify-center w-8 h-8 transition duration-300 border rounded-full lg:w-12 lg:h-12 text-slate-700 border-slate-700 hover:text-slate-900 hover:border-slate-900 focus-visible:outline-none bg-white/20"
+                data-glide-dir=">"
+                aria-label="next slide"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-5 h-5"
+                >
+                  <title>next slide</title>
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- manhwa colection -->
+        <div class="pt-32">
+          <h1 class="font-bold text-2xl text-center mb-5">
+            Our Manhwa Collection
+          </h1>
+          <div class="flex">
+            <div class="relative w-full glide-02">
+              <!-- Slides -->
+              <div class="overflow-hidden" data-glide-el="track">
+                <ul
+                  class="relative w-full overflow-hidden p-0 whitespace-no-wrap flex flex-no-wrap [backface-visibility: hidden] [transform-style: preserve-3d] [touch-action: pan-Y] [will-change: transform]"
+                >
+                  <li class="flex flex-wrap justify-center">
+                    <div
+                      class="lg:w-48 lg:h-72 w-24 h-40 bg-black ml-5 rounded-2xl"
+                    >
+                      <img
+                        src="img/Solo Leveling.jpeg"
+                        alt=""
+                        class="w-full rounded-2xl h-full"
+                      />
+                    </div>
+                    <div
+                      class="lg:w-48 lg:h-72 w-24 h-40 bg-black ml-5 rounded-2xl"
+                    >
+                      <img
+                        src="img/as fish.jpeg"
+                        alt=""
+                        class="w-full rounded-2xl h-full"
+                      />
+                    </div>
+                    <div
+                      class="lg:w-48 lg:h-72 w-24 h-40 bg-black ml-5 rounded-2xl"
+                    >
+                      <img
+                        src="img/daddy goes.jpg"
+                        alt=""
+                        class="w-full rounded-2xl h-full"
+                      />
+                    </div>
+                    <div
+                      class="w-48 h-72 bg-black ml-5 rounded-2xl hidden lg:block"
+                    >
+                      <img
+                        src="img/Lookism-249.jpeg"
+                        alt=""
+                        class="w-full rounded-2xl h-full"
+                      />
+                    </div>
+                    <div
+                      class="w-48 h-72 bg-black ml-5 rounded-2xl hidden lg:block"
+                    >
+                      <img
+                        src="img/Quest Supremacy.jpeg"
+                        alt=""
+                        class="w-full rounded-2xl h-full"
+                      />
+                    </div>
+                  </li>
+                  <li class="flex flex-wrap justify-center">
+                    <div
+                      class="lg:w-48 lg:h-72 w-24 h-40 bg-black ml-5 rounded-2xl"
+                    >
+                      <img
+                        src="img/Solo Leveling.jpeg"
+                        alt=""
+                        class="w-full rounded-2xl h-full"
+                      />
+                    </div>
+                    <div
+                      class="lg:w-48 lg:h-72 w-24 h-40 bg-black ml-5 rounded-2xl"
+                    >
+                      <img
+                        src="img/as fish.jpeg"
+                        alt=""
+                        class="w-full rounded-2xl h-full"
+                      />
+                    </div>
+                    <div
+                      class="lg:w-48 lg:h-72 w-24 h-40 bg-black ml-5 rounded-2xl"
+                    >
+                      <img
+                        src="img/daddy goes.jpg"
+                        alt=""
+                        class="w-full rounded-2xl h-full"
+                      />
+                    </div>
+                    <div
+                      class="w-48 h-72 bg-black ml-5 rounded-2xl hidden lg:block"
+                    >
+                      <img
+                        src="img/Lookism-249.jpeg"
+                        alt=""
+                        class="w-full rounded-2xl h-full"
+                      />
+                    </div>
+                    <div
+                      class="w-48 h-72 bg-black ml-5 rounded-2xl hidden lg:block"
+                    >
+                      <img
+                        src="img/Quest Supremacy.jpeg"
+                        alt=""
+                        class="w-full rounded-2xl h-full"
+                      />
+                    </div>
+                  </li>
+                  <li class="flex flex-wrap justify-center">
+                    <div
+                      class="lg:w-48 lg:h-72 w-24 h-40 bg-black ml-5 rounded-2xl"
+                    >
+                      <img
+                        src="img/Solo Leveling.jpeg"
+                        alt=""
+                        class="w-full rounded-2xl h-full"
+                      />
+                    </div>
+                    <div
+                      class="lg:w-48 lg:h-72 w-24 h-40 bg-black ml-5 rounded-2xl"
+                    >
+                      <img
+                        src="img/as fish.jpeg"
+                        alt=""
+                        class="w-full rounded-2xl h-full"
+                      />
+                    </div>
+                    <div
+                      class="lg:w-48 lg:h-72 w-24 h-40 bg-black ml-5 rounded-2xl"
+                    >
+                      <img
+                        src="img/daddy goes.jpg"
+                        alt=""
+                        class="w-full rounded-2xl h-full"
+                      />
+                    </div>
+                    <div
+                      class="w-48 h-72 bg-black ml-5 rounded-2xl hidden lg:block"
+                    >
+                      <img
+                        src="img/Lookism-249.jpeg"
+                        alt=""
+                        class="w-full rounded-2xl h-full"
+                      />
+                    </div>
+                    <div
+                      class="w-48 h-72 bg-black ml-5 rounded-2xl hidden lg:block"
+                    >
+                      <img
+                        src="img/Quest Supremacy.jpeg"
+                        alt=""
+                        class="w-full rounded-2xl h-full"
+                      />
+                    </div>
+                  </li>
+                  <li class="flex flex-wrap justify-center">
+                    <div
+                      class="lg:w-48 lg:h-72 w-24 h-40 bg-black ml-5 rounded-2xl"
+                    >
+                      <img
+                        src="img/Solo Leveling.jpeg"
+                        alt=""
+                        class="w-full rounded-2xl h-full"
+                      />
+                    </div>
+                    <div
+                      class="lg:w-48 lg:h-72 w-24 h-40 bg-black ml-5 rounded-2xl"
+                    >
+                      <img
+                        src="img/as fish.jpeg"
+                        alt=""
+                        class="w-full rounded-2xl h-full"
+                      />
+                    </div>
+                    <div
+                      class="lg:w-48 lg:h-72 w-24 h-40 bg-black ml-5 rounded-2xl"
+                    >
+                      <img
+                        src="img/daddy goes.jpg"
+                        alt=""
+                        class="w-full rounded-2xl h-full"
+                      />
+                    </div>
+                    <div
+                      class="w-48 h-72 bg-black ml-5 rounded-2xl hidden lg:block"
+                    >
+                      <img
+                        src="img/Lookism-249.jpeg"
+                        alt=""
+                        class="w-full rounded-2xl h-full"
+                      />
+                    </div>
+                    <div
+                      class="w-48 h-72 bg-black ml-5 rounded-2xl hidden lg:block"
+                    >
+                      <img
+                        src="img/Quest Supremacy.jpeg"
+                        alt=""
+                        class="w-full rounded-2xl h-full"
+                      />
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <!-- Controls -->
+              <div
+                class="absolute left-0 flex items-center justify-between w-full h-0 px-4 top-1/2"
+                data-glide-el="controls"
+              >
+                <button
+                  class="inline-flex items-center justify-center w-8 h-8 transition duration-300 border rounded-full lg:w-12 lg:h-12 text-slate-700 border-slate-700 hover:text-slate-900 hover:border-slate-900 focus-visible:outline-none bg-white/20"
+                  data-glide-dir="<"
+                  aria-label="prev slide"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-5 h-5"
+                  >
+                    <title>prev slide</title>
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M6.75 15.75L3 12m0 0l3.75-3.75M3 12h18"
+                    />
+                  </svg>
+                </button>
+                <button
+                  class="inline-flex items-center justify-center w-8 h-8 transition duration-300 border rounded-full lg:w-12 lg:h-12 text-slate-700 border-slate-700 hover:text-slate-900 hover:border-slate-900 focus-visible:outline-none bg-white/20"
+                  data-glide-dir=">"
+                  aria-label="next slide"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-5 h-5"
+                  >
+                    <title>next slide</title>
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- end -->
+  </body>
+</html>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.0.2/glide.js"></script>
+<script src="index.js"></script>
+<script>
+  var glide01 = new Glide(".glide-01", {
+    type: "slider",
+    focusAt: "center",
+    perView: 1,
+    autoplay: 3000,
+    animationDuration: 5000,
+    gap: 0,
+    classes: {
+      activeNav: "[&>*]:bg-slate-700",
+    },
+  });
+
+  var glide02 = new Glide(".glide-02", {
+    type: "slider",
+    focusAt: "center",
+    perView: 1,
+    autoplay: 3000,
+    animationDuration: 5000,
+    gap: 0,
+    classes: {
+      activeNav: "[&>*]:bg-slate-700",
+    },
+  });
+
+  glide01.mount();
+  glide02.mount();
+</script>
