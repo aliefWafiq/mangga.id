@@ -17,3 +17,11 @@
 .hamburger-active > .bungkus > span:nth-child(2){
     @apply scale-0;
 }
+
+.info-Manga{
+    @apply md:text-lg text-base font-bold text-slate-700;
+}
+
+.transisi-card{
+    @apply bg-red-200 lg:h-full h-40 fixed w-full lg:max-w-48 max-w-28 rounded-2xl translate-y-full group-hover:translate-y-0  transition ease-in-out;
+}
