@@ -9,10 +9,15 @@ $hasil = $proses->show($sql2, $param);
 $sql3 = "SELECT * FROM panel_manga WHERE id_manga = '$manga'";
 $hasilPanel = $proses->list($sql3);
 
+$sql4 = "SELECT * FROM manga WHERE id = :id";
+$param = [":id"=> $manga];
+$namaManga = $proses->show($sql4, $param);
+
 unlink("../img/cover-manga/". $hasil['cover']);
 
 foreach ($hasilPanel as $x) {
-    unlink("../img/panel_manga/". $x['panel']);
+    unlink("../img/panel_manga/". $namaManga['nama'] . "/" . $x['panel']);
+    rmdir("../img/panel_manga/". $namaManga["nama"]);
 }
 
 $sql = "DELETE FROM manga WHERE id = $manga";

@@ -31,7 +31,10 @@ if (!empty($_GET['acts'] == 'delete')) {
 }else if(!empty($_GET['acts'] == 'add')) {
     include 'layout/nav.php';
     require 'layout/addManga.php';
-} else {
+}else if(!empty($_GET['acts'] == 'panel')) {
+    include 'layout/nav.php';
+    include 'layout/addPanel.php';
+}else {
     include 'layout/nav.php';
     require 'admin/list.php';
 }

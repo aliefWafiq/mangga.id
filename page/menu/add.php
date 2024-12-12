@@ -9,7 +9,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $komikus = filter_input(INPUT_POST, "komikus", FILTER_SANITIZE_SPECIAL_CHARS);
     $sipnosis = filter_input(INPUT_POST, "sipnosis", FILTER_SANITIZE_SPECIAL_CHARS);
     $umur = filter_input(INPUT_POST, "umur", FILTER_VALIDATE_INT);
-    $chapter = filter_input(INPUT_POST, "chapter", FILTER_VALIDATE_INT);
     $status = filter_input(INPUT_POST, "status", FILTER_SANITIZE_SPECIAL_CHARS);
     $genre = filter_input(INPUT_POST, "genre", FILTER_SANITIZE_SPECIAL_CHARS);
     $type = filter_input(INPUT_POST, "type", FILTER_SANITIZE_SPECIAL_CHARS);
@@ -23,15 +22,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $tempname = $_FILES["uploadfile"]["tmp_name"];
     $folder = "../../img/cover-manga/" . $foto;
 
+    $folderPanel = "../../img/panel_manga/". $nama;
+    mkdir($folderPanel);
+
     if (empty($foto)) {
         echo "Masukan foto";
     } else {
         if (move_uploaded_file($tempname, $folder)) {
-            $sql = "INSERT INTO manga (nama,chapter,cover,komikus,Umur,Genre,status,sipnosis, waktu, type) VALUES (:nama, :chapter, :cover, :komikus, :Umur, :Genre, :status, :sipnosis, :waktu, :type)";
+            $sql = "INSERT INTO manga (nama,cover,komikus,Umur,Genre,status,sipnosis, waktu, type) VALUES (:nama, :cover, :komikus, :Umur, :Genre, :status, :sipnosis, :waktu, :type)";
             $stmt = $proses->getDb()->prepare($sql);
             $stmt->bindParam(':cover', $foto);
             $stmt->bindParam(':nama', $nama);
-            $stmt->bindParam(':chapter', $chapter);
             $stmt->bindParam(':komikus', $komikus);
             $stmt->bindParam(':Umur', $umur);
             $stmt->bindParam(':Genre', $genre);

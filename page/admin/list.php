@@ -54,9 +54,10 @@ $hasil = $proses->show($username, $param);
                             <td class="px-6 py-4 font-semibold text-gray-900 text-xl dark:text-white">
                                 <?php echo $x['chapter'] ?>
                             </td>
-                            <td class="px-6 py-4 text-xl">
-                                <a href="default.php?user=<?php echo $name ?>&manga=<?php echo $x['id'] ?>&acts=edit" class="mx-2 text-yellow-500">edit</a>
-                                <a href="default.php?user=<?php echo $name ?>&manga=<?php echo $x['id'] ?>&acts=delete" class="mx-2 text-red-700">delete</a>
+                            <td class="py-4 text-xl">
+                                <a href="default.php?user=<?php echo $name ?>&manga=<?php echo $x['id'] ?>&acts=panel" class="mx-2 px-3 py-1 text-white font-semibold rounded-xl bg-blue-500">Panel</a>
+                                <a href="default.php?user=<?php echo $name ?>&manga=<?php echo $x['id'] ?>&acts=edit" class="mx-2 px-3 py-1 text-white font-semibold rounded-xl bg-yellow-500">edit</a>
+                                <a href="default.php?user=<?php echo $name ?>&manga=<?php echo $x['id'] ?>&acts=delete" class="mx-2 px-3 py-1 text-white font-semibold rounded-xl bg-red-700">delete</a>
                             </td>
                         </tr>
                     </tbody>
