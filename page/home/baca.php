@@ -1,6 +1,7 @@
 <?php
 $manga = $_GET['manga'];
 $namaManga = "SELECT * FROM manga WHERE nama='$manga'";
+
 $idManga = "SELECT * FROM manga WHERE nama= :manga";
 $param = [':manga' => $manga];
 
@@ -30,14 +31,25 @@ $resultPanel = $proses->list($getPanel);
       <div class="md:p-4 sm:ml-64">
          <!-- main content -->
          <div class="container-fluid w-full">
-            <div class="mt-5 w-full">
+            <div class="mt-5 w-full flex flex-col items-center">
                <?php foreach ($resultPanel as $x) { ?>
                   <div class="flex w-full justify-center">
                     <div class="w-2/3 flex justify-center overflow-hidden">
-                        <img src="../img/panel_manga/<?php echo $manga ?>/<?php echo $x['panel'] ?>" alt="" class="object-cover w-full h-full">
+                        <img src="../img/panel_manga/<?php echo $manga ?>/<?php echo $x['chapter'] ?>/<?php echo $x['panel'] ?>" alt="" class="object-cover w-full h-full">
                     </div>
                   </div>
                <?php } ?>
+               <div class="flex justify-between w-1/2 bg-secondary fixed bottom-2 h-14 rounded-t- xl overflow-hidden">
+                  <a class="bg-third h-full flex-grow flex justify-center items-center" href="direct.php?manga=<?php echo $manga ?>&user=<?php echo $name ?>&page=baca&chapter=<?php $next = $chapter - 1; echo $next ?>">
+                     <i class="text-xl text-white fa-solid fa-arrow-left"></i>
+                  </a>
+                  <div class="flex justify-center items-center w-3/4">
+                     <p class="text-xl font-semibold">Chapter <?php echo $chapter ?></p>
+                  </div>
+                  <a class="bg-third h-full flex-grow flex justify-center items-center" href="direct.php?manga=<?php echo $manga ?>&user=<?php echo $name ?>&page=baca&chapter=<?php $next = $chapter + 1; echo $next ?>">
+                     <i class="text-xl text-white fa-solid fa-arrow-right"></i>
+                  </a>
+               </div>
             </div>
          </div>
    </body>

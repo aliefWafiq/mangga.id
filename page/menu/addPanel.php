@@ -12,26 +12,34 @@ $namaManga = $proses->show($sqlManga, $param);
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $chapter = filter_input(INPUT_POST, "chapter", FILTER_VALIDATE_INT);
 
-    $panel = $_FILES["uploadfile"]["name"];
-    $tempname = $_FILES["uploadfile"]["tmp_name"];
-    $folder = "../../img/panel_manga/" . $namaManga['nama'] . "/" . $panel;
+    foreach ($_FILES['uploadfile']['name'] as $index => $panel) {
+        if (empty($panel) || $_FILES['uploadfile']['size'][$index] <= 0 || $_FILES['uploadfile']['error'][$index] != 0) {
+            echo '<script>window.location="../default.php?user=' . $name . '&manga=' . $manga . '&acts=panel&isidulu"</script>';
+        } else {
+            $folderPanel = "../../img/panel_manga/". $namaManga['nama'] . "/" . $chapter;
 
+            if(!is_dir($folderPanel)){
+                mkdir($folderPanel, 0777, true);
+            }
 
-    if (move_uploaded_file($tempname, $folder)) {
-        $sql = "INSERT INTO panel_manga (id_manga, chapter, panel) VALUES (:idManga, :chapter, :panel)";
-        $stmt = $proses->getDb()->prepare($sql);
-        $stmt->bindParam(":idManga", $manga);
-        $stmt->bindParam(':chapter', $chapter);
-        $stmt->bindParam(':panel', $panel);
+            if (move_uploaded_file($_FILES['uploadfile']['tmp_name'][$index], "../../img/panel_manga/" . $namaManga['nama'] . "/" . $chapter . "/" . $panel)) {
+                for ($x = 0; $x < $panel; $x++) {
+                    $sql = "INSERT INTO panel_manga (id_manga, chapter, panel) VALUES (:idManga, :chapter, :panel)";
+                    $stmt = $proses->getDb()->prepare($sql);
+                    $stmt->bindParam(":idManga", $manga);
+                    $stmt->bindParam(':chapter', $chapter);
+                    $stmt->bindParam(':panel', $panel);
+                }
+                if ($stmt->execute()) {
+                    $updateManga = "UPDATE manga SET chapter = :chapter WHERE id = :id";
+                    $stmtUpdate = $proses->getDb()->prepare($updateManga);
+                    $stmtUpdate->bindParam(':chapter', $chapter);
+                    $stmtUpdate->bindParam(':id', $manga);
+                    $stmtUpdate->execute();
 
-        if ($stmt->execute()) {
-            $updateManga = "UPDATE manga SET chapter = :chapter WHERE id = :id";
-            $stmtUpdate = $proses->getDb()->prepare($updateManga);
-            $stmtUpdate->bindParam(':chapter', $chapter);
-            $stmtUpdate->bindParam(':id', $manga);
-            $stmtUpdate->execute();
-            
-            echo '<script>window.location="../default.php?user=' . $name . '&acts"</script>';
+                    echo '<script>window.location="../default.php?user=' . $name . '&acts"</script>';
+                }
+            }
         }
     }
 }

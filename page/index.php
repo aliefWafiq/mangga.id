@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Document</title>
-  <link rel="stylesheet" href="../src/output.css" />
+  <link rel="stylesheet" href="../src/output.css?<?= time() ?>" />
   <style>
     ::-webkit-scrollbar {
       width: 0px;
@@ -59,10 +59,10 @@
   <section id="home" class="h-screen overflow-hidden bg-no-repeat bg-cover"
     style="background-image: url(../img/asset\ landing\ page/wano.jpg);">
     <div
-      class="container h-full bg-black rounded-md bg-clip-padding p-5 backdrop-filter backdrop-blur-md bg-opacity-10">
+      class="container h-full bg-black rounded-md bg-clip-padding p-5 backdrop-filter backdrop-blur-md bg-opacity-10 ">
       <div class="flex flex-col w-full h-full">
         <div class="w-full h-[75%] pb-5 px-5 flex justify-center">
-          <div class="w-1/4 h-full mx-2 rounded-3xl overflow-hidden">
+          <div class="w-1/4 h-full mx-2 rounded-3xl overflow-hidden ">
             <img src="../img/asset landing page/kagurabachi.jpg" alt="" class="w-full h-full object-cover">
           </div>
           <div class="rounded-3xl overflow-hidden w-full h-full">
@@ -71,83 +71,77 @@
             </video>
           </div>
           <div
-            class="bg-black rounded-3xl overflow-hidden bg-clip-padding flex flex-col backdrop-filter backdrop-blur-md bg-opacity-60 w-1/3 h-full mx-3 text-secondary">
+            class="bg-black rounded-3xl overflow-hidden flex flex-col glassmorphism bg-opacity-60 w-1/3 h-full mx-3 text-secondary shadow-[0px_1px_25px_4px_rgba(232,_141,_103,_0.71)]">
             <div class="flex w-full h-[15%]">
               <h1 class="text-3xl font-bold w-full h-full flex items-center justify-center">Mangga.id</h1>
               <div
-                class="bg-gray-100 bg-clip-padding backdrop-filter backdrop-blur-md rounded-tl-[50px] bg-opacity-10 w-2/4 h-full">
+                class="bg-gray-100 glassmorphism rounded-tl-[50px] bg-opacity-10 w-2/4 h-full">
               </div>
             </div>
             <div
-              class="bg-gray-100 rounded-tl-[50px] bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-10 w-full h-[85%] flex flex-col justify-center px-5">
+              class="bg-gray-100 rounded-tl-[50px] glassmorphism bg-opacity-10 w-full h-[85%] flex flex-col justify-center px-5">
               <div>
                 <p class="text-lg">Manggaku.id adalah sebuah website dimana kita bisa membaca berbagai macam komik mulai
                   dari manga hingga manhwa dengan berbagai genre yang dijamin seru</p>
               </div>
               <div class="flex flex-wrap mt-4">
-                <p class="mx-1 my-1 bg-[#E88D67] px-2 rounded-full font-semibold">#Action</p>
-                <p class="mx-1 my-1 bg-[#E88D67] px-2 rounded-full font-semibold">#Comedy</p>
-                <p class="mx-1 my-1 bg-[#E88D67] px-2 rounded-full font-semibold">#Adventure</p>
-                <p class="mx-1 my-1 bg-[#E88D67] px-2 rounded-full font-semibold">#Romance</p>
-                <p class="mx-1 my-1 bg-[#E88D67] px-2 rounded-full font-semibold">#Fantasy</p>
-                <p class="mx-1 my-1 bg-[#E88D67] px-2 rounded-full font-semibold">#History</p>
-                <p class="mx-1 my-1 bg-[#E88D67] px-2 rounded-full font-semibold">#Gore</p>
+                <p class="mx-1 my-1 bg-third px-2 rounded-full font-semibold">#Action</p>
+                <p class="mx-1 my-1 bg-third px-2 rounded-full font-semibold">#Comedy</p>
+                <p class="mx-1 my-1 bg-third px-2 rounded-full font-semibold">#Adventure</p>
+                <p class="mx-1 my-1 bg-third px-2 rounded-full font-semibold">#Romance</p>
+                <p class="mx-1 my-1 bg-third px-2 rounded-full font-semibold">#Fantasy</p>
+                <p class="mx-1 my-1 bg-third px-2 rounded-full font-semibold">#History</p>
+                <p class="mx-1 my-1 bg-third px-2 rounded-full font-semibold">#Gore</p>
               </div>
             </div>
           </div>
         </div>
-        <div class="h-[25%] w-full flex justify-center px-5">
+        <div class="h-[25%] w-full flex justify-center px-5 ">
           <div
-            class="bg-black rounded-3xl overflow-hidden bg-clip-padding flex flex-col backdrop-filter backdrop-blur-md bg-opacity-60 w-2/3 h-full mx-3 p-5">
-            <p class="text-4xl font-bold text-secondary">Gas baca!!</p>
-            <div class="flex gap-5 items-center h-full">
+            class="bg-black rounded-3xl overflow-hidden glassmorphism bg-opacity-60 w-2/3 h-full mx-3 p-5 flex">
+            <div class="w-1/2 h-full flex justify-center flex-col text-secondary">
+              <p class="text-4xl font-bold">Gas baca!!</p>
+              <p class="font-semibold">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore, nesciunt.</p>
+            </div>
+            <div class="items-center h-full w-1/2 flex flex-col justify-center">
               <a href="regis.php"
-                class="bg-[#E88D67] w-1/2 py-2 text-secondary text-center rounded-full text-lg font-semibold">Daftar</a>
+                class="bg-third w-full py-2 text-secondary text-center rounded-full text-lg font-semibold my-3 hover:bg-secondary hover:text-third">Daftar</a>
               <a href="login.php"
-                class="bg-secondary text-[#E88D67] w-1/2 py-2 text-center rounded-full text-lg font-semibold">Masuk</a>
+                class="bg-secondary text-third w-full py-2 text-center rounded-full text-lg font-semibold hover:bg-third hover:text-secondary">Masuk</a>
             </div>
           </div>
-          <!-- <div class="w-full h-full mx-3 overflow-hidden flex rounded-3xl">
-            <img src="../img/asset landing page/aii.jpg" alt="" class="w-full h-full object-cover">
-          </div> -->
           <div
-            class="bg-black text-secondary rounded-3xl overflow-hidden bg-clip-padding flex flex-col backdrop-filter backdrop-blur-md bg-opacity-60 w-2/3 h-full mx-3 p-5">
-            <p class="text-xl font-bold mb-3">Chapter update</p>
-            <div>
-              <p>Kaoru hana wa rin to saku Chapter234</p>
-              <p>Kaoru hana wa rin to saku Chapter234</p>
-              <p>Kaoru hana wa rin to saku Chapter234</p>
-              <p>Kaoru hana wa rin to saku Chapter234</p>
-            </div>
+            class="bg-black text-secondary rounded-3xl overflow-hidden flex flex-col glassmorphism bg-opacity-60 w-2/3 h-full mx-3 p-5">
+            <img src="../img/asset landing page/aii.jpg" alt="" class="w-full h-full object-cover rounded-3xl">
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- introduction -->
-  <!-- <section id="about" class="bg-slate-600 h-screen  w-full lg:pt-36">
-    <div class="h-full w-full flex">
-      <div class="lg:ml-36 mx-5 lg:mx-0 flex flex-col justify-center lg:w-1/2 lg:justify-start">
-        <div class=" text-white lg:mt-20 mt-10">
-          <h1 class="text-5xl font-bold mb-3">Yuk kenalan sama Mangga.id</h1>
-        </div>
-        <div class="">
-          <p class="bg-red text-sm my-3 text-white">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia adipisci rerum sequi ratione, itaque,
-            laborum sint modi reiciendis omnis minus perspiciatis? Doloremque eaque eveniet cumque nobis est
-            consequuntur, voluptate mollitia commodi debitis voluptas totam, culpa, quis quod. Dignissimos, soluta, odio
-            similique repellendus rerum repudiandae consequatur veritatis voluptatem ea, non dolorem.
-          </p>
+  <section class="h-screen w-full bg-secondary">
+    <div class="w-full h-full flex">
+      <div class="w-1/2 h-full flex justify-center items-center">
+        <div class="w-3/4 h-3/4 flex justify-center items-center relative">
+          <div class="rounded-xl shadow-2xl overflow-hidden w-56 h-80 absolute z-10">
+            <img src="../img/asset landing page/DANDADAN.jpg" alt="" class="object-cover">
+          </div>
+          <div class="rounded-xl shadow-2xl overflow-hidden w-56 h-80 top-3 left-4 absolute">
+            <img src="../img/asset landing page/cover-kaoru.jpg" alt="" class="object-cover">
+          </div>
+          <div class="bg-sky-700 rounded-xl shadow-2xl overflow-hidden w-56 h-80 absolute bottom-4 right-5">
+            <img src="../img/asset landing page/cover mushoku.jpg" alt="" class="object-cover">
+          </div>
         </div>
       </div>
-      <div class="w-1/2 p-16 hidden lg:flex bg-red-00">
-        <img src="../img/20th cen.jpeg" alt="" class="w-1/2 mx-3">
-        <img src="../img/Kiga.jpeg" alt="" class="w-1/2">
+      <div class="w-1/2 h-full flex justify-center items-center">
+        <div class="w-3/4">
+          <h1 class="text-4xl my-3 font-semibold">Lorem, ipsum dolor.</h1>
+          <p class="text-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla ipsa veritatis optio quo sunt vero praesentium incidunt iusto accusantium libero?</p>
+        </div>
       </div>
     </div>
-  </section> -->
-  <!-- end -->
+  </section>
 
   <!-- main content -->
   <section id="content" class="lg:pt-36 pt-20 pb-36 w-full">
