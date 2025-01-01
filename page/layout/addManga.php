@@ -2,7 +2,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css"  rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="../../src/output.css?<?= time() ?>">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
@@ -35,13 +35,13 @@
                         <option value="completed">Completed</option>
                     </select>
 
-                    <label for="genre" class="md:ml-3 mt-5">Genre:</label>
-                    <select id="genre" name="genre">
-                        <option value="Action">Action</option>
-                        <option value="Romance">Romance</option>
-                        <option value="Comedy">Comedy</option>
-                        <option value="SOL">SOL</option>
-                    </select>
+                    <label for="genre">Pilih Genre:</label>
+                    <div id="genre">
+                        <input type="checkbox" name="genre[]" value="action"> Action
+                        <input type="checkbox" name="genre[]" value="adventure"> Adventure
+                        <input type="checkbox" name="genre[]" value="comedy"> Comedy
+                        <input type="checkbox" name="genre[]" value="romance"> Romance
+                    </div>
 
                     <label for="type" class="md:ml-3 mt-5">Type:</label>
                     <select id="ype" name="type">
