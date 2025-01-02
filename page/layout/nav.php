@@ -15,65 +15,65 @@
    </button>
 
    <aside id="sidebar-multi-level-sidebar" class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0" aria-label="Sidebar">
-      <div class="h-full px-3 py-4 overflow-y-auto bg-gray-200 dark:bg-gray-800">
+      <div class="h-full px-3 py-4 overflow-y-auto bg-primary dark:bg-gray-800">
          <ul class="space-y-2 font-medium">
             <li>
-               <a href="#" class="flex items-center p-2 mb-5 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+               <a href="#" class="flex items-center p-2 mb-5 text-third rounded-lg dark:text-white dark:hover:bg-gray-700 group">
                   <span class="text-3xl">Mangga.id</span>
                </a>
             </li>
             <li>
-               <a href="direct.php?user=<?php echo $name ?>&page=profile" class="flex items-center p-2 text-xl text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+               <a href="direct.php?user=<?php echo $name ?>&page=profile" class="flex items-center p-2 text-xl text-secondary rounded-lg dark:text-white hover:bg-gray-100 hover:text-primary dark:hover:bg-gray-700 group">
                   <i class="fa-solid fa-user"></i>
                   <span class="flex-1 ms-3 whitespace-nowrap">Profile</span>
                </a>
             </li>
             <li>
-               <button type="button" class="flex items-center w-full p-2 text-xl text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700" aria-controls="dropdown-example" data-collapse-toggle="dropdown-example">
+               <button type="button" class="flex items-center w-full p-2 text-xl text-secondary transition duration-75 rounded-lg group hover:bg-gray-100 hover:text-primary dark:text-white dark:hover:bg-gray-700" aria-controls="dropdown-example" data-collapse-toggle="dropdown-example">
                   <i class="fa-solid fa-book"></i>
                   <span class="text-left ms-3">Genre</span>
                </button>
                <ul id="dropdown-example" class="hidden py-2 space-y-2">
                   <li>
-                     <a href="direct.php?user=<?php echo $name ?>&page=genre&genre=Action" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Action</a>
+                     <a href="direct.php?user=<?php echo $name ?>&page=genre&genre=Action" class="flex items-center w-full p-2 text-secondary transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 hover:text-primary dark:text-white dark:hover:bg-gray-700">Action</a>
                   </li>
                   <li>
-                     <a href="direct.php?user=<?php echo $name ?>&page=genre&genre=SOL" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">SOL</a>
+                     <a href="direct.php?user=<?php echo $name ?>&page=genre&genre=SOL" class="flex items-center w-full p-2 text-secondary transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 hover:text-primary dark:text-white dark:hover:bg-gray-700">SOL</a>
                   </li>
                   <li>
-                     <a href="direct.php?user=<?php echo $name ?>&page=genre&genre=Romance" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Romance</a>
+                     <a href="direct.php?user=<?php echo $name ?>&page=genre&genre=Romance" class="flex items-center w-full p-2 text-secondary transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 hover:text-primary dark:text-white dark:hover:bg-gray-700">Romance</a>
                   </li>
                   <li>
-                     <a href="direct.php?user=<?php echo $name ?>&page=genre&genre=Comedy" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Comedy</a>
+                     <a href="direct.php?user=<?php echo $name ?>&page=genre&genre=Comedy" class="flex items-center w-full p-2 text-secondary transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 hover:text-primary dark:text-white dark:hover:bg-gray-700">Comedy</a>
                   </li>
                </ul>
             </li>
             <li>
-               <a href="direct.php?user=<?php echo $name ?>&page=home" class="flex items-center p-2 text-xl text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+               <a href="direct.php?user=<?php echo $name ?>&page=home" class="flex items-center p-2 text-xl text-secondary rounded-lg dark:text-white hover:bg-gray-100 hover:text-primary dark:hover:bg-gray-700 group">
                   <i class="fa-solid fa-house"></i>   
                   <span class="flex-1 ms-3 whitespace-nowrap">Home</span>
                </a>
             </li>
             <li>
-               <a href="direct.php?user=<?php echo $name ?>&page=top" class="flex items-center p-2 text-xl text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+               <a href="direct.php?user=<?php echo $name ?>&page=top" class="flex items-center p-2 text-xl text-secondary rounded-lg dark:text-white hover:bg-gray-100 hover:text-primary dark:hover:bg-gray-700 group">
                   <i class="fa-solid fa-list"></i>
                   <span class="flex-1 ms-3 whitespace-nowrap">Top List</span>
                </a>
             </li>
             <li class="hidden" id="list">
-               <a href="default.php?user=<?php echo $name ?>&acts" class="flex items-center p-2 text-xl text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+               <a href="default.php?user=<?php echo $name ?>&acts" class="flex items-center p-2 text-xl text-secondary rounded-lg dark:text-white hover:bg-gray-100 hover:text-primary dark:hover:bg-gray-700 group">
                   <i class="fa-solid fa-list"></i>
                   <span class="flex-1 ms-3 whitespace-nowrap">List manga</span>
                </a>
             </li>
             <li class="hidden" id="add">
-               <a href="default.php?user=<?php echo $name ?>&acts=add" class="flex items-center p-2 text-xl text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+               <a href="default.php?user=<?php echo $name ?>&acts=add" class="flex items-center p-2 text-xl text-secondary rounded-lg dark:text-white hover:bg-gray-100 hover:text-primary dark:hover:bg-gray-700 group">
                   <i class="fa-solid fa-plus"></i>
                   <span class="flex-1 ms-3 whitespace-nowrap">Add manga</span>
                </a>
             </li>
             <li>
-               <a href="index.php" class="flex items-center p-2 text-xl text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+               <a href="index.php" class="flex items-center p-2 text-xl text-secondary rounded-lg dark:text-white hover:bg-gray-100 hover:text-primary dark:hover:bg-gray-700 group">
                   <i class="fa-solid fa-right-from-bracket"></i>
                   <span class="flex-1 ms-3 whitespace-nowrap">Log out</span>
                </a>

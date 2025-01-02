@@ -1,12 +1,16 @@
 <?php
 $genre = $_GET['genre'];
 
-$listGenre = "SELECT * FROM manga WHERE Genre = '$genre'";
-$hasilListGenre = $proses->list($listGenre);
+$listGenre = "SELECT * FROM genre WHERE Genre = '$genre'";
+$getIdManga = $proses->list($listGenre);
 
-echo $genre;
+foreach($getIdManga as $x){
+    $id_manga = $x['id_manga'];
+}
+
+$get_manga = "SELECT *, genre.genre FROM manga JOIN genre ON manga.id = genre.id_manga WHERE genre.genre = '$genre'";
+$manga = $proses->list($get_manga);
 ?>
-
 
 <div class="md:p-4 sm:ml-64 2xl:ml-96">
     <!-- main content -->
@@ -14,7 +18,7 @@ echo $genre;
         <div class="wrapper">
             <div class="md:flex md:flex-row flex-wrap md:mx-10 xs:mx-5">
                 <?php
-                foreach ($hasilListGenre as $x) { ?>
+                foreach ($manga as $x) { ?>
                     <div class="mx-2 mt-4 lg:w-screen">
                         <a href="../home/manga.php?manga=<?php echo $x['nama'] ?>&user=<?php echo $name ?>">
                             <div class="bg-slate-100 border-solid border-2 border-gray-200 overflow-hidden lg:w-full lg:h-60 rounded-xl">

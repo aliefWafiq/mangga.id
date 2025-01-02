@@ -49,7 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $stmt->execute();
                 }
 
-                // echo '<script>window.location="../default.php?user='. $name .'&acts"</script>';
+                echo '<script>window.location="../default.php?user='. $name .'&acts"</script>';
             }
         }
     }

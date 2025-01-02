@@ -19,7 +19,7 @@
 }
 
 .info-Manga{
-    @apply md:text-lg text-base font-bold text-slate-700;
+    @apply md:text-lg text-base font-bold text-primary;
 }
 
 .transisi-card{
