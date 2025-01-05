@@ -35,12 +35,10 @@
                         <option value="completed">Completed</option>
                     </select>
 
-                    <label for="genre">Pilih Genre:</label>
+                    <label for="genre" class="mt-5">Pilih Genre:</label>
                     <div id="genre">
                         <input type="checkbox" name="genre[]" value="action"> Action
-                        <input type="checkbox" name="genre[]" value="adventure"> Adventure
-                        <input type="checkbox" name="genre[]" value="comedy"> Comedy
-                        <input type="checkbox" name="genre[]" value="romance"> Romance
+                       
                     </div>
 
                     <label for="type" class="md:ml-3 mt-5">Type:</label>

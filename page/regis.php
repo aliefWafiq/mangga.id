@@ -39,23 +39,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 
 <body>
-    <div class="container">
+    <div class="container h-screen w-full">
         <!-- form -->
-        <div class="form">
-            <h1 class="my-10 text-center text-lg font-bold">please complete the registration</h1>
-            <div class="md:flex md:justify-center">
-                <form class="mx-5 md:w-1/2 md:mx-auto" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="post">
+        <div class="form flex justify-center items-center h-full w-full">
+            <div class="flex flex-col items-end w-1/2 px-10">
+                <h1 class="text-5xl font-bold w-1/2">Daftar guild dulu king</h1>
+                <p class="w-1/2 mt-3"> “Do not change the world to suit your desires; first, change yourself” – Descartes, Discourse on Method</p>
+            </div>
+            <div class="w-1/2">
+                <form class="w-1/2" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="post">
                     <div class="relative">
                         <input type="text" required id="username" name="name" placeholder="" class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border border-gray-600 appearance-none focus:ring-1 peer"><br>
-                        <label for="username" class="absolute text-sm top-3 bg-white px-3 start-2.5 -translate-y-4 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto duration-300 transform origin-[0]">Username</label>
+                        <label for="username" class="labelInput">Username</label>
                     </div>
                     <div class="relative">
                         <input type="text" required id="email" name="email" placeholder="" class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border border-gray-600 appearance-none focus:ring-1 peer"><br>
-                        <label for="email" class="absolute text-sm top-3 bg-white px-3 start-2.5 -translate-y-4 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto duration-300 transform origin-[0]">Email</label>
+                        <label for="email" class="labelInput">Email</label>
                     </div>
                     <div class="relative">
                         <input type="password" required id="password" name="password" placeholder="" class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border border-gray-600 appearance-none focus:ring-1 peer"><br>
-                        <label for="password" class="absolute text-sm top-3 bg-white px-3 start-2.5 -translate-y-4 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto duration-300 transform origin-[0]">Password</label>
+                        <label for="password" class="labelInput">Password</label>
                     </div>
                     <input type="submit" name="submit" class="cursor-pointer border bg-transparent px-3 py-2 rounded-lg hover:text-white border-black hover:bg-sky-500 hover:border-0">
                 </form>
