@@ -7,13 +7,6 @@ foreach ($hasil as $x) {
     $id_user = $x['id'];
 }
 
-// $getDataManga = "SELECT * FROM manga";
-// $dataManga = $proses->list($getDataManga);
-
-// foreach ($dataManga as $x) {
-//     $idManga = $x['id_manga'];
-// }
-
 $get_favorite = "SELECT user.*, favorite.*, manga.* FROM user JOIN favorite ON user.id = favorite.id_user JOIN manga ON favorite.id_manga = manga.id WHERE favorite.id_user = $id_user";
 $favorite = $proses->list($get_favorite);
 ?>
@@ -46,11 +39,13 @@ $favorite = $proses->list($get_favorite);
             <p class="text-2xl mb-5 font-semibold">Favorite</p>
             <div class="flex">
                 <?php foreach ($favorite as $x) {
-                   ?>
+                ?>
+                    <a href="direct.php?manga=<?php echo $x['nama'] ?>&user=<?php echo $name ?>&page=detailManga">
                         <div class="lg:w-48 lg:h-72 w-24 h-40 bg-black ml-5 rounded-2xl">
                             <img src="../img/cover-manga/<?php echo $x['cover'] ?>" alt="" class="w-full rounded-2xl h-full" />
                         </div>
-                <?php 
+                    </a>
+                <?php
                 } ?>
             </div>
         </div>

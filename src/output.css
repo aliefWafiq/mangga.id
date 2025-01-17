@@ -1295,11 +1295,6 @@ input:checked + .toggle-bg {
   margin-bottom: 0.25rem;
 }
 
-.my-10 {
-  margin-top: 2.5rem;
-  margin-bottom: 2.5rem;
-}
-
 .my-2 {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
@@ -1542,6 +1537,10 @@ input:checked + .toggle-bg {
   height: 1.5rem;
 }
 
+.h-60 {
+  height: 15rem;
+}
+
 .h-64 {
   height: 16rem;
 }
@@ -1604,6 +1603,14 @@ input:checked + .toggle-bg {
 
 .w-1\/4 {
   width: 25%;
+}
+
+.w-1\/5 {
+  width: 20%;
+}
+
+.w-10 {
+  width: 2.5rem;
 }
 
 .w-12 {
@@ -3234,21 +3241,6 @@ input:checked + .toggle-bg {
   padding-bottom: 1.25rem;
 }
 
-.px-\[5px\] {
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-.px-8 {
-  padding-left: 2rem;
-  padding-right: 2rem;
-}
-
-.px-9 {
-  padding-left: 2.25rem;
-  padding-right: 2.25rem;
-}
-
 .pb-2 {
   padding-bottom: 0.5rem;
 }
@@ -3364,6 +3356,11 @@ input:checked + .toggle-bg {
   line-height: 2.5rem;
 }
 
+.text-5xl {
+  font-size: 3rem;
+  line-height: 1;
+}
+
 .text-base {
   font-size: 1rem;
   line-height: 1.5rem;
@@ -3387,11 +3384,6 @@ input:checked + .toggle-bg {
 .text-xs {
   font-size: 0.75rem;
   line-height: 1rem;
-}
-
-.text-5xl {
-  font-size: 3rem;
-  line-height: 1;
 }
 
 .font-bold {
@@ -4504,11 +4496,6 @@ input:checked + .toggle-bg {
     margin-right: 1.25rem;
   }
 
-  .md\:mx-auto {
-    margin-left: auto;
-    margin-right: auto;
-  }
-
   .md\:my-5 {
     margin-top: 1.25rem;
     margin-bottom: 1.25rem;
@@ -4546,12 +4533,12 @@ input:checked + .toggle-bg {
     margin-top: 1.25rem;
   }
 
-  .md\:block {
-    display: block;
+  .md\:mt-1 {
+    margin-top: 0.25rem;
   }
 
-  .md\:flex {
-    display: flex;
+  .md\:block {
+    display: block;
   }
 
   .md\:hidden {
@@ -4568,10 +4555,6 @@ input:checked + .toggle-bg {
 
   .md\:h-40 {
     height: 10rem;
-  }
-
-  .md\:w-1\/2 {
-    width: 50%;
   }
 
   .md\:w-24 {
@@ -4596,14 +4579,6 @@ input:checked + .toggle-bg {
 
   .md\:w-\[30rem\] {
     width: 30rem;
-  }
-
-  .md\:flex-row {
-    flex-direction: row;
-  }
-
-  .md\:justify-center {
-    justify-content: center;
   }
 
   .md\:bg-primary {
@@ -4714,10 +4689,6 @@ input:checked + .toggle-bg {
 
   .lg\:h-40 {
     height: 10rem;
-  }
-
-  .lg\:h-60 {
-    height: 15rem;
   }
 
   .lg\:h-72 {

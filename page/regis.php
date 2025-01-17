@@ -7,6 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = filter_input(INPUT_POST, "email", FILTER_SANITIZE_EMAIL);
     $password = filter_input(INPUT_POST, "password", FILTER_VALIDATE_INT);
     $hash = password_hash($password, PASSWORD_DEFAULT);
+    $level = 1;
 
     $stmt = $proses->getDb()->prepare("SELECT name FROM user WHERE ? = name");
     $param = array($_POST['name']);
@@ -16,11 +17,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($stmt->rowCount() > 0) {
         echo "Sorry, username already exists";
     } else {
-        $sql2 = 'INSERT INTO user (name, password, email) VALUES (:name, :hash, :email)';
+        $sql2 = 'INSERT INTO user (name, password, email, level) VALUES (:name, :hash, :email, :level)';
         $stmt = $proses->getDb()->prepare($sql2);
         $stmt->bindParam(':name', $username);
         $stmt->bindParam(':hash', $hash);
         $stmt->bindParam(':email', $email);
+        $stmt->bindParam(':level', $level);
         if($stmt->execute()){
             echo "<script>window.location='direct.php?user=",$username,"&page=home';</script>";
         }
@@ -61,6 +63,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <label for="password" class="labelInput">Password</label>
                     </div>
                     <input type="submit" name="submit" class="cursor-pointer border bg-transparent px-3 py-2 rounded-lg hover:text-white border-black hover:bg-sky-500 hover:border-0">
+                    <a href="login.php" class="mx-5 text-third font-semibold underline">Udah punya akun</a>
                 </form>
             </div>
         </div>

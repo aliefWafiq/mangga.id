@@ -11,7 +11,7 @@ $id = $resultId['id'];
 $getPanel = "SELECT * FROM panel_manga WHERE id_manga = '$id'";
 $resultPanel = $proses->list($getPanel);
 
-$get_genre = "SELECT * FROM genre WHERE id_manga = '$id'";
+$get_genre = "SELECT manga.*, genremanga.*, genre.* FROM manga JOIN genremanga ON manga.id = genremanga.id_manga JOIN genre ON genremanga.genre = genre.id WHERE genremanga.id_manga = $id";
 $genre = $proses->list($get_genre);
 ?>
 

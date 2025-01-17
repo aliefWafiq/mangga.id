@@ -1,19 +1,8 @@
 <?php
-$genre = $_GET['genre'];
+$searchManga = $_GET['manga'];
 
-$getGenre = "SELECT * FROM genre WHERE genre = :genre";
-$param = [':genre' => $genre];
-$listGenre = $proses->show($getGenre, $param);
-$idGenre = $listGenre['id'];
-
-// foreach($getIdManga as $x){
-//     $id_manga = $x['id_manga'];
-// }
-
-$get_manga = "SELECT manga.* FROM manga JOIN genremanga ON manga.id = genremanga.id_manga JOIN genre ON genremanga.genre = genre.id WHERE genre.id = '$idGenre'";
+$get_manga = "SELECT * FROM manga WHERE nama = '$searchManga'";
 $manga = $proses->list($get_manga);
-echo "link = " . $genre;
-echo "db = " . $listGenre['id'];
 ?>
 
 <div class="md:p-4 w-full">

@@ -19,7 +19,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $komikus = filter_input(INPUT_POST, "komikus", FILTER_SANITIZE_SPECIAL_CHARS);
     $sipnosis = filter_input(INPUT_POST, "sipnosis", FILTER_SANITIZE_SPECIAL_CHARS);
     $umur = filter_input(INPUT_POST, "umur", FILTER_VALIDATE_INT);
-    $chapter = filter_input(INPUT_POST, "chapter", FILTER_VALIDATE_INT);
     $status = filter_input(INPUT_POST, "status", FILTER_SANITIZE_SPECIAL_CHARS);
     $genre = filter_input(INPUT_POST, "genre", FILTER_SANITIZE_SPECIAL_CHARS);
     $rating = filter_input(INPUT_POST, "rating", FILTER_SANITIZE_SPECIAL_CHARS);
@@ -30,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $folder = "../../img/cover-manga/" . $foto;
 
         if (move_uploaded_file($tempname, $folder)) {
-            $sql4 = "UPDATE `manga` SET `cover` = '$foto', `nama` = '$gantiNama', `chapter` = '$chapter', `sipnosis` = '$sipnosis', `komikus` = '$komikus', `status` = '$status', `Genre` = '$genre', `Umur` = '$umur', `rating` = '$rating' WHERE `id` = '$idManga'";
+            $sql4 = "UPDATE `manga` SET `cover` = '$foto', `nama` = '$gantiNama', `sipnosis` = '$sipnosis', `komikus` = '$komikus', `status` = '$status', `Umur` = '$umur', `rating` = '$rating' WHERE `id` = '$idManga'";
             $stmt = $proses->action($sql4);
             
             unlink("../img/cover-manga/". $hasil['cover']);
@@ -40,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo "Gagal mengunggah file gambar";
         }
     }else {
-        $sql4 = "UPDATE `manga` SET `cover` = '$foto', `nama` = '$gantiNama', `chapter` = '$chapter', `sipnosis` = '$sipnosis', `komikus` = '$komikus', `status` = '$status', `Genre` = '$genre', `Umur` = '$umur', `rating` = '$rating' WHERE `id` = '$idManga'";
+        $sql4 = "UPDATE `manga` SET `nama` = '$gantiNama', `sipnosis` = '$sipnosis', `komikus` = '$komikus', `status` = '$status', `Umur` = '$umur', `rating` = '$rating' WHERE `id` = '$idManga'";
         $stmt = $proses->action($sql4);
 
         echo '<script>window.location="../default.php?user='. $name .'&acts"</script>';

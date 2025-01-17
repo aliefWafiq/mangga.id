@@ -74,6 +74,8 @@ foreach ($hasil as $row) {
                 require 'home/genre.php';
             }else if($page == 'baca'){
                 require 'home/baca.php';
+            }else if($page == 'search'){
+                require 'layout/searchManga.php';
             }
         }
         ?>

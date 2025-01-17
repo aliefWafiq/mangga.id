@@ -23,10 +23,6 @@
                         <label for="nama" class="absolute text-sm top-3 bg-white px-3 start-2.5 -translate-y-4 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto duration-300 transform origin-[0]">Nama</label>
                     </div>
                     <div class="relative">
-                        <input type="text" value="<?php echo $x['chapter']; ?>" id="chapter" name="chapter" placeholder="" class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border border-gray-600 appearance-none focus:ring-1 peer"><br>
-                        <label for="chapter" class="absolute text-sm top-3 bg-white px-3 start-2.5 -translate-y-4 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto duration-300 transform origin-[0]">Chapter</label>
-                    </div>
-                    <div class="relative">
                         <input type="text" value="<?php echo $x['Umur']; ?>" id="umur" name="umur" placeholder="" class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border border-gray-600 appearance-none focus:ring-1 peer"><br>
                         <label for="umur" class="absolute text-sm top-3 bg-white px-3 start-2.5 -translate-y-4 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto duration-300 transform origin-[0]">Umur</label>
                     </div>
@@ -91,7 +87,7 @@
 </body>
 <script src="../../node_modules/flowbite/dist/flowbite.min.js"></script>
 <script>
-    <?php foreach ($hasil2 as $x) { ?>
+    <?php foreach ($result2 as $x) { ?>
         const fileInput = document.querySelector('input[type="file"]');
 
         const myFile = new File(['cover'], '<?php echo $x['cover'] ?>', {

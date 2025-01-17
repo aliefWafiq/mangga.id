@@ -23,6 +23,14 @@
                </a>
             </li>
             <li>
+               <form action="menu/search.php?user=<?php echo $name ?>" method="post" class="flex">
+                  <input type="text" name="manga" class="rounded-lg border border-gray-600 w-10 flex-grow" placeholder="Cari...">
+                  <button class="bg-secondary w-1/5 mx-1 rounded-lg" type="submit" name="submit">
+                     <i class="fa-solid fa-search"></i>
+                  </button>
+               </form>
+            </li>
+            <li>
                <a href="direct.php?user=<?php echo $name ?>&page=profile" class="flex items-center p-2 text-xl text-secondary rounded-lg dark:text-white hover:bg-gray-100 hover:text-primary dark:hover:bg-gray-700 group">
                   <i class="fa-solid fa-user"></i>
                   <span class="flex-1 ms-3 whitespace-nowrap">Profile</span>
