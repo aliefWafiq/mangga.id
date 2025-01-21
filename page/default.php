@@ -62,6 +62,8 @@ foreach ($hasil as $row) {
             require 'layout/addManga.php';
         } else if (!empty($_GET['acts'] == 'panel')) {
             include 'layout/addPanel.php';
+        }else if(!empty($_GET['acts'] == 'manageContent')){
+            require 'layout/ManageContent.php';
         } else {
             require 'admin/list.php';
         }

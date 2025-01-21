@@ -1,12 +1,4 @@
-<head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Document</title>
-   <link rel="stylesheet" href="../../src/output.css?<?= time() ?>">
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
 
-<body>
    <button data-drawer-target="sidebar-multi-level-sidebar" data-drawer-toggle="sidebar-multi-level-sidebar" aria-controls="sidebar-multi-level-sidebar" type="button" class="inline-flex items-center p-2 mt-2 ms-3 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
       <span class="sr-only">Open sidebar</span>
       <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -80,6 +72,12 @@
                   <span class="flex-1 ms-3 whitespace-nowrap">Add manga</span>
                </a>
             </li>
+            <li class="hidden" id="content">
+               <a href="default.php?user=<?php echo $name ?>&acts=manageContent" class="flex items-center p-2 text-xl text-secondary rounded-lg dark:text-white hover:bg-gray-100 hover:text-primary dark:hover:bg-gray-700 group">
+                  <i class="fa-solid fa-bars-progress"></i>
+                  <span class="flex-1 ms-3 whitespace-nowrap">Manage content</span>
+               </a>
+            </li>
             <li>
                <a href="index.php" class="flex items-center p-2 text-xl text-secondary rounded-lg dark:text-white hover:bg-gray-100 hover:text-primary dark:hover:bg-gray-700 group">
                   <i class="fa-solid fa-right-from-bracket"></i>
@@ -89,11 +87,11 @@
          </ul>
       </div>
    </aside>
-</body>
 <script src="../node_modules/flowbite/dist/flowbite.min.js"></script>
 <script>
    if(isAdmin == true){
       document.getElementById('list').classList.remove('hidden')
       document.getElementById('add').classList.remove('hidden')
+      document.getElementById('content').classList.remove('hidden')
    }
 </script>

@@ -1,3 +1,9 @@
+<?php
+require '../config/call.php';
+
+$manga = "SELECT * FROM manga";
+$listManga = $proses->list($manga);
+?>
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 
@@ -129,7 +135,7 @@
           <div class="rounded-xl shadow-2xl overflow-hidden w-56 h-80 top-3 left-4 absolute">
             <img src="../img/asset landing page/cover-kaoru.jpg" alt="" class="object-cover">
           </div>
-          <div class="bg-sky-700 rounded-xl shadow-2xl overflow-hidden w-56 h-80 absolute bottom-4 right-5">
+          <div class="rounded-xl shadow-2xl overflow-hidden w-56 h-80 absolute bottom-4 right-5">
             <img src="../img/asset landing page/cover mushoku.jpg" alt="" class="object-cover">
           </div>
         </div>
@@ -156,211 +162,28 @@
             <ul
               class="relative w-full overflow-hidden p-0 whitespace-no-wrap flex flex-no-wrap [backface-visibility: hidden] [transform-style: preserve-3d] [touch-action: pan-Y] [will-change: transform]">
               <li class="flex flex-wrap justify-center">
-                <div class="lg:w-48 lg:h-72 w-28 h-40 bg-slate-300 rounded-2xl mx-1  overflow-hidden group">
-                  <div class="transisi-card">
-                    <div class="lg:my-5 my-2 lg:mx-5 mx-2">
-                      <p class="font-bold text-lg lg:text-xl">One piece</p>
-                      <p class="font-semibold text-lg">Oda</p>
-                      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium quasi vel fugit dolore ex
-                        sunt pariatur atque totam inventore odio.</p>
+                <?php foreach ($listManga as $x) { ?>
+                  <div class="lg:w-48 lg:h-72 w-28 h-40 bg-slate-300 rounded-2xl mx-1  overflow-hidden group">
+                    <div class="transisi-card">
+                      <div class="lg:my-5 my-2 lg:mx-5 mx-2">
+                        <p class="font-bold text-lg lg:text-xl"><?php if (strlen($x['nama']) >= 19) {
+                                                                  echo $judul = substr($x['nama'], 0, 25) . '...';
+                                                                } else {
+                                                                  echo $x['nama'];
+                                                                } ?></p>
+                        <p class="font-semibold text-lg"><?php  ?></p>
+                        <p><?php if (strlen($x['sipnosis']) >= 19) {
+                              echo $judul = substr($x['sipnosis'], 0, 100) . '...';
+                            } else {
+                              echo $x['sipnosis'];
+                            } ?></p>
+                      </div>
+                    </div>
+                    <div class="h-full w-full">
+                      <img src="../img/cover-manga/<?php echo $x['cover'] ?>" alt="" class="h-full w-full" />
                     </div>
                   </div>
-                  <div class="h-full w-full">
-                    <img src="../img/law.jpeg" alt="" class="h-full w-full" />
-                  </div>
-                </div>
-                <div class="lg:w-48 lg:h-72 w-28 h-40 bg-slate-300 rounded-2xl mx-1  overflow-hidden group">
-                  <div class="transisi-card">
-                    <div class="lg:my-5 my-2 lg:mx-5 mx-2">
-                      <p class="font-bold text-lg lg:text-xl">One piece</p>
-                      <p class="font-semibold text-lg">Oda</p>
-                      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium quasi vel fugit dolore ex
-                        sunt pariatur atque totam inventore odio.</p>
-                    </div>
-                  </div>
-                  <div class="h-full w-full">
-                    <img src="../img/law.jpeg" alt="" class="h-full w-full" />
-                  </div>
-                </div>
-                <div class="lg:w-48 lg:h-72 w-28 h-40 bg-slate-300 rounded-2xl mx-1  overflow-hidden group">
-                  <div class="transisi-card">
-                    <div class="lg:my-5 my-2 lg:mx-5 mx-2">
-                      <p class="font-bold text-lg lg:text-xl">One piece</p>
-                      <p class="font-semibold text-lg">Oda</p>
-                      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium quasi vel fugit dolore ex
-                        sunt pariatur atque totam inventore odio.</p>
-                    </div>
-                  </div>
-                  <div class="h-full w-full">
-                    <img src="../img/law.jpeg" alt="" class="h-full w-full" />
-                  </div>
-                </div>
-                <div
-                  class="lg:w-48 lg:h-72 w-28 h-40 bg-slate-300 hidden rounded-2xl mx-2 overflow-hidden group md:block">
-                  <div class="transisi-card">
-                    <div class="my-5 mx-5">
-                      <p class="font-bold text-xl">One piece</p>
-                      <p class="font-semibold text-lg">Oda</p>
-                      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium quasi vel fugit dolore ex
-                        sunt pariatur atque totam inventore odio.</p>
-                    </div>
-                  </div>
-                  <div class="h-full w-full">
-                    <img src="../img/law.jpeg" alt="" class="h-full w-full" />
-                  </div>
-                </div>
-                <div
-                  class="lg:w-48 lg:h-72 w-28 h-40 bg-slate-300 hidden rounded-2xl mx-2 overflow-hidden group md:block">
-                  <div class="transisi-card">
-                    <div class="my-5 mx-5">
-                      <p class="font-bold text-xl">One piece</p>
-                      <p class="font-semibold text-lg">Oda</p>
-                      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium quasi vel fugit dolore ex
-                        sunt pariatur atque totam inventore odio.</p>
-                    </div>
-                  </div>
-                  <div class="h-full w-full">
-                    <img src="../img/law.jpeg" alt="" class="h-full w-full" />
-                  </div>
-                </div>
-              </li>
-              <li class="flex flex-wrap justify-center">
-                <div class="lg:w-48 lg:h-72 w-28 h-40 bg-slate-300 rounded-2xl mx-1  overflow-hidden group">
-                  <div class="transisi-card">
-                    <div class="lg:my-5 my-2 lg:mx-5 mx-2">
-                      <p class="font-bold text-lg lg:text-xl">One piece</p>
-                      <p class="font-semibold text-lg">Oda</p>
-                      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium quasi vel fugit dolore ex
-                        sunt pariatur atque totam inventore odio.</p>
-                    </div>
-                  </div>
-                  <div class="h-full w-full">
-                    <img src="../img/law.jpeg" alt="" class="h-full w-full" />
-                  </div>
-                </div>
-                <div class="lg:w-48 lg:h-72 w-28 h-40 bg-slate-300 rounded-2xl mx-1  overflow-hidden group">
-                  <div class="transisi-card">
-                    <div class="lg:my-5 my-2 lg:mx-5 mx-2">
-                      <p class="font-bold text-lg lg:text-xl">One piece</p>
-                      <p class="font-semibold text-lg">Oda</p>
-                      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium quasi vel fugit dolore ex
-                        sunt pariatur atque totam inventore odio.</p>
-                    </div>
-                  </div>
-                  <div class="h-full w-full">
-                    <img src="../img/law.jpeg" alt="" class="h-full w-full" />
-                  </div>
-                </div>
-                <div class="lg:w-48 lg:h-72 w-28 h-40 bg-slate-300 rounded-2xl mx-1  overflow-hidden group">
-                  <div class="transisi-card">
-                    <div class="lg:my-5 my-2 lg:mx-5 mx-2">
-                      <p class="font-bold text-lg lg:text-xl">One piece</p>
-                      <p class="font-semibold text-lg">Oda</p>
-                      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium quasi vel fugit dolore ex
-                        sunt pariatur atque totam inventore odio.</p>
-                    </div>
-                  </div>
-                  <div class="h-full w-full">
-                    <img src="../img/law.jpeg" alt="" class="h-full w-full" />
-                  </div>
-                </div>
-                <div
-                  class="lg:w-48 lg:h-72 w-28 h-40 bg-slate-300 hidden rounded-2xl mx-2 overflow-hidden group md:block">
-                  <div class="transisi-card">
-                    <div class="my-5 mx-5">
-                      <p class="font-bold text-xl">One piece</p>
-                      <p class="font-semibold text-lg">Oda</p>
-                      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium quasi vel fugit dolore ex
-                        sunt pariatur atque totam inventore odio.</p>
-                    </div>
-                  </div>
-                  <div class="h-full w-full">
-                    <img src="../img/law.jpeg" alt="" class="h-full w-full" />
-                  </div>
-                </div>
-                <div
-                  class="lg:w-48 lg:h-72 w-28 h-40 bg-slate-300 hidden rounded-2xl mx-2 overflow-hidden group md:block">
-                  <div class="transisi-card">
-                    <div class="my-5 mx-5">
-                      <p class="font-bold text-xl">One piece</p>
-                      <p class="font-semibold text-lg">Oda</p>
-                      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium quasi vel fugit dolore ex
-                        sunt pariatur atque totam inventore odio.</p>
-                    </div>
-                  </div>
-                  <div class="h-full w-full">
-                    <img src="../img/law.jpeg" alt="" class="h-full w-full" />
-                  </div>
-                </div>
-              </li>
-              <li class="flex flex-wrap justify-center">
-                <div class="lg:w-48 lg:h-72 w-28 h-40 bg-slate-300 rounded-2xl mx-1  overflow-hidden group">
-                  <div class="transisi-card">
-                    <div class="lg:my-5 my-2 lg:mx-5 mx-2">
-                      <p class="font-bold text-lg lg:text-xl">One piece</p>
-                      <p class="font-semibold text-lg">Oda</p>
-                      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium quasi vel fugit dolore ex
-                        sunt pariatur atque totam inventore odio.</p>
-                    </div>
-                  </div>
-                  <div class="h-full w-full">
-                    <img src="../img/law.jpeg" alt="" class="h-full w-full" />
-                  </div>
-                </div>
-                <div class="lg:w-48 lg:h-72 w-28 h-40 bg-slate-300 rounded-2xl mx-1  overflow-hidden group">
-                  <div class="transisi-card">
-                    <div class="lg:my-5 my-2 lg:mx-5 mx-2">
-                      <p class="font-bold text-lg lg:text-xl">One piece</p>
-                      <p class="font-semibold text-lg">Oda</p>
-                      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium quasi vel fugit dolore ex
-                        sunt pariatur atque totam inventore odio.</p>
-                    </div>
-                  </div>
-                  <div class="h-full w-full">
-                    <img src="../img/law.jpeg" alt="" class="h-full w-full" />
-                  </div>
-                </div>
-                <div class="lg:w-48 lg:h-72 w-28 h-40 bg-slate-300 rounded-2xl mx-1  overflow-hidden group">
-                  <div class="transisi-card">
-                    <div class="lg:my-5 my-2 lg:mx-5 mx-2">
-                      <p class="font-bold text-lg lg:text-xl">One piece</p>
-                      <p class="font-semibold text-lg">Oda</p>
-                      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium quasi vel fugit dolore ex
-                        sunt pariatur atque totam inventore odio.</p>
-                    </div>
-                  </div>
-                  <div class="h-full w-full">
-                    <img src="../img/law.jpeg" alt="" class="h-full w-full" />
-                  </div>
-                </div>
-                <div
-                  class="lg:w-48 lg:h-72 w-28 h-40 bg-slate-300 hidden rounded-2xl mx-2 overflow-hidden group md:block">
-                  <div class="transisi-card">
-                    <div class="my-5 mx-5">
-                      <p class="font-bold text-xl">One piece</p>
-                      <p class="font-semibold text-lg">Oda</p>
-                      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium quasi vel fugit dolore ex
-                        sunt pariatur atque totam inventore odio.</p>
-                    </div>
-                  </div>
-                  <div class="h-full w-full">
-                    <img src="../img/law.jpeg" alt="" class="h-full w-full" />
-                  </div>
-                </div>
-                <div
-                  class="lg:w-48 lg:h-72 w-28 h-40 bg-slate-300 hidden rounded-2xl mx-2 overflow-hidden group md:block">
-                  <div class="transisi-card">
-                    <div class="my-5 mx-5">
-                      <p class="font-bold text-xl">One piece</p>
-                      <p class="font-semibold text-lg">Oda</p>
-                      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium quasi vel fugit dolore ex
-                        sunt pariatur atque totam inventore odio.</p>
-                    </div>
-                  </div>
-                  <div class="h-full w-full">
-                    <img src="../img/law.jpeg" alt="" class="h-full w-full" />
-                  </div>
-                </div>
+                <?php } ?>
               </li>
             </ul>
           </div>
