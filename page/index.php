@@ -20,48 +20,6 @@ $listManga = $proses->list($manga);
 </head>
 
 <body class="bg-slate-100 h-screen">
-  <!-- <header
-    class="lg:opacity-80 drop-shadow-sm fixed before:absolute top-0 left-0 w-full flex items-center z-30 bg-primary">
-    <div class="container-fluid py-3 lg:py-5 w-full">
-      <div class="flex w-full">
-        <div class="lg:px-5 px-2">
-          <h1 class="font-bold text-xl">Mangga.id</h1>
-        </div>
-        <div class="w-full flex justify-end my-1 mx-3">
-          <button id="hamburger" name="hamburger" type="button" class="block absolute lg:hidden">
-            <div class="bungkus space-y-2">
-              <span class="menu transition duration-300 ease-in-out origin-top-left"></span>
-              <span class="menu transition duration-300 ease-in-out"></span>
-              <span class="menu transition duration-300 ease-in-out origin-bottom-left"></span>
-            </div>
-          </button>
-        </div>
-        <div class="flex items-center">
-          <nav id="nav-menu"
-            class="lg:block hidden lg:opacity-80 absolute py-10 lg:py-0 lg:static opacity-100 lg:max-w-full top-full right-0 h-screen lg:h-auto max-w-[250px] w-1/2 bg-white md:bg-primary">
-            <ul class="lg:flex block">
-              <li class="lg:mx-5 mx-2 group">
-                <a href="#home" class="text-secondary flex py-2 mx-8 lg:mx-2 text-lg font-semibold">Home</a>
-              </li>
-              <li class="lg:mx-5 mx-2 group">
-                <a href="#about" class="text-secondary flex py-2 mx-8 lg:mx-2 text-lg font-semibold">About</a>
-              </li>
-              <li class="lg:mx-5 mx-2 group">
-                <a href="#content" class="text-secondary flex py-2 mx-8 lg:mx-2 text-lg font-semibold">Collection</a>
-              </li>
-              <li class="lg:mx-5 mx-2 group">
-                <a href="login.php" class="text-secondary flex py-2 mx-8 lg:mx-2 text-lg font-semibold">Masuk</a>
-              </li>
-              <li class="lg:mx-5 mx-2 group">
-                <a href="regis.php" class="text-secondary flex py-2 mx-8 lg:mx-2 text-lg font-semibold">Daftar</a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </div>
-    </div>
-  </header> -->
-
   <section id="home" class="h-screen overflow-hidden bg-no-repeat bg-cover"
     style="background-image: url(../img/asset\ landing\ page/wano.jpg);">
     <div

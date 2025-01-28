@@ -7,48 +7,22 @@
          <div class="relative w-full glide-01">
             <div class="overflow-hidden" data-glide-el="track">
                <ul class="relative lg:w-screen w-full overflow-hidden whitespace-no-wrap flex flex-no-wrap [backface-visibility: hidden] [transform-style: preserve-3d] [touch-action: pan-Y] [will-change: transform]">
+                  <?php foreach($content as $x){ ?>
                   <li class="flex bg-gray-300 h-auto">
                      <div class="content flex flex-row md:ml-36 ml-5 py-5">
                         <div class="flex lg:w-40 lg:h-72 w-24 h-44 py-5">
-                           <img src="../img/20th cen.jpeg" alt="" class="rounded-xl w-full h-full">
+                           <img src="../img/cover-manga/<?php echo $x['cover'] ?>" alt="" class="rounded-xl w-full h-full">
                         </div>
                         <div class="judul md:mx-3 mx-2 py-5">
-                           <p class="text-lg font-semibold">20th Century Boys</p>
+                           <p class="text-lg font-semibold"><?php echo $x['nama'] ?></p>
                            <div class="md:w-[30rem] w-52 absolute">
-                              <p class="py-2 md:py-5 hidden md:block text-sm">20th Century Boys atau Anak Lelaki Abad 20 (20世紀少年, Nijusseiki Shōnen) adalah judul sebuah manga fiksi ilmiah karya Urasawa Naoki yang terkenal dengan karya lainnya seperti Monster, Pluto. Manga ini diterbitkan sejak tahun 1999 oleh Shōgakukan. Tahun 2001, manga ini meraih Penghargaan Manga Kodansha dalam kategori Umum. Di Indonesia, 20th Century Boys diterbitkan Level Comics mulai tahun 2005. Ceritanya sendiri cukup kompleks dan berat, khas Urasawa Naoki.</p>
-                              <p class="py-2 md:hidden block text-sm">20th Century Boys adalah judul sebuah manga fiksi ilmiah karya Urasawa Naoki. Manga ini diterbitkan sejak tahun 1999 oleh Shōgakukan. Tahun 2001</p>
+                              <p class="py-2 md:py-5 hidden md:block text-sm"><?php echo $x['sipnosis'] ?></p>
+                              <!-- <p class="py-2 md:hidden block text-sm">20th Century Boys adalah judul sebuah manga fiksi ilmiah karya Urasawa Naoki. Manga ini diterbitkan sejak tahun 1999 oleh Shōgakukan. Tahun 2001</p> -->
                            </div>
                         </div>
                      </div>
                   </li>
-                  <li class="flex bg-gray-200 h-auto">
-                     <div class="content flex flex-row md:ml-36 ml-10 py-5">
-                        <div class="flex lg:w-40 lg:h-72 w-24 h-44 py-5">
-                           <img src="../img/Kiga.jpeg" alt="" class="rounded-xl w-full h-full">
-                        </div>
-                        <div class="judul md:mx-3 mx-2 py-5">
-                           <p class="text-lg font-semibold">Chainsaw Man</p>
-                           <div class="md:w-[30rem] w-52 absolute">
-                              <p class="py-2 md:py-5 hidden md:block text-sm">sosok Denji yang telah mati ini bangkit dengan kekuatan iblis, yang membuatnya mampu untuk mengubah bagian tubuhnya menjadi gergaji mesin. Karena kemampuan baru Denji inilah, menimbulkan risiko bagi masyarakat, pemburu setan elit Biro Keamanan Publik, hingga Makima. Denji mencurahkan segalanya dan bertarung dengan sekuat tenaga untuk mewujudkan mimpinya yang naif.</p>
-                              <p class="py-2 md:hidden block text-sm">Chainsaw Man adalah sebuah seri manga shōnen asal Jepang yang ditulis dan diilustrasikan oleh Tatsuki Fujimoto.</p>
-                           </div>
-                        </div>
-                     </div>
-                  </li>
-                  <li class="flex bg-gray-300 h-auto">
-                     <div class="content flex flex-row md:ml-36 ml-10 py-5">
-                        <div class="flex lg:w-40 lg:h-72 w-24 h-44 py-5">
-                           <img src="../img/law.jpeg" alt="" class="rounded-xl w-full h-full">
-                        </div>
-                        <div class="judul md:mx-3 mx-2 py-5">
-                           <p class="text-lg font-semibold">One Piece</p>
-                           <div class="md:w-[30rem] w-52 absolute">
-                              <p class="py-2 md:py-5 hidden md:block text-sm">Gol D. Roger merupakan Raja Bajak Laut menghadapi eksekusi mati yang divonis oleh Pemerintah Dunia. Sebelum nyawanya dihabisi, Roger mengucapkan kata-kata terakhir.Ia mengizinkan semua bajak laut di seluruh dunia untuk memburu harta karunnya yang tersembunyi di Grand Line, bernama One Piece. Siapa pun bajak laut yang berhasil menemukan harta karunnya bisa memilikinya.</p>
-                              <p class="py-2 md:hidden block text-sm">One Piece adalah sebuah seri manga Jepang yang ditulis dan diilustrasikan oleh Eiichiro Oda.</p>
-                           </div>
-                        </div>
-                     </div>
-                  </li>
+                  <?php } ?>
                </ul>
             </div>
 
@@ -121,9 +95,7 @@
       <!-- recomendation -->
       <div class="mt-14 md:mt-20">
          <p class="text-2xl text-center mb-5 font-semibold">You may like</p>
-         <a href="home/all-manga.php?user=<?php foreach ($hasil as $x) {
-                                             echo $x['name'];
-                                          } ?>" class="mx-2 text-base font-semibold text-blue-600">See more</a>
+         <a href="direct.php?user=<?php echo $name ?>&page=seeMore" class="mx-2 text-base font-semibold text-blue-600">See more</a>
          <div class="flex justify-center">
             <div class="relative w-full glide-02">
                <!-- Slides -->
@@ -214,9 +186,7 @@
       <!-- genre -->
       <div class="mt-14 md:mt-20">
          <p class="text-2xl text-center mb-5 font-semibold">Action</p>
-         <a href="home/genre.php?user=<?php foreach ($hasil as $x) {
-                                          echo $x['name'];
-                                       } ?>&genre=action" class="mx-2 text-base font-semibold text-blue-600">See more</a>
+         <a href="direct.php?user=<?php echo $name ?>&page=genre&genre=Action" class="mx-2 text-base font-semibold text-blue-600">See more</a>
          <div class="flex justify-center">
             <div class="relative w-full glide-03">
                <!-- Slides -->

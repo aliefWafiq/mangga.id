@@ -6,24 +6,19 @@ $name = $_GET['user'];
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $manga = filter_input(INPUT_POST, "manga", FILTER_SANITIZE_SPECIAL_CHARS);
+    $content = filter_input(INPUT_POST, "content", FILTER_SANITIZE_SPECIAL_CHARS);
 
+    $sql_idManga = "SELECT * FROM manga WHERE nama = :nama";
+    $param = [':nama' => $manga];
+    $get_idManga = $proses->show($sql_idManga, $param);
+    $id_manga = $get_idManga['id'];
 
-
-
-    $sql = "INSERT INTO manga (nama,cover,komikus,Umur,status,sipnosis, waktu, type) VALUES (:nama, :cover, :komikus, :Umur, :status, :sipnosis, :waktu, :type)";
+    $sql = "INSERT INTO manage_content (id_manga, content) VALUES (:id_manga, :content)";
     $stmt = $proses->getDb()->prepare($sql);
-    $stmt->bindParam(':cover', $foto);
-    $stmt->bindParam(':nama', $nama);
-    $stmt->bindParam(':komikus', $komikus);
-    $stmt->bindParam(':Umur', $umur);
-    $stmt->bindParam(':status', $status);
-    $stmt->bindParam(':sipnosis', $sipnosis);
-    $stmt->bindParam(':waktu', $waktu);
-    $stmt->bindParam(':type', $type);
+    $stmt->bindParam(':id_manga', $id_manga);
+    $stmt->bindParam(':content', $content);
 
     if ($stmt->execute()) {
-        $id_manga = $proses->getDb()->lastInsertId();
-
         echo '<script>window.location="../default.php?user=' . $name . '&acts"</script>';
     }
 }

@@ -19,6 +19,9 @@ $hasil = $proses->list($role);
 $manga = 'SELECT * FROM manga';
 $hasil2 = $proses->list($manga);
 
+$sql_content = "SELECT manga.* FROM manga JOIN manage_content ON manga.id = manage_content.id_manga";
+$content = $proses->list($sql_content);
+
 $name = $_GET['user'];
 
 foreach ($hasil as $row) {
