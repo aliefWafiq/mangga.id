@@ -25,7 +25,7 @@ $hasilManga = $proses->list($manga);
 $tes = "SELECT * FROM manga WHERE top != 'none'";
 $tes2 = $proses->list($tes);
 
-$sql_content = "SELECT manga.* FROM manga JOIN manage_content ON manga.id = manage_content.id_manga";
+$sql_content = "SELECT manga.* FROM manga JOIN manage_content ON manga.id = manage_content.id_manga WHERE manage_content.content = 'banner'";
 $content = $proses->list($sql_content);
 
 function compareTop($a, $b)
