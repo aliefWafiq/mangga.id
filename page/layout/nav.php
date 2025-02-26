@@ -73,7 +73,7 @@
                </a>
             </li>
             <li class="hidden" id="content">
-               <a href="default.php?user=<?php echo $name ?>&acts=manageContent" class="flex items-center p-2 text-xl text-secondary rounded-lg dark:text-white hover:bg-gray-100 hover:text-primary dark:hover:bg-gray-700 group">
+               <a href="default.php?user=<?php echo $name ?>&acts=menuManageContent" class="flex items-center p-2 text-xl text-secondary rounded-lg dark:text-white hover:bg-gray-100 hover:text-primary dark:hover:bg-gray-700 group">
                   <i class="fa-solid fa-bars-progress"></i>
                   <span class="flex-1 ms-3 whitespace-nowrap">Manage content</span>
                </a>

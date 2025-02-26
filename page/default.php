@@ -19,9 +19,6 @@ $hasil = $proses->list($role);
 $manga = 'SELECT * FROM manga';
 $hasil2 = $proses->list($manga);
 
-$sql_content = "SELECT manga.* FROM manga JOIN manage_content ON manga.id = manage_content.id_manga";
-$content = $proses->list($sql_content);
-
 $name = $_GET['user'];
 
 foreach ($hasil as $row) {
@@ -65,8 +62,10 @@ foreach ($hasil as $row) {
             require 'layout/addManga.php';
         } else if (!empty($_GET['acts'] == 'panel')) {
             include 'layout/addPanel.php';
-        }else if(!empty($_GET['acts'] == 'manageContent')){
-            require 'layout/ManageContent.php';
+        }else if(!empty($_GET['acts'] == 'menuManageContent')){
+            require 'layout/menuManageContent.php';
+        }else if (!empty($_GET['acts'] == 'manageContent')){
+            require 'layout/manageContent.php';
         } else {
             require 'admin/list.php';
         }
