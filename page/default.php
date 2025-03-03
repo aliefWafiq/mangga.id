@@ -56,7 +56,7 @@ foreach ($hasil as $row) {
         <?php
         if (!empty($_GET['acts'] == 'delete')) {
             require 'menu/delete.php';
-        } elseif (!empty($_GET['acts'] == 'edit')) {
+        } else if (!empty($_GET['acts'] == 'edit')) {
             require 'layout/editManga.php';
         } else if (!empty($_GET['acts'] == 'add')) {
             require 'layout/addManga.php';
