@@ -1,6 +1,6 @@
 <!-- banner -->
 <div class="flex flex-col justify-center">
-    <div class="relative w-full overflow-hidden whitespace-no-wrap flex flex-col flex-no-wrap [backface-visibility: hidden] [transform-style: preserve-3d] [touch-action: pan-Y] [will-change: transform]">
+    <form action="menu/ManageContent.php?user=<?php echo $name ?>&content=banner" method="post" enctype="multipart/form-data" class="relative w-full overflow-hidden whitespace-no-wrap flex flex-col flex-no-wrap [backface-visibility: hidden] [transform-style: preserve-3d] [touch-action: pan-Y] [will-change: transform]">
         <?php foreach ($list_content as $x) { ?>
             <div class="flex relative h-full overflow-hidden w-full mt-5">
                 <div class="content flex justify-center py-5 z-10 bg-gray-100 glassmorphism bg-opacity-10 w-full">
@@ -34,19 +34,13 @@
                     <img src="../img/cover-manga/<?php echo $x['cover'] ?>" alt="" class="w-full h-full object-cover">
                 </div>
             </div>
+            <div class="flex flex-col mt-3 mb-4">
+                <label for="manga">Manga:</label>
+                <input type="text" id="manga" name="manga" autocomplete="off">
+            </div>
         <?php } ?>
-    </div>
+        <div>
+            <input type="submit" name="submit" class="mt-5 cursor-pointer border bg-transparent px-3 py-2 rounded-lg hover:text-white border-black hover:bg-sky-500 hover:border-0">
+        </div>
+    </form>
 </div>
-<form action="menu/ManageContent.php?user=<?php echo $name ?>&content=banner" method="post" enctype="multipart/form-data" class="my-5">
-    <div class="flex flex-col">
-        <label for="manga">Manga:</label>
-        <select id="manga" name="manga">
-            <?php foreach ($hasil2 as $x) { ?>
-                <option value="<?php echo $x['nama'] ?>"><?php echo $x['nama'] ?></option>
-            <?php } ?>
-        </select>
-    </div>
-    <div>
-        <input type="submit" name="submit" class="mt-5 cursor-pointer border bg-transparent px-3 py-2 rounded-lg hover:text-white border-black hover:bg-sky-500 hover:border-0">
-    </div>
-</form>

@@ -1,21 +1,21 @@
 <?php
-    $content = $_GET['content'];
-    $sql_content = "SELECT manga.* FROM manga JOIN manage_content ON manga.id = manage_content.id_manga WHERE manage_content.content = '$content'";
-    $list_content = $proses->list($sql_content);
+$content = $_GET['content'];
+$sql_content = "SELECT manga.* FROM manga JOIN manage_content ON manga.id = manage_content.id_manga WHERE manage_content.content = '$content'";
+$list_content = $proses->list($sql_content);
 ?>
 <div class="md:p-4 flex justify-end">
     <!-- main content -->
     <div class="container-fluid xl:w-4/5">
 
-    <?php 
+        <?php
 
-    if($content == 'banner'){
-        include 'formManageContent/banner.php';
-    }else if($content == 'card_rekom'){
-        include 'formManageContent/cardRekom.php';
-    }
+        if ($content == 'banner') {
+            include 'formManageContent/banner.php';
+        } else if ($content == 'card_rekom') {
+            include 'formManageContent/cardRekom.php';
+        }
 
-    ?>    
+        ?>
 
     </div>
 </div>
@@ -35,4 +35,23 @@
     });
 
     glide01.mount();
+
+    $(document).on("focus", "#manga", function() {
+        $(this).autocomplete({
+            source: function(request, response) {
+                $.ajax({
+                    url: "menu/searchAutoComplete.php",
+                    type: "GET",
+                    dataType: "json",
+                    data: {
+                        q: request.term
+                    },
+                    success: function(data) {
+                        response(data);
+                    }
+                });
+            },
+            minLength: 1
+        });
+    });
 </script>
