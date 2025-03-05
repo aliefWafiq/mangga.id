@@ -1,9 +1,11 @@
 <?php
+include 'menu/searchAutoComplete.php';
+
 $content = $_GET['content'];
 $sql_content = "SELECT manga.* FROM manga JOIN manage_content ON manga.id = manage_content.id_manga WHERE manage_content.content = '$content'";
 $list_content = $proses->list($sql_content);
 ?>
-<div class="md:p-4 flex justify-end">
+<div class="md:p-4 flex justify-end ">
     <!-- main content -->
     <div class="container-fluid xl:w-4/5">
 
@@ -20,38 +22,48 @@ $list_content = $proses->list($sql_content);
     </div>
 </div>
 
-<script src="../../node_modules/flowbite/dist/flowbite.min.js"></script>
+<script src="../node_modules/flowbite/dist/flowbite.min.js"></script>
+<script src="../index.js"></script>
 <script>
-    var glide01 = new Glide(".glide-01", {
-        type: "slider",
-        focusAt: "center",
-        perView: 1,
-        autoplay: 4000,
-        animationDuration: 3000,
-        gap: 0,
-        classes: {
-            activeNav: "[&>*]:bg-slate-700",
-        },
-    });
+    //  var glide01 = new Glide(".glide-01", {
+    //      type: "slider",
+    //      focusAt: "center",
+    //      perView: 1,
+    //      autoplay: 4000,
+    //      animationDuration: 3000,
+    //      gap: 0,
+    //      classes: {
+    //          activeNav: "[&>*]:bg-slate-700",
+    //      },
+    //  });
 
-    glide01.mount();
+    // glide01.mount();
 
-    $(document).on("focus", "#manga", function() {
-        $(this).autocomplete({
-            source: function(request, response) {
-                $.ajax({
-                    url: "menu/searchAutoComplete.php",
-                    type: "GET",
-                    dataType: "json",
-                    data: {
-                        q: request.term
-                    },
-                    success: function(data) {
-                        response(data);
-                    }
+    let manga = [<?php echo $stringManga; ?>]
+
+    let mangaElements = document.getElementsByClassName("manga");
+    for (let i = 0; i < mangaElements.length; i++) {
+        autocomplete(mangaElements[i], manga);
+    }
+
+    function confirmDelete() {
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+        })
+        .then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire({
+                    title: "Deleted!",
+                    text: "Your file has been deleted.",
+                    icon: "success"
                 });
-            },
-            minLength: 1
+            }
         });
-    });
+    }
 </script>

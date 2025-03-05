@@ -42,6 +42,7 @@ foreach ($hasil as $row) {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.0.2/glide.js"></script>
     <link rel="stylesheet" href="../src/output.css?<?= time() ?>">
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
@@ -66,11 +67,11 @@ foreach ($hasil as $row) {
             include 'layout/addPanel.php';
         }else if(!empty($_GET['acts'] == 'menuManageContent')){
             require 'layout/menuManageContent.php';
+        } else if (!empty($_GET['acts'] == 'manageContent')){
+             require 'layout/manageContent.php';
         } else {
             require 'admin/list.php';
-        }//else if (!empty($_GET['acts'] == 'manageContent')){
-        //     require 'layout/manageContent.php';
-        // } 
+        }
        
         ?>
 

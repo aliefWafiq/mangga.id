@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-.menu {
+/* .menu {
     @apply block w-[30px] h-[2px] bg-gray-500;
 }
 
@@ -16,6 +16,10 @@
 
 .hamburger-active > .bungkus > span:nth-child(2){
     @apply scale-0;
+} */
+
+.autocomplete-active{
+    @apply bg-slate-200;
 }
 
 .info-Manga{

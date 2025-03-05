@@ -1,9 +1,10 @@
 <?php
-require '../../config/call.php';
+$sql = "SELECT nama FROM manga ORDER by nama";
+$arrayManga = array();
+$resultAutoComplete = $proses->list($sql);
 
-$keyword = isset($_GET['q']) ? $_GET['q'] : '';
+foreach($resultAutoComplete as $x){
+    $arrayManga[] = sprintf('"%s",', $x['nama']); 
+}
 
-$sql = "SELECT * FROM manga WHERE nama LIKE '$keyword' LIMIT 10";
-$result = $proses->list($sql);
-
-echo json_encode($result);
+$stringManga = implode("",$arrayManga); 

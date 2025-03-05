@@ -34,9 +34,14 @@
                     <img src="../img/cover-manga/<?php echo $x['cover'] ?>" alt="" class="w-full h-full object-cover">
                 </div>
             </div>
-            <div class="flex flex-col mt-3 mb-4">
+            <div class="flex flex-col mt-3 mb-4 w-full">
                 <label for="manga">Manga:</label>
-                <input type="text" id="manga" name="manga" autocomplete="off">
+                <div class="flex w-full">
+                    <div class="w-1/2">
+                        <input type="text" class="manga w-full" name="manga" autocomplete="off" value="<?php echo $x['nama'] ?>">
+                    </div>
+                    <button onclick="confirmDelete()">Delete</button>
+                </div>
             </div>
         <?php } ?>
         <div>

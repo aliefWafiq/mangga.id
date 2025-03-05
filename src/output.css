@@ -1373,10 +1373,6 @@ input:checked + .toggle-bg {
   margin-top: 1.25rem;
 }
 
-.mt-6 {
-  margin-top: 1.5rem;
-}
-
 .box-border {
   box-sizing: border-box;
 }
@@ -3963,28 +3959,25 @@ input:checked + .toggle-bg {
   forced-color-adjust: none;
 }
 
-.menu {
-  display: block;
-  height: 2px;
-  width: 30px;
+/* .menu {
+    @apply block w-[30px] h-[2px] bg-gray-500;
+}
+
+.hamburger-active > .bungkus > span:nth-child(1){
+    @apply rotate-45;
+}
+
+.hamburger-active > .bungkus > span:nth-child(3){
+    @apply -rotate-45;
+}
+
+.hamburger-active > .bungkus > span:nth-child(2){
+    @apply scale-0;
+} */
+
+.autocomplete-active {
   --tw-bg-opacity: 1;
-  background-color: rgb(107 114 128 / var(--tw-bg-opacity));
-}
-
-.hamburger-active > .bungkus > span:nth-child(1) {
-  --tw-rotate: 45deg;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.hamburger-active > .bungkus > span:nth-child(3) {
-  --tw-rotate: -45deg;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.hamburger-active > .bungkus > span:nth-child(2) {
-  --tw-scale-x: 0;
-  --tw-scale-y: 0;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  background-color: rgb(226 232 240 / var(--tw-bg-opacity));
 }
 
 .info-Manga {
@@ -4129,6 +4122,10 @@ input:checked + .toggle-bg {
   }
 }
 
+.hover\:cursor-pointer:hover {
+  cursor: pointer;
+}
+
 .hover\:border-0:hover {
   border-width: 0px;
 }
@@ -4181,6 +4178,11 @@ input:checked + .toggle-bg {
 .hover\:bg-sky-500:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(14 165 233 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-slate-200:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(226 232 240 / var(--tw-bg-opacity));
 }
 
 .hover\:bg-third:hover {
