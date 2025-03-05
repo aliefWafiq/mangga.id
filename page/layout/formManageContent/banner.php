@@ -40,12 +40,32 @@
                     <div class="w-1/2">
                         <input type="text" class="manga w-full" name="manga" autocomplete="off" value="<?php echo $x['nama'] ?>">
                     </div>
-                    <button type="button" onclick="confirmDelete()">Delete</button>
+                    <div>
+                        <button type="button" onclick="confirmDelete(<?php echo $x['id'] ?>)" class="px-5 mx-2 py-2 text-white font-semibold rounded-lg bg-red-600">Delete</button>
+                    </div>
                 </div>
             </div>
-            <?php } ?>
-            <div id="newBanner"></div>
-            <button type="button" onclick="addBanner()" class="my-5 border border-black rounded-lg py-3">Tambahkan Banner +</button>
+            <script>
+                function confirmDelete(id) {
+                    Swal.fire({
+                        title: "Are you sure?",
+                        text: "You won't be able to revert this!",
+                        icon: "warning",
+                        showCancelButton: true,
+                        confirmButtonColor: "#3085d6",
+                        cancelButtonColor: "#d33",
+                        confirmButtonText: "Yes, delete it!"
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            // Redirect ke halaman delete dengan ID yang sesuai
+                            window.location.href = `default.php?user=<?php echo $name ?>&acts=delete&source=manageContent&manga=${id}&content=banner`;
+                        }
+                    });
+                }
+            </script>
+        <?php } ?>
+        <div id="newBanner"></div>
+        <button type="button" onclick="addBanner()" class="my-5 border border-black rounded-lg py-3">Tambahkan Banner +</button>
         <div>
             <input type="submit" name="submit" class="mt-5 cursor-pointer border bg-transparent px-3 py-2 rounded-lg hover:text-white border-black hover:bg-sky-500 hover:border-0">
         </div>
