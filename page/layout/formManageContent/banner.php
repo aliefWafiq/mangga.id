@@ -40,10 +40,12 @@
                     <div class="w-1/2">
                         <input type="text" class="manga w-full" name="manga" autocomplete="off" value="<?php echo $x['nama'] ?>">
                     </div>
-                    <button onclick="confirmDelete()">Delete</button>
+                    <button type="button" onclick="confirmDelete()">Delete</button>
                 </div>
             </div>
-        <?php } ?>
+            <?php } ?>
+            <div id="newBanner"></div>
+            <button type="button" onclick="addBanner()" class="my-5 border border-black rounded-lg py-3">Tambahkan Banner +</button>
         <div>
             <input type="submit" name="submit" class="mt-5 cursor-pointer border bg-transparent px-3 py-2 rounded-lg hover:text-white border-black hover:bg-sky-500 hover:border-0">
         </div>

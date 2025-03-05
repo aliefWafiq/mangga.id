@@ -55,8 +55,7 @@ $list_content = $proses->list($sql_content);
             confirmButtonColor: "#3085d6",
             cancelButtonColor: "#d33",
             confirmButtonText: "Yes, delete it!"
-        })
-        .then((result) => {
+        }).then((result) => {
             if (result.isConfirmed) {
                 Swal.fire({
                     title: "Deleted!",
@@ -65,5 +64,31 @@ $list_content = $proses->list($sql_content);
                 });
             }
         });
+    }
+
+    function addBanner() {
+        let container = document.getElementById("newBanner");
+        let div = document.createElement("div");
+        div.innerHTML = `
+            <div class="flex flex-col mt-3 mb-4 w-full">
+                <label for="manga">Manga:</label>
+                <div class="flex w-full">
+                    <div class="w-1/2">
+                        <input type="text" class="manga w-full" name="manga" autocomplete="off">
+                    </div>
+                    <button type="button" onclick="confirmDelete()">Delete</button>
+                </div>
+            </div>
+    `;
+        container.appendChild(div);
+
+        let mangaElements = document.getElementsByClassName("manga");
+        for (let i = 0; i < mangaElements.length; i++) {
+            autocomplete(mangaElements[i], manga);
+        }
+    }
+
+    function deleteRow(button) {
+        button.parentElement.remove();
     }
 </script>
