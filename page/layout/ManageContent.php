@@ -60,7 +60,9 @@ $list_content = $proses->list($sql_content);
                     <div class="w-1/2">
                         <input type="text" class="manga w-full" name="manga" autocomplete="off">
                     </div>
-                    <button type="button" onclick="confirmDelete()">Delete</button>
+                    <div>
+                        <button type="button" onclick="confirmDelete()" class="px-5 mx-2 py-2 text-white font-semibold rounded-lg bg-red-600">Delete</button>
+                    </div>
                 </div>
             </div>
     `;

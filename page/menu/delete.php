@@ -30,7 +30,7 @@ if($source == 'list'){
     $content = $_GET['content'];
     echo $content;
     echo $manga;
-    $sql = "DELETE manga.* FROM manga JOIN manage_content ON manga.id = manage_content.id_manga WHERE manage_content.id_manga = '$manga' AND manage_content.content = '$content'";
+    $sql = "DELETE FROM manage_content WHERE id_manga = '$manga' AND content = '$content'";
     $proses->action($sql);
 
     echo '<script>window.location="default.php?user='. $user .'&acts=menuManageContent"</script>';
