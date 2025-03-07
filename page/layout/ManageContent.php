@@ -58,7 +58,7 @@ $list_content = $proses->list($sql_content);
                 <label for="manga">Manga:</label>
                 <div class="flex w-full">
                     <div class="w-1/2">
-                        <input type="text" class="manga w-full" name="manga" autocomplete="off">
+                        <input type="text" class="manga w-full" name="manga[]" autocomplete="off">
                     </div>
                     <div>
                         <button type="button" onclick="confirmDelete()" class="px-5 mx-2 py-2 text-white font-semibold rounded-lg bg-red-600">Delete</button>
