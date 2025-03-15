@@ -38,8 +38,7 @@
                 <label for="manga">Manga:</label>
                 <div class="flex w-full">
                     <div class="w-1/2">
-                        <input type="hidden" name="id_manageContent[]" value="<?php echo $x['id_manga'] ?>" >
-                        <input type="text" class="manga w-full" name="manga[]" autocomplete="off" value="<?php echo $x['nama'] ?>">
+                        <input type="text" class="manga w-full" name="manga" autocomplete="off" value="<?php echo $x['nama'] ?>">
                     </div>
                     <div>
                         <button type="button" onclick="confirmDelete(<?php echo $x['id'] ?>)" class="px-5 mx-2 py-2 text-white font-semibold rounded-lg bg-red-600">Delete</button>

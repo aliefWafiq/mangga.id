@@ -46,32 +46,37 @@ $list_content = $proses->list($sql_content);
         autocomplete(mangaElements[i], manga);
     }
 
-    <?php //foreach($list_content as $x){ ?>
-   
-    <?php //} ?>
+    // buat input form
 
     function addBanner() {
-        let container = document.getElementById("newBanner");
-        let div = document.createElement("div");
-        div.innerHTML = `
-            <div class="flex flex-col mt-3 mb-4 w-full">
-                <label for="manga">Manga:</label>
-                <div class="flex w-full">
-                    <div class="w-1/2">
-                        <input type="text" class="manga w-full" name="manga[]" autocomplete="off">
-                    </div>
-                    <div>
-                        <button type="button" onclick="confirmDelete()" class="px-5 mx-2 py-2 text-white font-semibold rounded-lg bg-red-600">Delete</button>
-                    </div>
+        Swal.fire({
+            title: "Tambah Banner",
+            html: `
+            <form id="form-add-banner">
+                <div class="mb-3">
+                    <label for="judul-banner" class="form-label">Judul Banner</label>
+                    <input type="text" class="form-control" id="judul-banner" name="judul-banner">
                 </div>
-            </div>
-    `;
-        container.appendChild(div);
-
-        let mangaElements = document.getElementsByClassName("manga");
-        for (let i = 0; i < mangaElements.length; i++) {
-            autocomplete(mangaElements[i], manga);
-        }
+            </form>
+        `,
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Simpan",
+            cancelButtonText: "Batal",
+        }).then((result) => {
+            if (result.isConfirmed) {
+                const form = document.getElementById("form-add-banner");
+                const formData = new FormData(form);
+                fetch("default.php?user=<?php echo $name ?>&acts=add&source=manageContent&manga=${id}&content=banner", {
+                        method: "POST",
+                        body: formData,
+                    })
+                    .then((response) => response.json())
+                    .then((data) => console.log(data))
+                    .catch((error) => console.error(error));
+            }
+        });
     }
 
     function deleteRow(button) {
