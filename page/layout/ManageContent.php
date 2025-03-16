@@ -46,30 +46,32 @@ $list_content = $proses->list($sql_content);
         autocomplete(mangaElements[i], manga);
     }
 
-    // buat input form
+    let inputBaru = document.getElementById("inputBaru")
+    inputBaru.addEventListener("input", function() {
+        autocomplete(inputBaru, manga)
+    })
 
     function addBanner() {
         Swal.fire({
             title: "Tambah Banner",
             html: `
-            <form id="form-add-banner">
-                <div class="mb-3">
-                    <label for="judul-banner" class="form-label">Judul Banner</label>
-                    <input type="text" class="form-control" id="judul-banner" name="judul-banner">
-                </div>
-            </form>
+        <form id="form-add-banner" action="menu/addContent.php?user=<?php echo $name ?>&content=<?php echo $content ?>" method="POST">
+            <div class="mb-3 flex flex-col">
+                <label for="judul-banner" class="form-label text-start mb-2">Judul Manga</label>
+                <input type="text" class="form-control rounded-lg manga" autocomplete="off" id="inputBaru" name="manga">
+            </div>
+            <button type="submit" class="bg-green-500 text-white px-5 py-3 rounded-lg">Simpan</button>
+        </form>
         `,
-            showCancelButton: true,
-            confirmButtonColor: "#3085d6",
-            cancelButtonColor: "#d33",
-            confirmButtonText: "Simpan",
-            cancelButtonText: "Batal",
+        showCancelButton: true,
+        showConfirmButton: false,
+        cancelButtonColor: "#d33" 
         }).then((result) => {
             if (result.isConfirmed) {
                 const form = document.getElementById("form-add-banner");
                 const formData = new FormData(form);
-                fetch("default.php?user=<?php echo $name ?>&acts=add&source=manageContent&manga=${id}&content=banner", {
-                        method: "POST",
+                fetch(form.action, {
+                        method: form.method,
                         body: formData,
                     })
                     .then((response) => response.json())

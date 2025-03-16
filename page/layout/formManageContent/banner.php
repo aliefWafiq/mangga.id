@@ -38,7 +38,7 @@
                 <label for="manga">Manga:</label>
                 <div class="flex w-full">
                     <div class="w-1/2">
-                        <input type="text" class="manga w-full" name="manga" autocomplete="off" value="<?php echo $x['nama'] ?>">
+                        <input type="text" class="manga w-full rounded-lg" name="manga" autocomplete="off" value="<?php echo $x['nama'] ?>">
                     </div>
                     <div>
                         <button type="button" onclick="confirmDelete(<?php echo $x['id'] ?>)" class="px-5 mx-2 py-2 text-white font-semibold rounded-lg bg-red-600">Delete</button>
@@ -67,7 +67,7 @@
         <div id="newBanner"></div>
         <button type="button" onclick="addBanner()" class="my-5 border border-black rounded-lg py-3">Tambahkan Banner +</button>
         <div>
-            <input type="submit" name="submit" class="mt-5 cursor-pointer border bg-transparent px-3 py-2 rounded-lg hover:text-white border-black hover:bg-sky-500 hover:border-0">
+            <input type="submit" name="Edit" placeholder="Edit" class="mt-5 cursor-pointer border bg-transparent px-3 py-2 rounded-lg hover:text-white border-black hover:bg-sky-500 hover:border-0">
         </div>
     </form>
 </div>
