@@ -1,6 +1,6 @@
 <!-- banner -->
 <div class="flex flex-col justify-center">
-    <form action="menu/ManageContent.php?user=<?php echo $name ?>&content=banner" method="post" enctype="multipart/form-data" class="relative w-full overflow-hidden whitespace-no-wrap flex flex-col flex-no-wrap [backface-visibility: hidden] [transform-style: preserve-3d] [touch-action: pan-Y] [will-change: transform]">
+    <form action="menu/editContent.php?user=<?php echo $name ?>&content=<?php echo $content ?>" method="post" enctype="multipart/form-data" class="relative w-full overflow-hidden whitespace-no-wrap flex flex-col flex-no-wrap [backface-visibility: hidden] [transform-style: preserve-3d] [touch-action: pan-Y] [will-change: transform]">
         <?php foreach ($list_content as $x) { ?>
             <div class="flex relative h-full overflow-hidden w-full mt-5">
                 <div class="content flex justify-center py-5 z-10 bg-gray-100 glassmorphism bg-opacity-10 w-full">
