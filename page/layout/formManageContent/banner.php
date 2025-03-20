@@ -40,6 +40,7 @@
                     <div class="w-1/2">
                         <input type="text" class="manga w-full rounded-lg" name="manga" autocomplete="off" value="<?php echo $x['nama'] ?>">
                     </div>
+                    <input type="number" value="<?php echo $x['id'] ?>" class="hidden" name="id">
                     <div>
                         <button type="button" onclick="confirmDelete(<?php echo $x['id'] ?>)" class="px-5 mx-2 py-2 text-white font-semibold rounded-lg bg-red-600">Delete</button>
                     </div>

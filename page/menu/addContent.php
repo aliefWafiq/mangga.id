@@ -19,14 +19,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->execute();
 
     echo '<script>window.location="../default.php?user=' . $name . '&acts=manageContent&content=banner"</script>';
-    // if ($get_idManga) { 
-    //     $id_manga = $get_idManga['id'];
-
-    //     $sql_check = "SELECT COUNT(*) FROM manage_content WHERE id_manga = :id_manga AND content = :content";
-    //     $stmt_check = $proses->getDb()->prepare($sql_check);
-    //     $stmt_check->bindParam(':id_manga', $id_manga);
-    //     $stmt_check->bindParam(':content', $set_content);
-    //     $stmt_check->execute();
-    //     $count = $stmt_check->fetchColumn();
-
 }
