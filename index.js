@@ -27,7 +27,7 @@ function autocomplete(inp, arr) {
           if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
             
             b = document.createElement("DIV");
-            b.setAttribute("class", "hover:cursor-pointer hover:bg-slate-200 px-5 py-3 bg-slate-100")
+            b.setAttribute("class", "hover:cursor-pointer hover:bg-slate-200 px-5 py-3 bg-slate-100 absolute")
             
             b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
             b.innerHTML += arr[i].substr(val.length);

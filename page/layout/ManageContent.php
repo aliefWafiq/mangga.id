@@ -13,7 +13,7 @@ $list_content = $proses->list($sql_content);
 
         if ($content == 'banner') {
             include 'formManageContent/banner.php';
-        } else if ($content == 'card_rekom') {
+        } else if ($content == 'card_recom') {
             include 'formManageContent/cardRekom.php';
         }
 
