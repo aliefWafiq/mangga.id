@@ -18,5 +18,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->bindParam(':content', $set_content);
     $stmt->execute();
 
-    echo '<script>window.location="../default.php?user=' . $name . '&acts=manageContent&content=banner"</script>';
+    echo '<script>window.location="../default.php?user=' . $name . '&acts=manageContent&content='. $content . '";</script>';
 }

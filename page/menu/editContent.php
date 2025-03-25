@@ -17,6 +17,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $sql = "UPDATE `manage_content` SET `id_manga` = '$id_mangaBaru' WHERE `id_manga` = '$id_manga' AND `content` = '$content'";
     $stmt = $proses->action($sql);
 
-    echo '<script>window.location="../default.php?user=' . $name . '&acts=manageContent&content=banner"</script>';
+    echo '<script>window.location="../default.php?user=' . $name . '&acts=manageContent&content='. $content .'"</script>';
 }
 ?>

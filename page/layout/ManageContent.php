@@ -63,12 +63,42 @@ $list_content = $proses->list($sql_content);
             <button type="submit" class="bg-green-500 text-white px-5 py-3 rounded-lg">Simpan</button>
         </form>
         `,
-        showCancelButton: true,
-        showConfirmButton: false,
-        cancelButtonColor: "#d33" 
+            showCancelButton: true,
+            showConfirmButton: false,
+            cancelButtonColor: "#d33"
         }).then((result) => {
             if (result.isConfirmed) {
                 const form = document.getElementById("form-add-banner");
+                const formData = new FormData(form);
+                fetch(form.action, {
+                        method: form.method,
+                        body: formData,
+                    })
+                    .then((response) => response.json())
+                    .then((data) => console.log(data))
+                    .catch((error) => console.error(error));
+            }
+        });
+    }
+
+    function addCard() {
+        Swal.fire({
+            title: "Tambah Card",
+            html: `
+        <form id="form-add-card" action="menu/addContent.php?user=<?php echo $name ?>&content=<?php echo $content ?>" method="POST">
+            <div class="mb-3 flex flex-col">
+                <label for="judul-card" class="form-label text-start mb-2">Judul Manga</label>
+                <input type="text" class="form-control rounded-lg manga" autocomplete="off" id="inputBaru" name="manga">
+            </div>
+            <button type="submit" class="bg-green-500 text-white px-5 py-3 rounded-lg">Simpan</button>
+        </form>
+        `,
+            showCancelButton: true,
+            showConfirmButton: false,
+            cancelButtonColor: "#d33"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                const form = document.getElementById("form-add-card");
                 const formData = new FormData(form);
                 fetch(form.action, {
                         method: form.method,

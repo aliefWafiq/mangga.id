@@ -1,6 +1,6 @@
 <!-- banner -->
 <div class="flex flex-col justify-center">
-    <form action="menu/editContent.php?user=<?php echo $name ?>&content=<?php echo $content ?>" method="post" enctype="multipart/form-data" class="relative w-full overflow-hidden whitespace-no-wrap flex flex-col flex-no-wrap [backface-visibility: hidden] [transform-style: preserve-3d] [touch-action: pan-Y] [will-change: transform]">
+    <form action="menu/editContent.php?user=<?php echo $name ?>&content=<?php echo $content ?>" method="post" enctype="multipart/form-data" class="w-full px-20 flex flex-col flex-no-wrap">
         <?php foreach ($list_content as $x) { ?>
             <div class="flex relative h-full overflow-hidden w-full mt-5">
                 <div class="content flex justify-center py-5 z-10 bg-gray-100 glassmorphism bg-opacity-10 w-full">
@@ -68,7 +68,7 @@
         <div id="newBanner"></div>
         <button type="button" onclick="addBanner()" class="my-5 border border-black rounded-lg py-3">Tambahkan Banner +</button>
         <div>
-            <input type="submit" name="Edit" placeholder="Edit" class="mt-5 cursor-pointer border bg-transparent px-3 py-2 rounded-lg hover:text-white border-black hover:bg-sky-500 hover:border-0">
+            <input type="submit" name="Edit" placeholder="Edit" class="mt-3 cursor-pointer border bg-transparent px-3 py-2 rounded-lg hover:text-white border-black hover:bg-sky-500 hover:border-0">
         </div>
     </form>
 </div>
