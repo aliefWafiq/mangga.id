@@ -25,8 +25,11 @@ $hasilManga = $proses->list($manga);
 $tes = "SELECT * FROM manga WHERE top != 'none'";
 $tes2 = $proses->list($tes);
 
-$sql_content = "SELECT manga.* FROM manga JOIN manage_content ON manga.id = manage_content.id_manga WHERE manage_content.content = 'banner'";
-$content = $proses->list($sql_content);
+$sql_banner = "SELECT manga.* FROM manga JOIN manage_content ON manga.id = manage_content.id_manga WHERE manage_content.content = 'banner'";
+$banner = $proses->list($sql_banner);
+
+$sql_cardRecom = "SELECT manga.* FROM manga JOIN manage_content ON manga.id = manage_content.id_manga WHERE manage_content.content = 'card_recom'";
+$cardRecom = $proses->list($sql_cardRecom);
 
 function compareTop($a, $b)
 {

@@ -8,9 +8,10 @@
                 <div class="mx-5 w-1/2">
                     <div class="flex flex-col ">
                         <label for="manga">Manga:</label>
-                        <input type="text" class="manga w-full rounded-lg" name="manga" autocomplete="off" value="<?php echo $x['nama'] ?>">
+                        <input type="text" class="manga w-full rounded-lg" name="manga[]" autocomplete="off" value="<?php echo isset($x['nama']) ? $x['nama'] : ''; ?>">
                     </div>
-                    <input type="number" value="<?php echo $x['id'] ?>" class="hidden" name="id">
+                    <input type="number" value="<?php echo isset($x['id']) ? $x['id'] : ''; ?>" class="hidden" name="id[]">
+
                     <div class="my-3">
                         <button type="button" onclick="confirmDelete(<?php echo $x['id'] ?>)" class="px-5 py-2 text-white font-semibold rounded-lg bg-red-600">Delete</button>
                     </div>
