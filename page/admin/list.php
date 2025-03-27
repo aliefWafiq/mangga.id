@@ -47,7 +47,7 @@ $hasil = $proses->show($username, $param);
                                 <div class="flex text-xl">
                                     <a href="default.php?user=<?php echo $name ?>&manga=<?php echo $x['id'] ?>&acts=panel" class="px-2 mx-1 py-1 text-white font-semibold rounded-xl bg-blue-500">Panel</a> 
                                     <a href="default.php?user=<?php echo $name ?>&manga=<?php echo $x['id'] ?>&acts=edit" class="px-2 mx-1 py-1 text-white font-semibold rounded-xl bg-yellow-500">edit</a>
-                                    <a href="default.php?user=<?php echo $name ?>&manga=<?php echo $x['id'] ?>&acts=delete" class="px-2 mx-1 py-1 text-white font-semibold rounded-xl bg-red-700">delete</a>
+                                    <a href="default.php?user=<?php echo $name ?>&manga=<?php echo $x['id'] ?>&acts=delete&source=list" class="px-2 mx-1 py-1 text-white font-semibold rounded-xl bg-red-700">delete</a>
                                 </div>
                             </td>
                         </tr>

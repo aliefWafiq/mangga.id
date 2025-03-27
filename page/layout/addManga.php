@@ -35,10 +35,15 @@
                         <option value="completed">Completed</option>
                     </select>
 
-                    <label for="genre" class="mt-5">Pilih Genre:</label>
-                    <div id="genre">
-                        <input type="checkbox" name="genre[]" value="action"> Action
-                       
+                    <div class="flex flex-wrap my-3">
+                        <div class="w-full">
+                            <label for="genre" class="mt-5">Pilih Genre:</label>
+                        </div>
+                        <?php foreach ($listGenre as $x) { ?>
+                            <div id="genre" class="mx-3 mt-2">
+                                <input type="checkbox" name="genre[]" value="<?php echo $x['id'] ?>"> <?php echo $x['genre'] ?>
+                            </div>
+                        <?php } ?>
                     </div>
 
                     <label for="type" class="md:ml-3 mt-5">Type:</label>

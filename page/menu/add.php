@@ -22,9 +22,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $tempname = $_FILES["uploadfile"]["tmp_name"];
     $folder = "../../img/cover-manga/" . $foto;
 
-    $folderPanel = "../../img/panel_manga/". $nama;
-    mkdir($folderPanel);
-
     if (empty($foto)) {
         echo "Masukan foto";
     } else {
@@ -42,13 +39,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             if($stmt->execute()){
                 $id_manga = $proses->getDb()->lastInsertId();
-
                 foreach($genre as $genre){
-                    $sql = "INSERT INTO genre (genre, id_manga) VALUES ('$genre', '$id_manga')";
+                    $sql = "INSERT INTO genremanga (genre, id_manga) VALUES ('$genre', '$id_manga')";
                     $stmt = $proses->getDb()->prepare($sql);
                     $stmt->execute();
                 }
-
                 echo '<script>window.location="../default.php?user='. $name .'&acts"</script>';
             }
         }

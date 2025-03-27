@@ -3032,21 +3032,6 @@ input:checked + .toggle-bg {
   background-color: rgb(194 120 3 / var(--tw-bg-opacity));
 }
 
-.bg-blue-600 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(28 100 242 / var(--tw-bg-opacity));
-}
-
-.bg-violet-600 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(124 58 237 / var(--tw-bg-opacity));
-}
-
-.bg-red-800 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(155 28 28 / var(--tw-bg-opacity));
-}
-
 .bg-opacity-10 {
   --tw-bg-opacity: 0.1;
 }
@@ -4742,10 +4727,6 @@ input:checked + .toggle-bg {
 
   .lg\:w-screen {
     width: 100vw;
-  }
-
-  .lg\:w-1\/2 {
-    width: 50%;
   }
 
   .lg\:px-8 {

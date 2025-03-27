@@ -15,6 +15,8 @@ $name = $_GET['user'];
 $role = "SELECT * FROM user WHERE name = '$name'";
 $hasil = $proses->list($role);
 
+$sql_genre = "SELECT * FROM genre";
+$listGenre = $proses->list($sql_genre);
 
 $manga = 'SELECT * FROM manga';
 $hasil2 = $proses->list($manga);
