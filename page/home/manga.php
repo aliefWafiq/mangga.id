@@ -22,9 +22,9 @@ $genre = $proses->list($get_genre);
       <div class="mt-5 w-full">
 
          <?php foreach ($hasil2 as $x) { ?>
-            <div class="w-full">
-               <div class="flex-col flex w-full justify-center items-center p-5 bg-secondary text-primary rounded-2xl">
-                  <div class="flex w-4/6">
+            <div class="w-full px-10">
+               <div class="flex-col flex w-full justify-center items-center px-14 py-5 bg-secondary text-primary rounded-2xl">
+                  <div class="flex w-full ">
                      <div class="flex w-fit items-center">
                         <div class="flex justify-center">
                            <img src="../img/cover-manga/<?php echo $x['cover'] ?>" alt="" class="md:w-50 md:h-70 w-60 h-70 rounded-lg shadow-xl">
@@ -63,24 +63,25 @@ $genre = $proses->list($get_genre);
                               <p>:</p>
                               <p class="mx-2 text-lg"><?php echo $x['Umur'] ?></p>
                            </div>
-                           <div class="flex mt-5">
-                              <?php foreach ($genre as $s) { ?>
-                                 <p class="bg-third mx-2 px-4 py-1 text-secondary rounded-full text-lg font-semibold"><?php echo $s['genre'] ?></p>
+                           <div class="flex mt-5 gap-2">
+                              <?php foreach ($genre as $s) {?>
+                                 <p class="bg-third px-4 py-1 text-secondary rounded-full text-lg font-semibold"><?php echo $s['genre'] ?></p>
                               <?php } ?>
                            </div>
+                           <form action="menu/favorite.php?manga=<?php echo $manga ?>&user=<?php echo $name ?>" method="post" class="my-3">
+                           <button type="submit" name="submit" class="flex items-center bg-third text-secondary px-3 py-2 rounded-3xl hover:bg-primary hover:text-third transition-all ease-in-out">
+                              <i class="fa-solid fa-star mr-2"></i>
+                              <p>Add to Favorite</p>
+                           </button>
+                        </form>
                         </div>
                      </div>
                   </div>
                   <div class="w-full flex mt-3 justify-center">
-                     <div class="w-4/6">
-                        <p class="text-2xl font-semibold mt-4">Sipnosis</p>
+                     <div class="w-full">
+                        <p class="text-4xl font-semibold my-4">Sipnosis</p>
                         <p><?php echo $x['sipnosis'] ?></p>
-                        <form action="menu/favorite.php?manga=<?php echo $manga ?>&user=<?php echo $name ?>" method="post" class="my-3">
-                           <button type="submit" name="submit" class="flex items-center bg-third text-secondary px-3 py-2 rounded-3xl hover:bg-primary hover:text-third transition-all ease-in-out">
-                              <i class="fa-solid fa-star mr-2"></i>
-                              <p>Favorite</p>
-                           </button>
-                        </form>
+                        
                      </div>
                   </div>
                </div>

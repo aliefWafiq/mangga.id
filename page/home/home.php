@@ -10,7 +10,7 @@
                   <?php foreach ($banner as $x) { ?>
                      <li class="flex h-auto w-full">
                         <div class="content flex justify-center py-5 z-10 bg-gray-100 glassmorphism bg-opacity-10 w-full">
-                           <div class="flex lg:h-72 w-1/2 h-44 justify-center">
+                           <div class="flex lg:h-72 w-1/3 h-44 justify-center">
                               <div class="lg:w-1/4 -rotate-6 absolute">
                                  <img src="../img/cover-manga/<?php echo $x['cover'] ?>" alt="" class="rounded-xl w-full h-full">
                               </div>
@@ -23,13 +23,13 @@
                                                                                  } else {
                                                                                     echo $x['sipnosis'];
                                                                                  } ?></p>
-                                 <div class="flex">
+                                 <div class="flex gap-2">
                                     <?php
                                     $id = $x['id'];
                                     $genre = "SELECT manga.*, genremanga.*, genre.* FROM manga JOIN genremanga ON manga.id = genremanga.id_manga JOIN genre ON genremanga.genre = genre.id WHERE genremanga.id_manga = $id";
                                     $get_genre = $proses->list($genre);
                                     foreach ($get_genre as $s) { ?>
-                                       <p class="bg-third mx-2 px-4 py-1 text-secondary rounded-full text-lg font-semibold"><?php echo $s['genre'];
+                                       <p class="bg-third px-4 py-1 text-secondary rounded-full text-lg font-semibold"><?php echo $s['genre'];
                                                                                                                            } ?></p>
                                  </div>
                               </div>
@@ -120,10 +120,13 @@
                <div class="overflow-hidden" data-glide-el="track">
                   <ul class="relative w-full overflow-hidden p-0 whitespace-no-wrap flex flex-no-wrap [backface-visibility: hidden] [transform-style: preserve-3d] [touch-action: pan-Y] [will-change: transform]">
                      <li class="flex flex-wrap justify-center">
-                           <?php foreach ($cardRecom as $x) { ?>
-                           <div class="mx-3 lg:w-48 lg:h-72 w-24 h-40 ml-5 rounded-2xl">
+                           <?php foreach ($cardRecom as $x) { 
+                              $sql_manga = "SELECT * FROM manga WHERE id = :id";
+                              $param = [':id' => $x['id']];
+                              $namaManga = $proses->show($sql_manga, $param);?>
+                           <a class="mx-3 lg:w-48 lg:h-72 w-24 h-40 ml-5 rounded-2xl" href="direct.php?manga=<?php echo $namaManga['nama'] ?>&user=<?php echo $name ?>&page=detailManga">
                               <img src="../img/cover-manga/<?php echo $x['cover'] ?>" alt="" class="w-full rounded-2xl h-full" />
-                           </div>
+                           </a>
                            <?php } ?>
                         </li>
                      </ul>
