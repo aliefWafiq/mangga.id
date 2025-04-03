@@ -4,7 +4,7 @@ $select2 = "SELECT * FROM manga WHERE id = '$idManga'";
 $result2 = $proses->list($select2);
 ?>
 
-<div class="md:p-4 sm:ml-64 md:mt-10">
+<div class="md:p-4 sm:ml-64">
     <form action="menu/addPanel.php?user=<?php echo $name ?>&manga=<?php echo $idManga ?>" method="post" enctype="multipart/form-data">
         <div class="mx-5 p-6">
             <div class="relative">

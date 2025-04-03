@@ -1,14 +1,4 @@
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="../../src/output.css?<?= time() ?>">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
-
-<body>
-    <div class="md:p-4 sm:ml-64 md:mt-10">
+    <div class="md:p-4 sm:ml-64">
         <form action="menu/add.php?user=<?php echo $name ?>" method="post" enctype="multipart/form-data">
             <div class="mx-5 p-6">
                 <div class="relative">
@@ -61,5 +51,4 @@
                 </div>
         </form>
     </div>
-</body>
-<script src="../../node_modules/flowbite/dist/flowbite.min.js"></script>
+    <script src="../../node_modules/flowbite/dist/flowbite.min.js"></script>

@@ -12,20 +12,18 @@ $idGenre = $listGenre['id'];
 
 $get_manga = "SELECT manga.* FROM manga JOIN genremanga ON manga.id = genremanga.id_manga JOIN genre ON genremanga.genre = genre.id WHERE genre.id = '$idGenre'";
 $manga = $proses->list($get_manga);
-echo "link = " . $genre;
-echo "db = " . $listGenre['id'];
 ?>
 
-<div class="md:p-4 w-full">
+<div class="md:p-4 flex justify-end">
     <!-- main content -->
-    <div class="container-fluid w-full h-full">
+    <div class="container-fluid xl:w-4/5">
         <div class="wrapper w-full h-full">
             <div class="flex flex-wrap w-full justify-center px-10">
                 <?php
                 foreach ($manga as $x) { ?>
                     <!-- <div class="mx-2 mt-4 bg-red w-full h-full"> -->
                         <a href="direct.php?manga=<?php echo $x['nama'] ?>&user=<?php echo $name ?>&page=detailManga">
-                            <div class="bg-slate-100 border-solid border-2 border-gray-200 overflow-hidden w-2/3 my-3 h-60 rounded-xl">
+                            <div class="bg-slate-100 border-solid border-2 border-gray-200 overflow-hidden w-full my-3 h-60 rounded-xl">
                                 <div class="w-full h-full rounded-t-xl flex">
                                     <img src="../img/cover-manga/<?php echo $x['cover'] ?>" alt="" class="lg:w-44 h-full w-28" />
                                     <div class="mx-3 md:mx-5 w-full h-full">
@@ -37,7 +35,7 @@ echo "db = " . $listGenre['id'];
                                                                                                 echo $x['nama'];
                                                                                             } ?></p>
                                             <p class="text-base md:mt-3 hidden md:block"> <?php if (strlen($x['sipnosis']) >= 19) {
-                                                                                                echo $judul = substr($x['sipnosis'], 0, 500) . '...';
+                                                                                                echo $judul = substr($x['sipnosis'], 0, 350) . '...';
                                                                                             } else {
                                                                                                 echo $x['sipnosis'];
                                                                                             } ?>

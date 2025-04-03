@@ -50,7 +50,7 @@ foreach ($hasil as $row) {
 </head>
 
 <body>
-    <div class="wrapper">
+    <div class="container">
         <!-- Navbar -->
         <?php
         require 'layout/nav.php';
@@ -58,24 +58,25 @@ foreach ($hasil as $row) {
         <!-- /.navbar -->
 
         <!-- Content Wrapper. Contains page content -->
-        <?php
-        if (!empty($_GET['acts'] == 'delete')) {
-            require 'menu/delete.php';
-        } else if (!empty($_GET['acts'] == 'edit')) {
-            require 'layout/editManga.php';
-        } else if (!empty($_GET['acts'] == 'add')) {
-            require 'layout/addManga.php';
-        } else if (!empty($_GET['acts'] == 'panel')) {
-            include 'layout/addPanel.php';
-        }else if(!empty($_GET['acts'] == 'menuManageContent')){
-            require 'layout/menuManageContent.php';
-        } else if (!empty($_GET['acts'] == 'manageContent')){
-             require 'layout/manageContent.php';
-        } else {
-            require 'admin/list.php';
-        }
-       
-        ?>
+        <div class="wrapper px-10">
+            <?php
+            if (!empty($_GET['acts'] == 'delete')) {
+                require 'menu/delete.php';
+            } else if (!empty($_GET['acts'] == 'edit')) {
+                require 'layout/editManga.php';
+            } else if (!empty($_GET['acts'] == 'add')) {
+                require 'layout/addManga.php';
+            } else if (!empty($_GET['acts'] == 'panel')) {
+                include 'layout/addPanel.php';
+            } else if (!empty($_GET['acts'] == 'menuManageContent')) {
+                require 'layout/menuManageContent.php';
+            } else if (!empty($_GET['acts'] == 'manageContent')) {
+                require 'layout/manageContent.php';
+            } else {
+                require 'admin/list.php';
+            }
+            ?>
+        </div>
 
 </body>
 

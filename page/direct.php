@@ -61,7 +61,7 @@ foreach ($hasil as $row) {
 </head>
 
 <body>
-    <div class="wrapper">
+    <div class="container">
         <!-- Navbar -->
         <?php
         require 'layout/nav.php';
@@ -69,31 +69,33 @@ foreach ($hasil as $row) {
         <!-- /.navbar -->
 
         <!-- Content Wrapper. Contains page content -->
-        <?php
-        foreach ($hasil as $row) {
-            if ($page == 'home') {
-                require 'home/home.php';
-            } else if ($page == 'top') {
-                require 'home/top.php';
-            } else if ($page == 'profile') {
-                require 'home/profile.php';
-            } else if ($page == 'genre') {
-                require 'home/genre.php';
-            } else if ($page == 'editProfile') {
-                require 'home/editProfile.php';
-            } else if ($page == 'detailManga') {
-                require 'home/manga.php';
-            } else if ($page == 'genre') {
-                require 'home/genre.php';
-            }else if ($page == 'seeMore'){
-                require 'home/all-manga.php';
-            } else if ($page == 'baca') {
-                require 'home/baca.php';
-            } else if ($page == 'search') {
-                require 'layout/searchManga.php';
+        <div class="wrapper px-10">
+            <?php
+            foreach ($hasil as $row) {
+                if ($page == 'home') {
+                    require 'home/home.php';
+                } else if ($page == 'top') {
+                    require 'home/top.php';
+                } else if ($page == 'profile') {
+                    require 'home/profile.php';
+                } else if ($page == 'genre') {
+                    require 'home/genre.php';
+                } else if ($page == 'editProfile') {
+                    require 'home/editProfile.php';
+                } else if ($page == 'detailManga') {
+                    require 'home/manga.php';
+                } else if ($page == 'genre') {
+                    require 'home/genre.php';
+                } else if ($page == 'seeMore') {
+                    require 'home/all-manga.php';
+                } else if ($page == 'baca') {
+                    require 'home/baca.php';
+                } else if ($page == 'search') {
+                    require 'layout/searchManga.php';
+                }
             }
-        }
-        ?>
+            ?>
+        </div>
 
 </body>
 

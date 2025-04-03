@@ -4,7 +4,7 @@
     $result2 = $proses->list($select2);
 ?>
 
-    <div class="md:p-4 sm:ml-64 md:mt-10">
+    <div class="md:p-4 sm:ml-64">
         <form action="menu/editManga.php?user=<?php echo $name ?>&manga=<?php echo $idManga ?>" method="post" enctype="multipart/form-data">
             <div class="mx-5 p-6">
                 <?php foreach ($result2 as $x) { ?>

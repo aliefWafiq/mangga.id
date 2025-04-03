@@ -149,7 +149,7 @@
             </div>
          </div>
       </div>
-      <!-- recom end -->
+      <!-- recomendation end -->
 
       <!-- genre -->
       <div class="mt-14 md:mt-20">
@@ -278,3 +278,4 @@
          glide02.mount();
          glide03.mount();
       </script>
+</div>
