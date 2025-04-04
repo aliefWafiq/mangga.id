@@ -31,6 +31,9 @@ $banner = $proses->list($sql_banner);
 $sql_cardRecom = "SELECT manga.* FROM manga JOIN manage_content ON manga.id = manage_content.id_manga WHERE manage_content.content = 'card_recom'";
 $cardRecom = $proses->list($sql_cardRecom);
 
+$sql_cardAction = "SELECT manga.* FROM manga JOIN manage_content ON manga.id = manage_content.id_manga WHERE manage_content.content = 'card_action'";
+$cardAction = $proses->list($sql_cardAction);
+
 function compareTop($a, $b)
 {
     return $a['top'] - $b['top'];

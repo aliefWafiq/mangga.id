@@ -119,19 +119,22 @@ $listManga = $proses->list($manga);
           <div class="overflow-hidden" data-glide-el="track">
             <ul
               class="relative w-full overflow-hidden p-0 whitespace-no-wrap flex flex-no-wrap [backface-visibility: hidden] [transform-style: preserve-3d] [touch-action: pan-Y] [will-change: transform]">
-              <li class="flex flex-wrap justify-center">
-                <?php foreach ($listManga as $x) { ?>
-                  <div class="lg:w-48 lg:h-72 w-28 h-40 bg-slate-300 rounded-2xl mx-1  overflow-hidden group">
+              <?php 
+              $chunks = array_chunk($listManga, 5);
+              foreach ($chunks as $chunk) { ?>
+                <li class="flex flex-wrap justify-center">
+                  <?php foreach($chunk as $x){ ?>
+                  <div class="lg:w-64 lg:h-96 w-28 h-40 bg-slate-300 rounded-2xl mx-1  overflow-hidden group">
                     <div class="transisi-card">
-                      <div class="lg:my-5 my-2 lg:mx-5 mx-2">
-                        <p class="font-bold text-lg lg:text-xl"><?php if (strlen($x['nama']) >= 19) {
+                      <div class="h-full px-5 flex flex-col justify-center">
+                        <p class="font-bold text-lg lg:text-xl mb-3"><?php if (strlen($x['nama']) >= 19) {
                                                                   echo $judul = substr($x['nama'], 0, 25) . '...';
                                                                 } else {
                                                                   echo $x['nama'];
                                                                 } ?></p>
                         <p class="font-semibold text-lg"><?php  ?></p>
                         <p><?php if (strlen($x['sipnosis']) >= 19) {
-                              echo $judul = substr($x['sipnosis'], 0, 100) . '...';
+                              echo $judul = substr($x['sipnosis'], 0, 200) . '...';
                             } else {
                               echo $x['sipnosis'];
                             } ?></p>
@@ -141,8 +144,9 @@ $listManga = $proses->list($manga);
                       <img src="../img/cover-manga/<?php echo $x['cover'] ?>" alt="" class="h-full w-full" />
                     </div>
                   </div>
+                  <?php } ?>
+                </li>
                 <?php } ?>
-              </li>
             </ul>
           </div>
           <!-- Controls -->

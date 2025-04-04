@@ -27,7 +27,7 @@
 }
 
 .transisi-card{
-    @apply bg-red-200 lg:h-full h-40 fixed w-full lg:max-w-48 max-w-28 rounded-2xl translate-y-full group-hover:translate-y-0  transition ease-in-out;
+    @apply bg-red-200 lg:h-full h-40 fixed w-full lg:w-64 lg:max-w-64 max-w-28 rounded-2xl translate-y-full group-hover:translate-y-0  transition ease-in-out;
 }
 
 .glassmorphism {

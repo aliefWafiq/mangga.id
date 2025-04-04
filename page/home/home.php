@@ -30,7 +30,7 @@
                                     $get_genre = $proses->list($genre);
                                     foreach ($get_genre as $s) { ?>
                                        <p class="bg-third px-4 py-1 text-secondary rounded-full text-lg font-semibold"><?php echo $s['genre'];
-                                                                                                                           } ?></p>
+                                                                                                                     } ?></p>
                                  </div>
                               </div>
                            </div>
@@ -85,7 +85,7 @@
       <!-- daily update -->
       <div class="mt-10">
          <p class="text-2xl text-center mb-7 xxs:mb-4 font-semibold">Latest Update</p>
-         <div class="flex flex-row flex-wrap md:mx-10 xs:mx-5">
+         <div class="flex flex-row flex-wrap">
             <?php foreach ($sortManga as $s) { ?>
                <div class="md:mx-2 mt-4">
                   <a href="direct.php?manga=<?php echo $s['nama'] ?>&user=<?php echo $name ?>&page=detailManga">
@@ -119,17 +119,22 @@
                <!-- Slides -->
                <div class="overflow-hidden" data-glide-el="track">
                   <ul class="relative w-full overflow-hidden p-0 whitespace-no-wrap flex flex-no-wrap [backface-visibility: hidden] [transform-style: preserve-3d] [touch-action: pan-Y] [will-change: transform]">
-                     <li class="flex flex-wrap justify-center">
-                           <?php foreach ($cardRecom as $x) { 
+                     <?php
+                     $chunks = array_chunk($cardRecom, 5);
+                     foreach ($chunks as $chunk) { ?>
+                        <li class="flex flex-wrap">
+                           <?php
+                           foreach ($chunk as $x) {
                               $sql_manga = "SELECT * FROM manga WHERE id = :id";
                               $param = [':id' => $x['id']];
-                              $namaManga = $proses->show($sql_manga, $param);?>
-                           <a class="mx-3 lg:w-48 lg:h-72 w-24 h-40 ml-5 rounded-2xl" href="direct.php?manga=<?php echo $namaManga['nama'] ?>&user=<?php echo $name ?>&page=detailManga">
-                              <img src="../img/cover-manga/<?php echo $x['cover'] ?>" alt="" class="w-full rounded-2xl h-full" />
-                           </a>
+                              $namaManga = $proses->show($sql_manga, $param); ?>
+                              <a class="mx-3 lg:w-48 lg:h-72 w-24 h-40 ml-5 rounded-2xl" href="direct.php?manga=<?php echo $namaManga['nama'] ?>&user=<?php echo $name ?>&page=detailManga">
+                                 <img src="../img/cover-manga/<?php echo $x['cover'] ?>" alt="" class="w-full rounded-2xl h-full" />
+                              </a>
                            <?php } ?>
                         </li>
-                     </ul>
+                     <?php } ?>
+                  </ul>
                </div>
                <!-- Controls -->
                <div class="absolute left-0 flex items-center justify-between w-full h-0 px-4 top-1/2" data-glide-el="controls">
@@ -159,63 +164,22 @@
             <div class="relative w-full glide-03">
                <!-- Slides -->
                <div class="overflow-hidden" data-glide-el="track">
-                  <ul class="relative w-full overflow-hidden p-0 whitespace-no-wrap flex flex-no-wrap [backface-visibility: hidden] [transform-style: preserve-3d] [touch-action: pan-Y] [will-change: transform]">
-                     <li class="flex flex-wrap justify-center">
-                        <div class="lg:w-48 lg:h-72 w-24 h-40 bg-black ml-5 rounded-2xl">
-                           <img src="../img/law.jpeg" alt="" class="w-full rounded-2xl h-full" />
-                        </div>
-                        <div class="lg:w-48 lg:h-72 w-24 h-40 bg-black ml-5 rounded-2xl">
-                           <img src="../img/Kiga.jpeg" alt="" class="w-full rounded-2xl h-full" />
-                        </div>
-                        <div class="lg:w-48 lg:h-72 w-24 h-40 bg-black ml-5 rounded-2xl">
-                           <img src="../img/enen.jpeg" alt="" class="w-full rounded-2xl h-full" />
-                        </div>
-                        <div class="w-48 h-72 bg-black ml-5 rounded-2xl hidden lg:block">
-                           <img src="../img/jjk cover.jpeg" alt="" class="w-full rounded-2xl h-full" />
-                        </div>
-                     </li>
-                     <li class="flex flex-wrap justify-center">
-                        <div class="lg:w-48 lg:h-72 w-24 h-40 bg-black ml-5 rounded-2xl">
-                           <img src="../img/law.jpeg" alt="" class="w-full rounded-2xl h-full" />
-                        </div>
-                        <div class="lg:w-48 lg:h-72 w-24 h-40 bg-black ml-5 rounded-2xl">
-                           <img src="../img/Kiga.jpeg" alt="" class="w-full rounded-2xl h-full" />
-                        </div>
-                        <div class="lg:w-48 lg:h-72 w-24 h-40 bg-black ml-5 rounded-2xl">
-                           <img src="../img/enen.jpeg" alt="" class="w-full rounded-2xl h-full" />
-                        </div>
-                        <div class="w-48 h-72 bg-black ml-5 rounded-2xl hidden lg:block">
-                           <img src="../img/jjk cover.jpeg" alt="" class="w-full rounded-2xl h-full" />
-                        </div>
-                     </li>
-                     <li class="flex flex-wrap justify-center">
-                        <div class="lg:w-48 lg:h-72 w-24 h-40 bg-black ml-5 rounded-2xl">
-                           <img src="../img/law.jpeg" alt="" class="w-full rounded-2xl h-full" />
-                        </div>
-                        <div class="lg:w-48 lg:h-72 w-24 h-40 bg-black ml-5 rounded-2xl">
-                           <img src="../img/Kiga.jpeg" alt="" class="w-full rounded-2xl h-full" />
-                        </div>
-                        <div class="lg:w-48 lg:h-72 w-24 h-40 bg-black ml-5 rounded-2xl">
-                           <img src="../img/enen.jpeg" alt="" class="w-full rounded-2xl h-full" />
-                        </div>
-                        <div class="w-48 h-72 bg-black ml-5 rounded-2xl hidden lg:block">
-                           <img src="../img/jjk cover.jpeg" alt="" class="w-full rounded-2xl h-full" />
-                        </div>
-                     </li>
-                     <li class="flex flex-wrap justify-center">
-                        <div class="lg:w-48 lg:h-72 w-24 h-40 bg-black ml-5 rounded-2xl">
-                           <img src="../img/law.jpeg" alt="" class="w-full rounded-2xl h-full" />
-                        </div>
-                        <div class="lg:w-48 lg:h-72 w-24 h-40 bg-black ml-5 rounded-2xl">
-                           <img src="../img/Kiga.jpeg" alt="" class="w-full rounded-2xl h-full" />
-                        </div>
-                        <div class="lg:w-48 lg:h-72 w-24 h-40 bg-black ml-5 rounded-2xl">
-                           <img src="../img/enen.jpeg" alt="" class="w-full rounded-2xl h-full" />
-                        </div>
-                        <div class="w-48 h-72 bg-black ml-5 rounded-2xl hidden lg:block">
-                           <img src="../img/jjk cover.jpeg" alt="" class="w-full rounded-2xl h-full" />
-                        </div>
-                     </li>
+               <ul class="relative w-full overflow-hidden p-0 whitespace-no-wrap flex flex-no-wrap [backface-visibility: hidden] [transform-style: preserve-3d] [touch-action: pan-Y] [will-change: transform]">
+                     <?php
+                     $chunks = array_chunk($cardAction, 5);
+                     foreach ($chunks as $chunk) { ?>
+                        <li class="flex flex-wrap">
+                           <?php
+                           foreach ($chunk as $x) {
+                              $sql_manga = "SELECT * FROM manga WHERE id = :id";
+                              $param = [':id' => $x['id']];
+                              $namaManga = $proses->show($sql_manga, $param); ?>
+                              <a class="mx-3 lg:w-48 lg:h-72 w-24 h-40 ml-5 rounded-2xl" href="direct.php?manga=<?php echo $namaManga['nama'] ?>&user=<?php echo $name ?>&page=detailManga">
+                                 <img src="../img/cover-manga/<?php echo $x['cover'] ?>" alt="" class="w-full rounded-2xl h-full" />
+                              </a>
+                           <?php } ?>
+                        </li>
+                     <?php } ?>
                   </ul>
                </div>
                <!-- Controls -->
@@ -278,4 +242,4 @@
          glide02.mount();
          glide03.mount();
       </script>
-</div>
+   </div>

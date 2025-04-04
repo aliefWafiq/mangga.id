@@ -26,12 +26,13 @@ if($source == 'list'){
     $proses->action($sql);
 
     echo '<script>window.location="default.php?user='. $user .'&acts"</script>';
-}else {
+}else if($source == 'manageContent') {
     $content = $_GET['content'];
-    echo $content;
-    echo $manga;
     $sql = "DELETE FROM manage_content WHERE id_manga = '$manga' AND content = '$content'";
     $proses->action($sql);
 
     echo '<script>window.location="default.php?user='. $user .'&acts=menuManageContent"</script>';
+}else if($source == 'favorite'){
+    $sql = "DELETE FROM favorite WHERE id_manga = '$manga'";
+    $proses->action($sql);
 }

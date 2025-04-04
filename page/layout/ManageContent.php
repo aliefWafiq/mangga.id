@@ -15,8 +15,10 @@ $list_content = $proses->list($sql_content);
             include 'formManageContent/banner.php';
         } else if ($content == 'card_recom') {
             include 'formManageContent/cardRekom.php';
+        }else if($content == 'card_action'){
+            include 'formManageContent/cardAction.php';
         }
-
+        
         ?>
 
     </div>

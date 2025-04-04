@@ -64,16 +64,16 @@ $genre = $proses->list($get_genre);
                               <p class="mx-2 text-lg"><?php echo $x['Umur'] ?></p>
                            </div>
                            <div class="flex mt-5 gap-2">
-                              <?php foreach ($genre as $s) {?>
+                              <?php foreach ($genre as $s) { ?>
                                  <p class="bg-third px-4 py-1 text-secondary rounded-full text-lg font-semibold"><?php echo $s['genre'] ?></p>
                               <?php } ?>
                            </div>
                            <form action="menu/favorite.php?manga=<?php echo $manga ?>&user=<?php echo $name ?>" method="post" class="my-3">
-                           <button type="submit" name="submit" class="flex items-center bg-third text-secondary px-3 py-2 rounded-3xl hover:bg-primary hover:text-third transition-all ease-in-out">
-                              <i class="fa-solid fa-star mr-2"></i>
-                              <p>Add to Favorite</p>
-                           </button>
-                        </form>
+                              <button type="submit" name="submit" class="flex items-center bg-third text-secondary px-3 py-2 rounded-3xl hover:bg-primary hover:text-third transition-all ease-in-out">
+                                 <i class="fa-solid fa-star mr-2"></i>
+                                 <p>Add to Favorite</p>
+                              </button>
+                           </form>
                         </div>
                      </div>
                   </div>
@@ -81,7 +81,7 @@ $genre = $proses->list($get_genre);
                      <div class="w-full">
                         <p class="text-4xl font-semibold my-4">Sipnosis</p>
                         <p><?php echo $x['sipnosis'] ?></p>
-                        
+
                      </div>
                   </div>
                </div>

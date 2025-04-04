@@ -31,17 +31,22 @@ $favorite = $proses->list($get_favorite);
             </a>
 
         </div>
-        <p class="ml-5 text-lg">Bio :</p>
+        <p class="ml-5 mt-3 text-lg">Bio :</p>
         <div class="bio mx-5 bg-slate-100 h-auto border-slate-400 border-2 rounded-2xl">
             <p class="md:p-5 p-2"><?php echo $x['bio'] ?></p>
         </div>
-        <div class="w-full mt-10 px-5">
+        <div class="w-full mt-10 px-5 overflow-x-scroll">
             <p class="text-2xl mb-5 font-semibold">Favorite</p>
-            <div class="flex">
+            <div class="flex gap-5 my-2">
                 <?php foreach ($favorite as $x) {
                 ?>
                     <a href="direct.php?manga=<?php echo $x['nama'] ?>&user=<?php echo $name ?>&page=detailManga">
-                        <div class="lg:w-48 lg:h-72 w-24 h-40 bg-black ml-5 rounded-2xl">
+                        <div class="lg:w-48 lg:h-72 w-24 h-40 bg-black rounded-2xl">
+                            <form action="default.php?manga=<?php echo $x['id'] ?>&user=<?php echo $name ?>&source=favorite&acts=delete" method="post" class="my-3 absolute">
+                              <button type="submit" name="submit" class="flex items-center bg-third text-secondary p-3 rounded-3xl hover:bg-secondary hover:text-red-600 transition-all ease-in-out">
+                                 <i class="fa-solid fa-star"></i>
+                              </button>
+                           </form>
                             <img src="../img/cover-manga/<?php echo $x['cover'] ?>" alt="" class="w-full rounded-2xl h-full" />
                         </div>
                     </a>
