@@ -7,6 +7,12 @@ $hasil = $proses->show($username, $param);
 ?>
 <div class="md:p-4 sm:ml-64 md:mt-5">
     <div class="mx-4">
+        <div class="flex w-full justify-end mb-5">
+            <input type="text" class="manga rounded-lg w-1/2" id="search_manga" autocomplete="off" placeholder="Search...">
+            <button class="bg-primary px-5 mx-1 rounded-lg" onclick="search_manga()">
+                <i class="fa-solid fa-search text-secondary"></i>
+            </button>
+        </div>
         <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
             <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
                 <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
@@ -45,9 +51,9 @@ $hasil = $proses->show($username, $param);
                             </td>
                             <td class="py-4 px-6">
                                 <div class="flex text-xl">
-                                    <a href="default.php?user=<?php echo $name ?>&manga=<?php echo $x['id'] ?>&acts=panel" class="px-2 mx-1 py-1 text-white font-semibold rounded-xl bg-blue-500">Panel</a> 
-                                    <a href="default.php?user=<?php echo $name ?>&manga=<?php echo $x['id'] ?>&acts=edit" class="px-2 mx-1 py-1 text-white font-semibold rounded-xl bg-yellow-500">edit</a>
-                                    <a href="default.php?user=<?php echo $name ?>&manga=<?php echo $x['id'] ?>&acts=delete&source=list" class="px-2 mx-1 py-1 text-white font-semibold rounded-xl bg-red-700">delete</a>
+                                    <a href="default.php?user=<?php echo $name ?>&manga=<?php echo $x['id'] ?>&acts=panel" class="px-2 mx-1 py-1 text-white font-semibold rounded-xl bg-blue-500">Panel</a>
+                                    <a href="default.php?user=<?php echo $name ?>&manga=<?php echo $x['id'] ?>&acts=edit" class="px-2 mx-1 py-1 text-white font-semibold rounded-xl bg-yellow-500">Edit</a>
+                                    <a href="default.php?user=<?php echo $name ?>&manga=<?php echo $x['id'] ?>&acts=delete&source=list" class="px-2 mx-1 py-1 text-white font-semibold rounded-xl bg-red-700">Delete</a>
                                 </div>
                             </td>
                         </tr>

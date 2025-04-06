@@ -35,4 +35,5 @@ if($source == 'list'){
 }else if($source == 'favorite'){
     $sql = "DELETE FROM favorite WHERE id_manga = '$manga'";
     $proses->action($sql);
+    echo '<script>window.location="direct.php?user='. $user .'&page=profile"</script>';
 }

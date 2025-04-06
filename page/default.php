@@ -77,7 +77,8 @@ foreach ($hasil as $row) {
             }
             ?>
         </div>
+        
 
 </body>
-
+<script src="../index.js"></script>
 </html>

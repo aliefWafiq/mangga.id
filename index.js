@@ -95,4 +95,8 @@ function autocomplete(inp, arr) {
       closeAllLists(e.target);
   });
   }
+
+  function search_manga() {
+        
+  }
   
