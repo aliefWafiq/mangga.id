@@ -64,7 +64,7 @@ foreach ($hasil as $row) {
 </head>
 
 <body>
-    <div class="container">
+    <div class="wrapper w-full">
         <!-- Navbar -->
         <?php
         require 'layout/nav.php';
@@ -72,7 +72,7 @@ foreach ($hasil as $row) {
         <!-- /.navbar -->
 
         <!-- Content Wrapper. Contains page content -->
-        <div class="wrapper px-10">
+        <div class="md:px-10 px-3 w-full">
             <?php
             foreach ($hasil as $row) {
                 if ($page == 'home') {
@@ -103,3 +103,5 @@ foreach ($hasil as $row) {
 </body>
 
 </html>
+
+<script src="../../node_modules/flowbite/dist/flowbite.min.js"></script>

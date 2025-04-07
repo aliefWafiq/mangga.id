@@ -1,5 +1,4 @@
 <?php
-
 $name = $_GET['user'];
 $username = 'SELECT * FROM user WHERE name = :name';
 $param = [':name' => $name];
@@ -7,11 +6,13 @@ $hasil = $proses->show($username, $param);
 ?>
 <div class="md:p-4 sm:ml-64 md:mt-5">
     <div class="mx-4">
-        <div class="flex w-full justify-end mb-5">
+        <div class="flex w-full justify-center mb-5">
             <input type="text" class="manga rounded-lg w-1/2" id="search_manga" autocomplete="off" placeholder="Search...">
             <button class="bg-primary px-5 mx-1 rounded-lg" onclick="search_manga()">
                 <i class="fa-solid fa-search text-secondary"></i>
             </button>
+        </div>
+        <div class="autoCompleteField">
         </div>
         <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
             <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">

@@ -9,6 +9,7 @@ if (empty($_SESSION['role'] == "")) {
 }
 
 require '../config/call.php';
+include 'menu/searchAutoComplete.php';
 
 $name = $_GET['user'];
 
@@ -80,5 +81,13 @@ foreach ($hasil as $row) {
         
 
 </body>
-<script src="../index.js"></script>
 </html>
+<script src="../index.js"></script>
+<script>
+    let manga = [<?php echo $stringManga ?>]
+
+    let mangaElement = document.getElementsByClassName("manga")
+    for(let i = 0; i < mangaElement.length; i++){
+        autocomplete(mangaElement[i], manga)
+    }
+</script>

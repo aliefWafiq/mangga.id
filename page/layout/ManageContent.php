@@ -43,7 +43,7 @@ $list_content = $proses->list($sql_content);
 
     let manga = [<?php echo $stringManga; ?>]
 
-    let mangaElements = document.getElementsByClassName("manga");
+    let mangaElements = document.getElementsByClassName("manga")
     for (let i = 0; i < mangaElements.length; i++) {
         autocomplete(mangaElements[i], manga);
     }

@@ -15,19 +15,20 @@ function autocomplete(inp, arr) {
         closeAllLists();
         if (!val) { return false;}
         currentFocus = -1;
+
+        let field = document.getElementsByClassName("autoCompleteField")
        
-        a = document.createElement("DIV");
-        a.setAttribute("id", this.id + "autocomplete-list");
-        a.setAttribute("class", "autocomplete-items");
-        
-        this.parentNode.appendChild(a);
+        a = document.createElement("DIV")
+        a.setAttribute("id", this.id + "autocomplete-list")
+        a.setAttribute("class", "autocomplete-items absolute")
+        document.body.insertBefore(field, a)
         
         for (i = 0; i < arr.length; i++) {
           
           if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
             
             b = document.createElement("DIV");
-            b.setAttribute("class", "hover:cursor-pointer hover:bg-slate-200 px-5 py-3 bg-slate-100")
+            b.setAttribute("class", "hover:cursor-pointer hover:bg-slate-200 px-5 py-3 bg-slate-100 absolute")
             
             b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
             b.innerHTML += arr[i].substr(val.length);

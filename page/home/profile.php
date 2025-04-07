@@ -15,7 +15,7 @@ $favorite = $proses->list($get_favorite);
     <?php foreach ($hasil as $x) { ?>
         <div class="flex py-3 rounded-3xl md:mt-5 mx-3 md:mx-0">
             <div>
-                <div class="md:w-40 md:h-40 w-24 h-24 rounded-full bg-black">
+                <div class="md:w-40 md:h-40 w-20 h-20 rounded-full">
                     <img src="../img/<?php echo $x['foto']; ?>" alt="" class=" w-full h-full overflow-hidden rounded-full">
                 </div>
             </div>
@@ -41,9 +41,9 @@ $favorite = $proses->list($get_favorite);
                 <?php foreach ($favorite as $x) {
                 ?>
                     <a href="direct.php?manga=<?php echo $x['nama'] ?>&user=<?php echo $name ?>&page=detailManga">
-                        <div class="lg:w-48 lg:h-72 w-24 h-40 bg-black rounded-2xl">
-                            <form action="default.php?manga=<?php echo $x['id'] ?>&user=<?php echo $name ?>&source=favorite&acts=delete" method="post" class="my-3 absolute">
-                              <button type="submit" name="submit" class="flex items-center bg-third text-secondary p-3 rounded-3xl hover:bg-secondary hover:text-red-600 transition-all ease-in-out">
+                        <div class="lg:w-48 lg:h-72 w-32 h-48 bg-black rounded-2xl">
+                            <form action="default.php?manga=<?php echo $x['id'] ?>&user=<?php echo $name ?>&source=favorite&acts=delete" method="post" class="absolute">
+                              <button type="submit" name="submit" class="flex items-center bg-third text-secondary p-3 rounded-3xl hover:bg-secondary hover:text-red-600 transition-all md:my-2 md:mx-2 ease-in-out">
                                  <i class="fa-solid fa-star"></i>
                               </button>
                            </form>
@@ -56,5 +56,3 @@ $favorite = $proses->list($get_favorite);
         </div>
     <?php } ?>
 </div>
-
-<script src="../../node_modules/flowbite/dist/flowbite.min.js"></script>
