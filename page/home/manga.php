@@ -22,15 +22,15 @@ $genre = $proses->list($get_genre);
       <div class="mt-5 w-full">
 
          <?php foreach ($hasil2 as $x) { ?>
-            <div class="w-full px-10">
-               <div class="flex-col flex w-full justify-center items-center px-14 py-5 bg-secondary text-primary rounded-2xl">
-                  <div class="flex w-full ">
+            <div class="w-full md:px-10">
+               <div class="flex-col flex w-full justify-center items-center md:px-14 py-10 bg-secondary text-primary rounded-2xl">
+                  <div class="flex md:flex-row flex-col justify-center items-center w-full ">
                      <div class="flex w-fit items-center">
                         <div class="flex justify-center">
                            <img src="../img/cover-manga/<?php echo $x['cover'] ?>" alt="" class="md:w-50 md:h-70 w-60 h-70 rounded-lg shadow-xl">
                         </div>
                      </div>
-                     <div class="mx-3 py-5 w-1/2">
+                     <div class="mx-3 py-5 md:w-1/2">
                         <div class="my-3 ml-2 md:my-5 w-full">
                            <div class="flex mb-5">
                               <p class="md:text-2xl font-bold text-3xl"><?php echo $x['nama'] ?></p>
@@ -77,7 +77,7 @@ $genre = $proses->list($get_genre);
                         </div>
                      </div>
                   </div>
-                  <div class="w-full flex mt-3 justify-center">
+                  <div class="w-full flex md:mt-3 px-5 justify-center">
                      <div class="w-full">
                         <p class="text-4xl font-semibold my-4">Sipnosis</p>
                         <p><?php echo $x['sipnosis'] ?></p>

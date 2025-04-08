@@ -6,8 +6,8 @@ $hasil = $proses->show($username, $param);
 ?>
 <div class="md:p-4 sm:ml-64 md:mt-5">
     <div class="mx-4">
-        <div class="flex w-full justify-center mb-5">
-            <input type="text" class="manga rounded-lg w-1/2" id="search_manga" autocomplete="off" placeholder="Search...">
+        <div class="flex w-full justify-center mb-5 mt-5">
+            <input type="text" class="manga rounded-lg md:w-1/2 w-full" id="search_manga" autocomplete="off" placeholder="Search...">
             <button class="bg-primary px-5 mx-1 rounded-lg" onclick="search_manga()">
                 <i class="fa-solid fa-search text-secondary"></i>
             </button>

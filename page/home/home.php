@@ -3,15 +3,15 @@
    <div class="xl:w-4/5 w-full">
 
       <!-- banner -->
-      <div class="flex justify-center">
+      <div class="flex justify-center w-full">
          <div class="relative w-full glide-01">
             <div class="overflow-hidden" data-glide-el="track">
                <ul class="relative lg:w-screen w-full overflow-hidden whitespace-no-wrap flex flex-no-wrap [backface-visibility: hidden] [transform-style: preserve-3d] [touch-action: pan-Y] [will-change: transform]">
                   <?php foreach ($banner as $x) { ?>
                      <li class="flex h-auto w-full">
                         <div class="content flex justify-center md:py-5 py-2 z-10 bg-gray-100 glassmorphism bg-opacity-10 w-full">
-                           <div class="flex lg:h-72 md:w-1/3 w-1/4 h-44 justify-center">
-                              <div class="lg:w-1/4 -rotate-6 absolute">
+                           <div class="flex lg:h-72 md:w-1/3 w-44 h-44 justify-center">
+                              <div class="lg:w-1/4 md:-rotate-6 absolute">
                                  <img src="../img/cover-manga/<?php echo $x['cover'] ?>" alt="" class="rounded-xl w-full h-full">
                               </div> 
                            </div>
@@ -23,13 +23,13 @@
                                                                                  } else {
                                                                                     echo $x['sipnosis'];
                                                                                  } ?></p>
-                                 <div class="flex gap-2">
+                                 <div class="flex gap-2 flex-wrap w-full mt-3">
                                     <?php
                                     $id = $x['id'];
                                     $genre = "SELECT manga.*, genremanga.*, genre.* FROM manga JOIN genremanga ON manga.id = genremanga.id_manga JOIN genre ON genremanga.genre = genre.id WHERE genremanga.id_manga = $id";
                                     $get_genre = $proses->list($genre);
                                     foreach ($get_genre as $s) { ?>
-                                       <p class="bg-third md:px-4 py-1 px-2 text-secondary rounded-full md:text-lg font-semibold"><?php echo $s['genre'];
+                                       <p class="bg-third md:px-4 py-1 px-2 text-secondary text-xs rounded-full md:text-lg font-semibold"><?php echo $s['genre'];
                                                                                                                      } ?></p>
                                  </div>
                               </div>
@@ -84,7 +84,7 @@
 
       <!-- daily update -->
       <div class="mt-10">
-         <p class="text-2xl text-center mb-7 xxs:mb-4 font-semibold">Latest Update</p>
+         <p class="text-2xl text-center mb-4 font-semibold">Latest Update</p>
          <div class="flex flex-row flex-wrap">
             <?php foreach ($sortManga as $s) { ?>
                <div class="md:mx-2 mt-4">
