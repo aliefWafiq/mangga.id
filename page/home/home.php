@@ -13,7 +13,7 @@
                            <div class="flex lg:h-72 md:w-1/3 w-44 h-44 justify-center">
                               <div class="lg:w-1/4 md:-rotate-6 absolute">
                                  <img src="../img/cover-manga/<?php echo $x['cover'] ?>" alt="" class="rounded-xl w-full h-full">
-                              </div> 
+                              </div>
                            </div>
                            <div class="judul md:mx-3 mx-2 py-5 w-1/2 text-secondary">
                               <p class="md:text-4xl text-xl font-semibold"><?php echo $x['nama'] ?></p>
@@ -23,20 +23,20 @@
                                                                                  } else {
                                                                                     echo $x['sipnosis'];
                                                                                  } ?></p>
-                                 <div class="flex gap-2 flex-wrap w-full mt-3">
+                                 <div class="flex gap-2 flex-wrap w-full">
                                     <?php
                                     $id = $x['id'];
                                     $genre = "SELECT manga.*, genremanga.*, genre.* FROM manga JOIN genremanga ON manga.id = genremanga.id_manga JOIN genre ON genremanga.genre = genre.id WHERE genremanga.id_manga = $id";
                                     $get_genre = $proses->list($genre);
                                     foreach ($get_genre as $s) { ?>
                                        <p class="bg-third md:px-4 py-1 px-2 text-secondary text-xs rounded-full md:text-lg font-semibold"><?php echo $s['genre'];
-                                                                                                                     } ?></p>
+                                                                                                                                       } ?></p>
                                  </div>
                               </div>
                            </div>
                         </div>
                         <div class="bg w-full h-full absolute">
-                           <div class="bg-black w-full h-full opacity-50 absolute"></div>
+                           <div class="bg-black w-full h-full opacity-50"></div>
                            <img src="../img/cover-manga/<?php echo $x['cover'] ?>" alt="" class="w-full h-full object-cover">
                         </div>
                      </li>
@@ -114,21 +114,59 @@
       <div class="mt-14 md:mt-20">
          <p class="text-2xl text-center mb-5 font-semibold">You may like</p>
          <a href="direct.php?user=<?php echo $name ?>&page=seeMore" class="mx-2 text-base font-semibold text-blue-600">See more</a>
-         <div class="flex justify-center">
-            <div class="relative w-full glide-02">
+         <div class="flex justify-center ">
+            <div class="relative w-full glide-02 md:block hidden">
                <!-- Slides -->
                <div class="overflow-hidden" data-glide-el="track">
-                  <ul class="relative w-full overflow-hidden p-0 whitespace-no-wrap flex flex-no-wrap [backface-visibility: hidden] [transform-style: preserve-3d] [touch-action: pan-Y] [will-change: transform]">
+                  <ul class="relative w-full hidden md:flex overflow-hidden p-0 whitespace-no-wrap flex-no-wrap [backface-visibility: hidden] [transform-style: preserve-3d] [touch-action: pan-Y] [will-change: transform]">
                      <?php
                      $chunks = array_chunk($cardRecom, 5);
                      foreach ($chunks as $chunk) { ?>
-                        <li class="flex flex-wrap">
+                        <li class="flex flex-wrap justify-center">
                            <?php
                            foreach ($chunk as $x) {
                               $sql_manga = "SELECT * FROM manga WHERE id = :id";
                               $param = [':id' => $x['id']];
                               $namaManga = $proses->show($sql_manga, $param); ?>
-                              <a class="mx-3 lg:w-48 lg:h-72 w-24 h-40 ml-5 rounded-2xl" href="direct.php?manga=<?php echo $namaManga['nama'] ?>&user=<?php echo $name ?>&page=detailManga">
+                              <a class="mx-3 w-44 h-72 ml-5 rounded-2xl" href="direct.php?manga=<?php echo $namaManga['nama'] ?>&user=<?php echo $name ?>&page=detailManga">
+                                 <img src="../img/cover-manga/<?php echo $x['cover'] ?>" alt="" class="w-full rounded-2xl h-full" />
+                              </a>
+                           <?php } ?>
+                        </li>
+                     <?php } ?>
+                  </ul>
+               </div>
+               <!-- Controls -->
+               <div class="absolute left-0 flex items-center justify-between w-full h-0 px-4 top-1/2" data-glide-el="controls">
+                  <button class="inline-flex items-center justify-center w-8 h-8 transition duration-300 border rounded-full lg:w-12 lg:h-12 text-slate-700 border-slate-700 hover:text-slate-900 hover:border-slate-900 focus-visible:outline-none bg-white/20" data-glide-dir="<" aria-label="prev slide">
+                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                        <title>prev slide</title>
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 15.75L3 12m0 0l3.75-3.75M3 12h18" />
+                     </svg>
+                  </button>
+                  <button class="inline-flex items-center justify-center w-8 h-8 transition duration-300 border rounded-full lg:w-12 lg:h-12 text-slate-700 border-slate-700 hover:text-slate-900 hover:border-slate-900 focus-visible:outline-none bg-white/20" data-glide-dir=">" aria-label="next slide">
+                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                        <title>next slide</title>
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+                     </svg>
+                  </button>
+               </div>
+            </div>
+
+            <!-- Slides mobile -->
+            <div class="relative w-full glide-03 md:hidden">
+               <div class="overflow-hidden" data-glide-el="track">
+                  <ul class="relative w-full overflow-hidden p-0 whitespace-no-wrap flex flex-wrap [backface-visibility: hidden] [transform-style: preserve-3d] [touch-action: pan-Y] [will-change: transform]">
+                     <?php
+                     $chunks = array_chunk($cardRecom, 3);
+                     foreach ($chunks as $chunk) { ?>
+                        <li class="flex flex-wrap gap-2 justify-center">
+                           <?php
+                           foreach ($chunk as $x) {
+                              $sql_manga = "SELECT * FROM manga WHERE id = :id";
+                              $param = [':id' => $x['id']];
+                              $namaManga = $proses->show($sql_manga, $param); ?>
+                              <a class="w-24 h-36 rounded-2xl" href="direct.php?manga=<?php echo $namaManga['nama'] ?>&user=<?php echo $name ?>&page=detailManga">
                                  <img src="../img/cover-manga/<?php echo $x['cover'] ?>" alt="" class="w-full rounded-2xl h-full" />
                               </a>
                            <?php } ?>
@@ -161,20 +199,58 @@
          <p class="text-2xl text-center mb-5 font-semibold">Action</p>
          <a href="direct.php?user=<?php echo $name ?>&page=genre&genre=Action" class="mx-2 text-base font-semibold text-blue-600">See more</a>
          <div class="flex justify-center">
-            <div class="relative w-full glide-03">
+            <div class="relative w-full glide-04 md:block hidden">
                <!-- Slides -->
                <div class="overflow-hidden" data-glide-el="track">
-               <ul class="relative w-full overflow-hidden p-0 whitespace-no-wrap flex flex-no-wrap [backface-visibility: hidden] [transform-style: preserve-3d] [touch-action: pan-Y] [will-change: transform]">
+                  <ul class="relative w-full hidden md:flex overflow-hidden p-0 whitespace-no-wrap flex-no-wrap [backface-visibility: hidden] [transform-style: preserve-3d] [touch-action: pan-Y] [will-change: transform]">
                      <?php
                      $chunks = array_chunk($cardAction, 5);
                      foreach ($chunks as $chunk) { ?>
-                        <li class="flex flex-wrap">
+                        <li class="flex flex-wrap justify-center">
                            <?php
                            foreach ($chunk as $x) {
                               $sql_manga = "SELECT * FROM manga WHERE id = :id";
                               $param = [':id' => $x['id']];
                               $namaManga = $proses->show($sql_manga, $param); ?>
-                              <a class="mx-3 lg:w-48 lg:h-72 w-24 h-40 ml-5 rounded-2xl" href="direct.php?manga=<?php echo $namaManga['nama'] ?>&user=<?php echo $name ?>&page=detailManga">
+                              <a class="mx-3 w-44 h-72 ml-5 rounded-2xl" href="direct.php?manga=<?php echo $namaManga['nama'] ?>&user=<?php echo $name ?>&page=detailManga">
+                                 <img src="../img/cover-manga/<?php echo $x['cover'] ?>" alt="" class="w-full rounded-2xl h-full" />
+                              </a>
+                           <?php } ?>
+                        </li>
+                     <?php } ?>
+                  </ul>
+               </div>
+               <!-- Controls -->
+               <div class="absolute left-0 flex items-center justify-between w-full h-0 px-4 top-1/2" data-glide-el="controls">
+                  <button class="inline-flex items-center justify-center w-8 h-8 transition duration-300 border rounded-full lg:w-12 lg:h-12 text-slate-700 border-slate-700 hover:text-slate-900 hover:border-slate-900 focus-visible:outline-none bg-white/20" data-glide-dir="<" aria-label="prev slide">
+                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                        <title>prev slide</title>
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 15.75L3 12m0 0l3.75-3.75M3 12h18" />
+                     </svg>
+                  </button>
+                  <button class="inline-flex items-center justify-center w-8 h-8 transition duration-300 border rounded-full lg:w-12 lg:h-12 text-slate-700 border-slate-700 hover:text-slate-900 hover:border-slate-900 focus-visible:outline-none bg-white/20" data-glide-dir=">" aria-label="next slide">
+                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                        <title>next slide</title>
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+                     </svg>
+                  </button>
+               </div>
+            </div>
+
+            <!-- Slides mobile -->
+            <div class="relative w-full glide-05 md:hidden">
+               <div class="overflow-hidden" data-glide-el="track">
+                  <ul class="relative w-full overflow-hidden p-0 whitespace-no-wrap flex flex-wrap [backface-visibility: hidden] [transform-style: preserve-3d] [touch-action: pan-Y] [will-change: transform]">
+                     <?php
+                     $chunks = array_chunk($cardAction, 3);
+                     foreach ($chunks as $chunk) { ?>
+                        <li class="flex flex-wrap gap-2 justify-center">
+                           <?php
+                           foreach ($chunk as $x) {
+                              $sql_manga = "SELECT * FROM manga WHERE id = :id";
+                              $param = [':id' => $x['id']];
+                              $namaManga = $proses->show($sql_manga, $param); ?>
+                              <a class="w-24 h-36 rounded-2xl" href="direct.php?manga=<?php echo $namaManga['nama'] ?>&user=<?php echo $name ?>&page=detailManga">
                                  <img src="../img/cover-manga/<?php echo $x['cover'] ?>" alt="" class="w-full rounded-2xl h-full" />
                               </a>
                            <?php } ?>
@@ -238,8 +314,32 @@
             },
          });
 
-         glide01.mount();
-         glide02.mount();
-         glide03.mount();
+         var glide04 = new Glide(".glide-04", {
+            type: "slider",
+            focusAt: "center",
+            perView: 1,
+            animationDuration: 3000,
+            gap: 0,
+            classes: {
+               activeNav: "[&>*]:bg-slate-700",
+            },
+         });
+
+         var glide05 = new Glide(".glide-05", {
+            type: "slider",
+            focusAt: "center",
+            perView: 1,
+            animationDuration: 3000,
+            gap: 0,
+            classes: {
+               activeNav: "[&>*]:bg-slate-700",
+            },
+         });
+
+         glide01.mount()
+         glide02.mount()
+         glide03.mount()
+         glide04.mount()
+         glide05.mount()
       </script>
    </div>

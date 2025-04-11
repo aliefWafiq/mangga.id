@@ -13,6 +13,17 @@ $id = $resultId['id'];
 $getPanel = "SELECT * FROM panel_manga WHERE id_manga = '$id' AND chapter = '$chapter'";
 $resultPanel = $proses->list($getPanel);
 
+$sql_getChapter = "SELECT manga.*, panel_manga.* FROM manga JOIN panel_manga on manga.id = panel_manga.id_manga WHERE panel_manga.id_manga = '$resultId'";
+$chapter_manga = $proses->list($sql_getChapter);
+
+$previous;
+foreach($chapter_manga as $s){
+   if($previous != $s['chapter']){
+      $previous = $chapter;
+   }else {
+      $previous = $chapter - 1;
+   }
+}
 ?>
 
 <body class="bg-black">
@@ -27,9 +38,8 @@ $resultPanel = $proses->list($getPanel);
                   </div>
                </div>
             <?php } ?>
-            <div class="flex justify-between w-1/2 bg-secondary fixed bottom-2 h-14 rounded-t- xl overflow-hidden">
-               <a class="bg-third h-full flex-grow flex justify-center items-center" href="direct.php?manga=<?php echo $manga ?>&user=<?php echo $name ?>&page=baca&chapter=<?php $next = $chapter - 1;
-                                                                                                                                                                              echo $next ?>">
+            <div class="flex justify-between w-1/2 bg-secondary fixed bottom-2 h-14 rounded-t-xl overflow-hidden">
+               <a class="bg-third h-full flex-grow flex justify-center items-center" href="direct.php?manga=<?php echo $manga ?>&user=<?php echo $name ?>&page=baca&chapter=<?php echo $previous ?>">
                   <i class="text-xl text-white fa-solid fa-arrow-left"></i>
                </a>
                <div class="flex justify-center items-center w-3/4">
