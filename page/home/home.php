@@ -36,7 +36,7 @@
                            </div>
                         </div>
                         <div class="bg w-full h-full absolute">
-                           <div class="bg-black w-full h-full opacity-50"></div>
+                           <div class="bg-black w-full h-full opacity-50 absolute"></div>
                            <img src="../img/cover-manga/<?php echo $x['cover'] ?>" alt="" class="w-full h-full object-cover">
                         </div>
                      </li>

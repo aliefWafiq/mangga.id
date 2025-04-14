@@ -23,32 +23,32 @@ $listManga = $proses->list($manga);
   <section id="home" class="h-screen overflow-hidden bg-no-repeat bg-cover"
     style="background-image: url(../img/asset\ landing\ page/wano.jpg);">
     <div
-      class="container h-full bg-black rounded-md bg-clip-padding p-5 backdrop-filter backdrop-blur-md bg-opacity-10 ">
+      class="container-fluid h-full bg-black rounded-md bg-clip-padding p-2 md:p-5 backdrop-filter backdrop-blur-md bg-opacity-10 ">
       <div class="flex flex-col w-full h-full">
-        <div class="w-full h-[75%] pb-5 px-5 flex justify-center">
-          <div class="w-1/4 h-full mx-2 rounded-3xl overflow-hidden ">
+        <div class="w-full md:h-[75%] h-4/5 pb-5 p-2 md:px-5 flex flex-col md:flex-row items-center justify-center">
+          <div class="w-1/4 h-full mx-2 rounded-3xl overflow-hidden hidden md:block">
             <img src="../img/asset landing page/kagurabachi.jpg" alt="" class="w-full h-full object-cover">
           </div>
-          <div class="rounded-3xl overflow-hidden w-full h-full">
+          <div class="rounded-3xl overflow-hidden w-full h-1/2 md:h-full">
             <video autoplay muted loop class="w-full h-full object-cover">
               <source src="../img/asset landing page/The Ghost..mp4" type="video/mp4">
             </video>
           </div>
           <div
-            class="bg-black rounded-3xl overflow-hidden flex flex-col glassmorphism bg-opacity-60 w-1/3 h-full mx-3 text-secondary shadow-[0px_1px_25px_4px_rgba(232,_141,_103,_0.71)]">
+            class="bg-black rounded-3xl overflow-hidden mt-3 flex flex-col glassmorphism bg-opacity-60 w-full md:w-1/3 h-1/2 md:h-full mx-3 text-secondary shadow-[0px_1px_25px_4px_rgba(232,_141,_103,_0.71)]">
             <div class="flex w-full h-[15%]">
               <h1 class="text-3xl font-bold w-full h-full flex items-center justify-center">Mangga.id</h1>
               <div
-                class="bg-gray-100 glassmorphism rounded-tl-[50px] bg-opacity-10 w-2/4 h-full">
+                class="bg-gray-100 glassmorphism rounded-tl-[50px] bg-opacity-10 w-2/4 h-full hidden md:block">
               </div>
             </div>
             <div
-              class="bg-gray-100 rounded-tl-[50px] glassmorphism bg-opacity-10 w-full h-[85%] flex flex-col justify-center px-5">
+              class="bg-gray-100 rounded-tl-[50px] mt-2 md:mt-0 glassmorphism bg-opacity-10 w-full h-[85%] flex flex-col justify-center px-5">
               <div>
-                <p class="text-lg">Manggaku.id adalah sebuah website dimana kita bisa membaca berbagai macam komik mulai
+                <p class="text-lg">Mangga.id adalah sebuah website dimana kita bisa membaca berbagai macam komik mulai
                   dari manga hingga manhwa dengan berbagai genre yang dijamin seru</p>
               </div>
-              <div class="flex flex-wrap mt-4">
+              <div class="md:flex flex-wrap mt-4 hidden">
                 <p class="mx-1 my-1 bg-third px-2 rounded-full font-semibold">#Action</p>
                 <p class="mx-1 my-1 bg-third px-2 rounded-full font-semibold">#Comedy</p>
                 <p class="mx-1 my-1 bg-third px-2 rounded-full font-semibold">#Adventure</p>
@@ -60,14 +60,14 @@ $listManga = $proses->list($manga);
             </div>
           </div>
         </div>
-        <div class="h-[25%] w-full flex justify-center px-5 ">
+        <div class="md:h-[25%] h-1/2 w-full flex justify-center md:px-5 ">
           <div
-            class="bg-black rounded-3xl overflow-hidden glassmorphism bg-opacity-60 w-2/3 h-full mx-3 p-5 flex">
-            <div class="w-1/2 h-full flex justify-center flex-col text-secondary">
-              <p class="text-4xl font-bold">Gas baca!!</p>
+            class="bg-black rounded-3xl overflow-hidden glassmorphism bg-opacity-60 w-2/3 md:h-full h-fit mx-3 p-3 md:p-5 flex flex-col md:flex-row">
+            <div class="w-1/2 h-full  hidden md:flex justify-center flex-col text-secondary">
+              <p class="md:text-4xl font-bold text-3xl">Gas baca!!</p>
               <p class="font-semibold">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore, nesciunt.</p>
             </div>
-            <div class="items-center h-full w-1/2 flex flex-col justify-center">
+            <div class="items-center h-full w-full md:w-1/2 flex flex-col justify-center">
               <a href="regis.php"
                 class="bg-third w-full py-2 text-secondary text-center rounded-full text-lg font-semibold my-3 hover:bg-secondary hover:text-third">Daftar</a>
               <a href="login.php"
@@ -75,7 +75,7 @@ $listManga = $proses->list($manga);
             </div>
           </div>
           <div
-            class="bg-black text-secondary rounded-3xl overflow-hidden flex flex-col glassmorphism bg-opacity-60 w-2/3 h-full mx-3 p-5">
+            class="bg-black text-secondary rounded-3xl overflow-hidden flex flex-col glassmorphism bg-opacity-60 w-2/3 h-full mx-3 md:p-5 p-2">
             <img src="../img/asset landing page/aii.jpg" alt="" class="w-full h-full object-cover rounded-3xl">
           </div>
         </div>
