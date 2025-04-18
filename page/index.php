@@ -84,22 +84,22 @@ $listManga = $proses->list($manga);
   </section>
 
   <section class="h-screen w-full bg-secondary">
-    <div class="w-full h-full flex">
-      <div class="w-1/2 h-full flex justify-center items-center">
+    <div class="w-full h-full flex flex-col md:flex-row py-10">
+      <div class="w-full h-1/2 md:w-1/2 overflow-hidden md:h-full flex justify-center items-center">
         <div class="w-3/4 h-3/4 flex justify-center items-center relative">
-          <div class="rounded-xl shadow-2xl overflow-hidden w-56 h-80 absolute z-10">
+          <div class="rounded-xl shadow-md md:shadow-2xl overflow-hidden w-56 h-80 absolute z-10">
             <img src="../img/asset landing page/DANDADAN.jpg" alt="" class="object-cover">
           </div>
-          <div class="rounded-xl shadow-2xl overflow-hidden w-56 h-80 top-3 left-4 absolute">
+          <div class="rounded-xl shadow-md md:shadow-2xl overflow-hidden w-56 h-80 top-3 left-4 absolute">
             <img src="../img/asset landing page/cover-kaoru.jpg" alt="" class="object-cover">
           </div>
-          <div class="rounded-xl shadow-2xl overflow-hidden w-56 h-80 absolute bottom-4 right-5">
+          <div class="rounded-xl shadow-md md:shadow-2xl overflow-hidden w-56 h-80 absolute bottom-4 right-5">
             <img src="../img/asset landing page/cover mushoku.jpg" alt="" class="object-cover">
           </div>
         </div>
       </div>
-      <div class="w-1/2 h-full flex justify-center items-center">
-        <div class="w-3/4">
+      <div class="w-full h-1/2 md:w-1/2 md:h-full flex justify-center items-center">
+        <div class="w-3/4 text-center md:text-start">
           <h1 class="text-4xl my-3 font-semibold">Lorem, ipsum dolor.</h1>
           <p class="text-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla ipsa veritatis optio quo sunt vero praesentium incidunt iusto accusantium libero?</p>
         </div>

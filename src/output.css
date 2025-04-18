@@ -1529,6 +1529,10 @@ input:checked + .toggle-bg {
   height: 1rem;
 }
 
+.h-4\/5 {
+  height: 80%;
+}
+
 .h-40 {
   height: 10rem;
 }
@@ -1577,14 +1581,6 @@ input:checked + .toggle-bg {
   height: 15%;
 }
 
-.h-\[25\%\] {
-  height: 25%;
-}
-
-.h-\[75\%\] {
-  height: 75%;
-}
-
 .h-\[85\%\] {
   height: 85%;
 }
@@ -1593,25 +1589,17 @@ input:checked + .toggle-bg {
   height: auto;
 }
 
+.h-fit {
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
 .h-full {
   height: 100%;
 }
 
 .h-screen {
   height: 100vh;
-}
-
-.h-2\/3 {
-  height: 66.666667%;
-}
-
-.h-4\/5 {
-  height: 80%;
-}
-
-.h-fit {
-  height: -moz-fit-content;
-  height: fit-content;
 }
 
 .max-h-full {
@@ -3046,6 +3034,11 @@ input:checked + .toggle-bg {
 .bg-yellow-500 {
   --tw-bg-opacity: 1;
   background-color: rgb(194 120 3 / var(--tw-bg-opacity));
+}
+
+.bg-red-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(240 82 82 / var(--tw-bg-opacity));
 }
 
 .bg-opacity-10 {
@@ -4579,6 +4572,10 @@ input:checked + .toggle-bg {
     margin-left: 1.25rem;
   }
 
+  .md\:mt-0 {
+    margin-top: 0px;
+  }
+
   .md\:mt-10 {
     margin-top: 2.5rem;
   }
@@ -4597,10 +4594,6 @@ input:checked + .toggle-bg {
 
   .md\:mt-5 {
     margin-top: 1.25rem;
-  }
-
-  .md\:mt-0 {
-    margin-top: 0px;
   }
 
   .md\:block {
@@ -4627,12 +4620,12 @@ input:checked + .toggle-bg {
     height: 10rem;
   }
 
-  .md\:h-\[75\%\] {
-    height: 75%;
-  }
-
   .md\:h-\[25\%\] {
     height: 25%;
+  }
+
+  .md\:h-\[75\%\] {
+    height: 75%;
   }
 
   .md\:h-full {
@@ -4669,6 +4662,14 @@ input:checked + .toggle-bg {
 
   .md\:w-\[30rem\] {
     width: 30rem;
+  }
+
+  .md\:w-2\/3 {
+    width: 66.666667%;
+  }
+
+  .md\:w-3\/4 {
+    width: 75%;
   }
 
   .md\:-rotate-6 {
@@ -4717,6 +4718,11 @@ input:checked + .toggle-bg {
     padding-right: 1rem;
   }
 
+  .md\:px-5 {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
   .md\:py-1 {
     padding-top: 0.25rem;
     padding-bottom: 0.25rem;
@@ -4732,9 +4738,8 @@ input:checked + .toggle-bg {
     padding-bottom: 1.5rem;
   }
 
-  .md\:px-5 {
-    padding-left: 1.25rem;
-    padding-right: 1.25rem;
+  .md\:text-start {
+    text-align: start;
   }
 
   .md\:text-2xl {
@@ -4755,6 +4760,12 @@ input:checked + .toggle-bg {
   .md\:text-xl {
     font-size: 1.25rem;
     line-height: 1.75rem;
+  }
+
+  .md\:shadow-2xl {
+    --tw-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+    --tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   }
 }
 
