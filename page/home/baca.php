@@ -13,20 +13,24 @@ $id = $resultId['id'];
 $getPanel = "SELECT * FROM panel_manga WHERE id_manga = '$id' AND chapter = '$chapter'";
 $resultPanel = $proses->list($getPanel);
 
-$sql_getChapter = "SELECT manga.*, panel_manga.* FROM manga JOIN panel_manga on manga.id = panel_manga.id_manga WHERE panel_manga.id_manga = '$resultId'";
+$sql_getChapter = "SELECT manga.*, panel_manga.* FROM manga JOIN panel_manga on manga.id = panel_manga.id_manga WHERE panel_manga.id_manga = '$id'";
 $chapter_manga = $proses->list($sql_getChapter);
 
-$previous;
+
+$list_chapter = array();
+$previous = $chapter - 1;
 foreach($chapter_manga as $s){
-   if($previous != $s['chapter']){
-      $previous = $chapter;
-   }else {
-      $previous = $chapter - 1;
-   }
+    array_push($list_chapter, $s['chapter']);
+};
+
+if(in_array($previous, $list_chapter)){
+    $previous = $chapter - 1;
+}else{
+    $previous = $chapter;
 }
 ?>
 
-<body class="bg-black">
+<body class="bg-back">
    <div class="md:p-4 sm:ml-64">
       <!-- main content -->
       <div class="container-fluid w-full">
