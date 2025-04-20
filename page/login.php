@@ -36,15 +36,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 
 <body>
-    <div class="container h-screen w-full">
+    <div class="container-fluid h-screen w-full">
         <!-- form -->
-        <div class="form flex justify-center items-center h-full w-full">
-            <div class="flex flex-col items-end w-1/2 px-10">
-                <h1 class="text-5xl font-bold w-1/2">Masukkan akun wahai user</h1>
-                <p class="w-1/2 mt-3">“A Genius Lives Only One Story Above Madness.” – Arthur Schopenhauer</p>
+        <div class="form flex md:flex-row flex-col justify-center items-center h-full w-full">
+            <div class="flex flex-col items-center md:items-end justify-center w-full md:w-1/2 px-10 text-center md:text-start">
+                <h1 class="md:text-5xl text-4xl font-bold md:w-1/2">Masukkan akun wahai user</h1>
+                <p class="md:w-1/2 mt-3">“A Genius Lives Only One Story Above Madness.” – Arthur Schopenhauer</p>
             </div>
-            <div class="w-1/2">
-                <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="post" class="w-1/2">
+            <div class="w-full md:w-1/2 mt-10 md:mt-0 flex justify-center md:justify-start">
+                <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="post" class="md:w-1/2">
                     <div class="relative">
                         <input type="text" required id="name" name="name" placeholder="" class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border border-gray-600 appearance-none focus:ring-1 peer"><br>
                         <label for="name" class="labelInput">Username</label>
