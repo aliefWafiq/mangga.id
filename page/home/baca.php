@@ -1,11 +1,9 @@
 <?php
 $manga = $_GET['manga'];
-$namaManga = "SELECT * FROM manga WHERE nama='$manga'";
 
 $idManga = "SELECT * FROM manga WHERE nama= :manga";
 $param = [':manga' => $manga];
 
-$hasil2 = $proses->list($namaManga);
 $resultId = $proses->show($idManga, $param);
 
 $chapter = $_GET['chapter'];
@@ -30,7 +28,7 @@ if(in_array($previous, $list_chapter)){
 }
 ?>
 
-<body class="bg-back">
+<body class="bg-black">
    <div class="md:p-4 sm:ml-64">
       <!-- main content -->
       <div class="container-fluid w-full">
