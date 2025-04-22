@@ -10,6 +10,15 @@
             </div>
         </a>
 
+        <a href="default.php?user=<?php echo $name ?>&acts=manageContent&content=top_list" class="card mx-3 bg-green-600 w-1/5 h-1/3 flex justify-evenly items-center rounded-3xl flex-col">
+            <div class="h-1/2 flex items-end">
+                <i class="fa-solid fa-trophy text-7xl text-gray-300"></i>
+            </div>
+            <div class="h-1/3 flex items-end">
+                <h1 class="text-2xl text-white font-semibold">Top list</h1>
+            </div>
+        </a>
+
         <a href="default.php?user=<?php echo $name ?>&acts=manageContent&content=card_recom" class="card mx-3 bg-yellow-300 w-1/5 h-1/3 flex justify-evenly items-center rounded-3xl flex-col">
             <div class="h-1/2 flex items-end">
                 <i class="fa-solid fa-star text-7xl text-yellow-100"></i>

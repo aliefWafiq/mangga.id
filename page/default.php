@@ -78,7 +78,7 @@ foreach ($hasil as $row) {
             }
             ?>
         </div>
-        
+
 
 </body>
 </html>

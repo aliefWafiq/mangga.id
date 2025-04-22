@@ -22,8 +22,8 @@ $sortManga = $proses->list($manga);
 $manga = "SELECT * FROM manga";
 $hasilManga = $proses->list($manga);
 
-$tes = "SELECT * FROM manga WHERE top != 'none'";
-$tes2 = $proses->list($tes);
+$sql_top = "SELECT * FROM manga WHERE top != 'none'";
+$top = $proses->list($sql_top);
 
 $sql_banner = "SELECT manga.* FROM manga JOIN manage_content ON manga.id = manage_content.id_manga WHERE manage_content.content = 'banner'";
 $banner = $proses->list($sql_banner);
@@ -39,7 +39,7 @@ function compareTop($a, $b)
     return $a['top'] - $b['top'];
 }
 
-usort($tes2, 'compareTop');
+usort($top, 'compareTop');
 
 foreach ($hasil as $row) {
     if ($row['role'] == 'user') {
