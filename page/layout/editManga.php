@@ -34,7 +34,6 @@
 
                         <label for="genre" class="md:ml-3 mt-5">Genre:</label>
                         <select id="genre" name="genre">
-                            <option value="<?php echo $x['Genre'] ?>"><?php echo $x['Genre'] ?></option>
                             <option value="Action">Action</option>
                             <option value="Romance">Romance</option>
                             <option value="Comedy">Comedy</option>

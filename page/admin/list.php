@@ -7,10 +7,12 @@ $hasil = $proses->show($username, $param);
 <div class="md:p-4 sm:ml-64 md:mt-5">
     <div class="mx-4">
         <div class="flex w-full justify-center mb-5 mt-5">
-            <input type="text" class="manga rounded-lg md:w-1/2 w-full" id="search_manga" autocomplete="off" placeholder="Search...">
-            <button class="bg-primary px-5 mx-1 rounded-lg" onclick="search_manga()">
-                <i class="fa-solid fa-search text-secondary"></i>
-            </button>
+            <form action="menu/search.php?user=<?php echo $name ?>" method="post" class="flex w-1/2">
+                <input type="text" name="manga" class="rounded-lg border border-gray-600 w-10 flex-grow" placeholder="Cari...">
+                <button class="bg-secondary w-1/5 mx-1 rounded-lg" type="submit" name="submit">
+                    <i class="fa-solid fa-search"></i>
+                </button>
+            </form>
         </div>
         <div class="autoCompleteField">
         </div>

@@ -29,8 +29,7 @@
                                     $genre = "SELECT manga.*, genremanga.*, genre.* FROM manga JOIN genremanga ON manga.id = genremanga.id_manga JOIN genre ON genremanga.genre = genre.id WHERE genremanga.id_manga = $id";
                                     $get_genre = $proses->list($genre);
                                     foreach ($get_genre as $s) { ?>
-                                       <p class="bg-third md:px-4 py-1 px-2 text-secondary text-xs rounded-full md:text-lg font-semibold"><?php echo $s['genre'];
-                                                                                                                                       } ?></p>
+                                       <p class="bg-third md:px-4 py-1 px-2 text-secondary text-xs rounded-full md:text-lg font-semibold"><?php echo $s['genre'];} ?></p>
                                  </div>
                               </div>
                            </div>

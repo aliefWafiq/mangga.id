@@ -69,7 +69,7 @@ foreach ($hasil as $row) {
         <?php
         require 'layout/nav.php';
         ?>
-        <!-- /.navbar -->
+        <!-- /.navbar-->
 
         <!-- Content Wrapper. Contains page content -->
         <div class="md:px-10 px-3 w-full">
