@@ -6,14 +6,14 @@ $hasil = $proses->show($username, $param);
 ?>
 <div class="md:p-4 sm:ml-64 md:mt-5">
     <div class="mx-4">
-        <div class="flex w-full justify-center mb-5 mt-5">
-            <form action="menu/search.php?user=<?php echo $name ?>" method="post" class="flex w-1/2">
+        <!-- <div class="flex w-full justify-center mb-5 mt-5">
+            <form action="menu/search.php?user=<?php // echo $name ?>" method="post" class="flex w-1/2">
                 <input type="text" name="manga" class="rounded-lg border border-gray-600 w-10 flex-grow" placeholder="Cari...">
                 <button class="bg-secondary w-1/5 mx-1 rounded-lg" type="submit" name="submit">
                     <i class="fa-solid fa-search"></i>
                 </button>
             </form>
-        </div>
+        </div> -->
         <div class="autoCompleteField">
         </div>
         <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
