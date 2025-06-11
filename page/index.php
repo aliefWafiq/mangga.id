@@ -3,6 +3,9 @@ require '../config/call.php';
 
 $manga = "SELECT * FROM manga";
 $listManga = $proses->list($manga);
+
+$mangaRomance = "SELECT manga.*  FROM manga JOIN genremanga ON manga.id = genremanga.id_manga JOIN genre ON genremanga.genre = genre.id WHERE genremanga.genre = 4";
+$listRomance = $proses->list($mangaRomance);
 ?>
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
@@ -64,8 +67,8 @@ $listManga = $proses->list($manga);
                     <div
                         class="bg-black rounded-3xl overflow-hidden glassmorphism bg-opacity-60 w-2/3 md:h-full h-fit mx-3 p-3 md:p-5 flex flex-col md:flex-row">
                         <div class="w-1/2 h-full  hidden md:flex justify-center flex-col text-secondary">
-                            <p class="md:text-4xl font-bold text-3xl">Gas baca!!</p>
-                            <p class="font-semibold">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore, nesciunt.</p>
+                            <p class="md:text-4xl font-bold text-3xl">Gas baca</p>
+                            <p class="font-semibold">Buat akun untuk mulai baca dan tingkatkan level mu dengan membaca</p>
                         </div>
                         <div class="items-center h-full w-full md:w-1/2 flex flex-col justify-center">
                             <a href="regis.php"
@@ -83,44 +86,45 @@ $listManga = $proses->list($manga);
         </div>
     </section>
 
-    <section class="h-screen w-full bg-secondary">
-        <div class="w-full h-full flex flex-col md:flex-row py-10">
-            <div class="w-full h-1/2 md:w-1/2 overflow-hidden md:h-full flex justify-center items-center">
-                <div class="w-3/4 h-3/4 flex justify-center items-center relative">
-                    <div class="rounded-xl shadow-md md:shadow-2xl overflow-hidden w-56 h-80 absolute z-10">
-                        <img src="../img/asset landing page/DANDADAN.jpg" alt="" class="object-cover">
-                    </div>
-                    <div class="rounded-xl shadow-md md:shadow-2xl overflow-hidden w-56 h-80 top-3 left-4 absolute">
-                        <img src="../img/asset landing page/cover-kaoru.jpg" alt="" class="object-cover">
-                    </div>
-                    <div class="rounded-xl shadow-md md:shadow-2xl overflow-hidden w-56 h-80 absolute bottom-4 right-5">
-                        <img src="../img/asset landing page/cover mushoku.jpg" alt="" class="object-cover">
-                    </div>
+    <section class="h-2/3 md:h-4/5 w-full flex justify-center items-center px-10 lg:px-52">
+        <div class="w-full h-4/5 flex flex-col md:flex-row p-2 bg-white rounded-3xl">
+            <div class="w-full h-1/2 md:w-1/2 gap-2 overflow-hidden md:h-full flex">
+                <div class="rounded-s-2xl overflow-hidden w-44 h-full">
+                    <img src="../img/asset landing page/DANDADAN.jpg" alt="" class="w-full h-full object-cover">
+                </div>
+                <div class="overflow-hidden w-44 h-full">
+                    <img src="../img/asset landing page/cover-kaoru.jpg" alt="" class="w-full h-full object-cover">
+                </div>
+                <div class="rounded-e-2xl overflow-hidden w-44 h-full">
+                    <img src="../img/asset landing page/cover mushoku.jpg" alt="" class="w-full h-full object-cover">
                 </div>
             </div>
             <div class="w-full h-1/2 md:w-1/2 md:h-full flex justify-center items-center">
                 <div class="w-3/4 text-center md:text-start">
-                    <h1 class="text-4xl my-3 font-semibold">Lorem, ipsum dolor.</h1>
-                    <p class="text-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla ipsa veritatis optio quo sunt vero praesentium incidunt iusto accusantium libero?</p>
+                    <h1 class="md:text-4xl text-2xl  my-3 font-semibold">Lorem, ipsum dolor.</h1>
+                    <p class="md:text-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla ipsa veritatis optio quo sunt vero praesentium incidunt iusto accusantium libero?</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- main content -->
-    <section id="content" class="lg:pt-36 pt-20 pb-36 w-full">
-        <div class="lg:mx-5">
-            <h1 class="font-bold text-xl text-center lg:mb-5 mb-2">
-                Our Manga Collection
-            </h1>
-            <div class="hidden md:flex justify-center">
+    <!-- recomendation -->
+    <section id="content" class="pb-36 w-full">
+        <div class="lg:px-36">
+            <div class="flex justify-between items-center md:px-20 px-10">
+                <h1 class="font-bold text-2xl md:text-4xl lg:mb-5 w-1/2 mb-2">
+                    Our must read manga recomendation
+                </h1>
+                <a href="direct.php?user=<?php echo $name ?>&page=seeMore" class="mx-2 text-base font-semibold text-blue-600">See more</a>
+            </div>
+            <div class="hidden md:flex justify-center mt-10">
                 <div class="relative w-full glide-01">
                     <!-- Slides -->
                     <div class="overflow-hidden" data-glide-el="track">
                         <ul
                             class="relative w-full overflow-hidden p-0 whitespace-no-wrap flex flex-no-wrap [backface-visibility: hidden] [transform-style: preserve-3d] [touch-action: pan-Y] [will-change: transform]">
                             <?php
-                            $chunks = array_chunk($listManga, 5);
+                            $chunks = array_chunk($listManga, 4);
                             foreach ($chunks as $chunk) { ?>
                                 <li class="flex flex-wrap justify-center">
                                     <?php foreach ($chunk as $x) { ?>
@@ -175,7 +179,7 @@ $listManga = $proses->list($manga);
             </div>
 
             <!-- slide mobile -->
-            <div class="flex justify-center md:hidden">
+            <div class="flex justify-center md:hidden mt-5">
                 <div class="relative w-full glide-02">
                     <!-- Slides -->
                     <div class="overflow-hidden" data-glide-el="track">
@@ -187,15 +191,15 @@ $listManga = $proses->list($manga);
                                 <li class="flex flex-wrap justify-center">
                                     <?php foreach ($chunk as $x) { ?>
                                         <div class="w-full h-full flex bg-slate-200 p-5 rounded-2xl mx-1  overflow-hidden">
-                                        <div class="h-full w-3/4">
+                                            <div class="h-full w-3/4">
                                                 <img src="../img/cover-manga/<?php echo $x['cover'] ?>" alt="" class="h-full w-full rounded-2xl" />
                                             </div>
                                             <div class="h-full px-2 md:px-5 flex flex-col justify-center">
                                                 <p class="font-bold text-xl mb-2"><?php if (strlen($x['nama']) >= 19) {
-                                                                                                    echo $judul = substr($x['nama'], 0, 30) . '...';
-                                                                                                } else {
-                                                                                                    echo $x['nama'];
-                                                                                                } ?></p>
+                                                                                        echo $judul = substr($x['nama'], 0, 30) . '...';
+                                                                                    } else {
+                                                                                        echo $x['nama'];
+                                                                                    } ?></p>
                                                 <p><?php if (strlen($x['sipnosis']) >= 19) {
                                                         echo $judul = substr($x['sipnosis'], 0, 80) . '...';
                                                     } else {
@@ -235,6 +239,138 @@ $listManga = $proses->list($manga);
         </div>
     </section>
     <!-- end -->
+
+    <!-- romance recomendation  -->
+     <section id="content" class="pb-36 w-full">
+        <div class="lg:px-36">
+            <div class="flex justify-between items-center md:px-20 px-10">
+                <h1 class="font-bold text-2xl md:text-4xl lg:mb-5 w-1/2 mb-2">
+                    Romance
+                </h1>
+                <a href="direct.php?user=<?php echo $name ?>&page=seeMore" class="mx-2 text-base font-semibold text-blue-600">See more</a>
+            </div>
+            <div class="hidden md:flex  justify-center mt-10">
+                <div class="relative w-full glide-03">
+                    <!-- Slides -->
+                    <div class="overflow-hidden" data-glide-el="track">
+                        <ul
+                            class="relative w-full overflow-hidden p-0 whitespace-no-wrap flex flex-no-wrap [backface-visibility: hidden] [transform-style: preserve-3d] [touch-action: pan-Y] [will-change: transform]">
+                            <?php
+                            $chunks = array_chunk($listRomance, 4);
+                            foreach ($chunks as $chunk) { ?>
+                                <li class="flex flex-wrap justify-center">
+                                    <?php foreach ($chunk as $x) { ?>
+                                        <div class="lg:w-64 lg:h-96 w-28 h-40 bg-slate-300 rounded-2xl mx-1  overflow-hidden group">
+                                            <div class="transisi-card">
+                                                <div class="h-full px-5 flex flex-col justify-center">
+                                                    <p class="font-bold text-lg lg:text-xl mb-3"><?php if (strlen($x['nama']) >= 19) {
+                                                                                                        echo $judul = substr($x['nama'], 0, 25) . '...';
+                                                                                                    } else {
+                                                                                                        echo $x['nama'];
+                                                                                                    } ?></p>
+                                                    <p class="font-semibold text-lg"><?php  ?></p>
+                                                    <p><?php if (strlen($x['sipnosis']) >= 19) {
+                                                            echo $judul = substr($x['sipnosis'], 0, 200) . '...';
+                                                        } else {
+                                                            echo $x['sipnosis'];
+                                                        } ?></p>
+                                                </div>
+                                            </div>
+                                            <div class="h-full w-full">
+                                                <img src="../img/cover-manga/<?php echo $x['cover'] ?>" alt="" class="h-full w-full" />
+                                            </div>
+                                        </div>
+                                    <?php } ?>
+                                </li>
+                            <?php } ?>
+                        </ul>
+                    </div>
+                    <!-- Controls -->
+                    <div class="absolute left-0 flex items-center justify-between w-full h-0 px-4 top-1/2"
+                        data-glide-el="controls">
+                        <button
+                            class="inline-flex items-center justify-center w-8 h-8 transition duration-300 border rounded-full lg:w-12 lg:h-12 text-slate-700 border-slate-700 hover:text-slate-900 hover:border-slate-900 focus-visible:outline-none bg-white/20"
+                            data-glide-dir="<" aria-label="prev slide">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-5 h-5">
+                                <title>prev slide</title>
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 15.75L3 12m0 0l3.75-3.75M3 12h18" />
+                            </svg>
+                        </button>
+                        <button
+                            class="inline-flex items-center justify-center w-8 h-8 transition duration-300 border rounded-full lg:w-12 lg:h-12 text-slate-700 border-slate-700 hover:text-slate-900 hover:border-slate-900 focus-visible:outline-none bg-white/20"
+                            data-glide-dir=">" aria-label="next slide">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-5 h-5">
+                                <title>next slide</title>
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- slide mobile -->
+            <div class="flex justify-center md:hidden mt-5">
+                <div class="relative w-full glide-04">
+                    <!-- Slides -->
+                    <div class="overflow-hidden" data-glide-el="track">
+                        <ul
+                            class="relative w-full overflow-hidden p-0 whitespace-no-wrap flex flex-no-wrap [backface-visibility: hidden] [transform-style: preserve-3d] [touch-action: pan-Y] [will-change: transform]">
+                            <?php
+                            $chunks = array_chunk($listRomance, 1);
+                            foreach ($chunks as $chunk) { ?>
+                                <li class="flex flex-wrap justify-center">
+                                    <?php foreach ($chunk as $x) { ?>
+                                        <div class="w-full h-full flex bg-slate-200 p-5 rounded-2xl mx-1  overflow-hidden">
+                                            <div class="h-full w-3/4">
+                                                <img src="../img/cover-manga/<?php echo $x['cover'] ?>" alt="" class="h-full w-full rounded-2xl" />
+                                            </div>
+                                            <div class="h-full px-2 md:px-5 flex flex-col justify-center">
+                                                <p class="font-bold text-xl mb-2"><?php if (strlen($x['nama']) >= 19) {
+                                                                                        echo $judul = substr($x['nama'], 0, 30) . '...';
+                                                                                    } else {
+                                                                                        echo $x['nama'];
+                                                                                    } ?></p>
+                                                <p><?php if (strlen($x['sipnosis']) >= 19) {
+                                                        echo $judul = substr($x['sipnosis'], 0, 80) . '...';
+                                                    } else {
+                                                        echo $x['sipnosis'];
+                                                    } ?></p>
+                                            </div>
+                                        </div>
+                                    <?php } ?>
+                                </li>
+                            <?php } ?>
+                        </ul>
+                    </div>
+                    <!-- Controls -->
+                    <div class="absolute left-0 flex items-center justify-between w-full h-0 px-4 top-1/2"
+                        data-glide-el="controls">
+                        <button
+                            class="inline-flex items-center justify-center w-8 h-8 transition duration-300 border rounded-full lg:w-12 lg:h-12 text-slate-700 border-slate-700 hover:text-slate-900 hover:border-slate-900 focus-visible:outline-none bg-white/20"
+                            data-glide-dir="<" aria-label="prev slide">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-5 h-5">
+                                <title>prev slide</title>
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 15.75L3 12m0 0l3.75-3.75M3 12h18" />
+                            </svg>
+                        </button>
+                        <button
+                            class="inline-flex items-center justify-center w-8 h-8 transition duration-300 border rounded-full lg:w-12 lg:h-12 text-slate-700 border-slate-700 hover:text-slate-900 hover:border-slate-900 focus-visible:outline-none bg-white/20"
+                            data-glide-dir=">" aria-label="next slide">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-5 h-5">
+                                <title>next slide</title>
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end  -->
 </body>
 
 </html>
@@ -278,7 +414,20 @@ $listManga = $proses->list($manga);
         },
     });
 
-    glide01.mount();
-    glide02.mount();
-    glide03.mount();
+     var glide04 = new Glide(".glide-04", {
+        type: "slider",
+        focusAt: "center",
+        perView: 1,
+        autoplay: 3000,
+        animationDuration: 3000,
+        gap: 0,
+        classes: {
+            activeNav: "[&>*]:bg-slate-700",
+        },
+    });
+
+    glide01.mount()
+    glide02.mount()
+    glide03.mount()
+    glide04.mount()
 </script>
