@@ -1,5 +1,5 @@
 <div class="flex flex-col justify-center">
-    <form action="menu/editContent.php?user=<?php echo $name ?>&content=card_action" method="post" enctype="multipart/form-data" class="w-full px-20 flex flex-col flex-no-wrap">
+    <form action="menu/editContent.php?user=<?php echo $name ?>&content=card_romance" method="post" enctype="multipart/form-data" class="w-full px-20 flex flex-col flex-no-wrap">
         <?php foreach ($list_content as $x) { ?>
             <div class="flex items-center my-4">
                 <div class="lg:w-48 lg:h-72 w-24 h-40 bg-black rounded-2xl">
@@ -22,15 +22,13 @@
                                 text: "You won't be able to revert this!",
                                 icon: "warning",
                                 showCancelButton: true,
-                                customClass: {
-                                    confirmButton: 'bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700',
-                                    cancelButton: 'bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 ml-2'
-                                },
-                                buttonsStyling: false,
+                                confirmButtonColor: "#3085d6",
+                                cancelButtonColor: "#d33",
                                 confirmButtonText: "Yes, delete it!"
                             }).then((result) => {
                                 if (result.isConfirmed) {
-                                    window.location.href = `default.php?user=<?php echo $name ?>&acts=delete&source=manageContent&manga=${id}&content=card_action`;
+                                    // Redirect ke halaman delete dengan ID yang sesuai
+                                    window.location.href = `default.php?user=<?php echo $name ?>&acts=delete&source=manageContent&manga=${id}&content=card_romance`;
                                 }
                             });
                         }

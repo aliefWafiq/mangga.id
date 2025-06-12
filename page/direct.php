@@ -34,6 +34,9 @@ $cardRecom = $proses->list($sql_cardRecom);
 $sql_cardAction = "SELECT manga.* FROM manga JOIN manage_content ON manga.id = manage_content.id_manga WHERE manage_content.content = 'card_action'";
 $cardAction = $proses->list($sql_cardAction);
 
+$sql_cardRomance = "SELECT manga.* FROM manga JOIN manage_content ON manga.id = manage_content.id_manga WHERE manage_content.content = 'card_romance'";
+$cardRomance = $proses->list($sql_cardRomance);
+
 function compareTop($a, $b)
 {
     return $a['top'] - $b['top'];

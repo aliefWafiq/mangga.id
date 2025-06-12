@@ -13,12 +13,14 @@ $list_content = $proses->list($sql_content);
 
         if ($content == 'banner') {
             include 'formManageContent/banner.php';
-        }else if($content == 'top_list'){
+        } else if ($content == 'top_list') {
             include 'formManageContent/editTop.php';
-        }else if ($content == 'card_recom') {
+        } else if ($content == 'card_recom') {
             include 'formManageContent/cardRekom.php';
-        }else if($content == 'card_action'){
+        } else if ($content == 'card_action') {
             include 'formManageContent/cardAction.php';
+        } else if ($content == 'card_romance') {
+            include 'formManageContent/cardRomance.php';
         }
 
         ?>
@@ -29,7 +31,6 @@ $list_content = $proses->list($sql_content);
 <script src="../node_modules/flowbite/dist/flowbite.min.js"></script>
 <script src="../index.js"></script>
 <script>
-
     let manga = [<?php echo $stringManga; ?>]
 
     let mangaElements = document.getElementsByClassName("manga")
@@ -86,7 +87,11 @@ $list_content = $proses->list($sql_content);
         `,
             showCancelButton: true,
             showConfirmButton: false,
-            cancelButtonColor: "#d33"
+            showCancelButton: true,
+            customClass: {
+                confirmButton: 'bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700',
+                cancelButton: 'bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 ml-2'
+            },
         }).then((result) => {
             if (result.isConfirmed) {
                 const form = document.getElementById("form-add-card");

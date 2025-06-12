@@ -275,6 +275,88 @@
             </div>
          </div>
       </div>
+
+      <div class="mt-14 md:mt-20">
+         <p class="text-2xl text-center mb-5 font-semibold">Romance</p>
+         <a href="direct.php?user=<?php echo $name ?>&page=genre&genre=Action" class="mx-2 text-base font-semibold text-blue-600">See more</a>
+         <div class="flex justify-center">
+            <div class="relative w-full glide-06 md:block hidden">
+               <!-- Slides -->
+               <div class="overflow-hidden" data-glide-el="track">
+                  <ul class="relative w-full hidden md:flex overflow-hidden p-0 whitespace-no-wrap flex-no-wrap [backface-visibility: hidden] [transform-style: preserve-3d] [touch-action: pan-Y] [will-change: transform]">
+                     <?php
+                     $chunks = array_chunk($cardRomance, 5);
+                     foreach ($chunks as $chunk) { ?>
+                        <li class="flex flex-wrap justify-center">
+                           <?php
+                           foreach ($chunk as $x) {
+                              $sql_manga = "SELECT * FROM manga WHERE id = :id";
+                              $param = [':id' => $x['id']];
+                              $namaManga = $proses->show($sql_manga, $param); ?>
+                              <a class="mx-3 lg:w-56 lg:h-80 w-28 h-40 rounded-2xl" href="direct.php?manga=<?php echo $namaManga['nama'] ?>&user=<?php echo $name ?>&page=detailManga">
+                                 <img src="../img/cover-manga/<?php echo $x['cover'] ?>" alt="" class="w-full rounded-2xl h-full" />
+                              </a>
+                           <?php } ?>
+                        </li>
+                     <?php } ?>
+                  </ul>
+               </div>
+               <!-- Controls -->
+               <div class="absolute left-0 flex items-center justify-between w-full h-0 px-4 top-1/2" data-glide-el="controls">
+                  <button class="inline-flex items-center justify-center w-8 h-8 transition duration-300 border rounded-full lg:w-12 lg:h-12 text-slate-700 border-slate-700 hover:text-slate-900 hover:border-slate-900 focus-visible:outline-none bg-white/20" data-glide-dir="<" aria-label="prev slide">
+                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                        <title>prev slide</title>
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 15.75L3 12m0 0l3.75-3.75M3 12h18" />
+                     </svg>
+                  </button>
+                  <button class="inline-flex items-center justify-center w-8 h-8 transition duration-300 border rounded-full lg:w-12 lg:h-12 text-slate-700 border-slate-700 hover:text-slate-900 hover:border-slate-900 focus-visible:outline-none bg-white/20" data-glide-dir=">" aria-label="next slide">
+                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                        <title>next slide</title>
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+                     </svg>
+                  </button>
+               </div>
+            </div>
+
+            <!-- Slides mobile -->
+            <div class="relative w-full glide-07 md:hidden">
+               <div class="overflow-hidden" data-glide-el="track">
+                  <ul class="relative w-full overflow-hidden p-0 whitespace-no-wrap flex flex-wrap [backface-visibility: hidden] [transform-style: preserve-3d] [touch-action: pan-Y] [will-change: transform]">
+                     <?php
+                     $chunks = array_chunk($cardRomance, 3);
+                     foreach ($chunks as $chunk) { ?>
+                        <li class="flex flex-wrap gap-2 justify-center">
+                           <?php
+                           foreach ($chunk as $x) {
+                              $sql_manga = "SELECT * FROM manga WHERE id = :id";
+                              $param = [':id' => $x['id']];
+                              $namaManga = $proses->show($sql_manga, $param); ?>
+                              <a class="w-24 h-36 rounded-2xl" href="direct.php?manga=<?php echo $namaManga['nama'] ?>&user=<?php echo $name ?>&page=detailManga">
+                                 <img src="../img/cover-manga/<?php echo $x['cover'] ?>" alt="" class="w-full rounded-2xl h-full" />
+                              </a>
+                           <?php } ?>
+                        </li>
+                     <?php } ?>
+                  </ul>
+               </div>
+               <!-- Controls -->
+               <div class="absolute left-0 flex items-center justify-between w-full h-0 px-4 top-1/2" data-glide-el="controls">
+                  <button class="inline-flex items-center justify-center w-8 h-8 transition duration-300 border rounded-full lg:w-12 lg:h-12 text-slate-700 border-slate-700 hover:text-slate-900 hover:border-slate-900 focus-visible:outline-none bg-white/20" data-glide-dir="<" aria-label="prev slide">
+                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                        <title>prev slide</title>
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 15.75L3 12m0 0l3.75-3.75M3 12h18" />
+                     </svg>
+                  </button>
+                  <button class="inline-flex items-center justify-center w-8 h-8 transition duration-300 border rounded-full lg:w-12 lg:h-12 text-slate-700 border-slate-700 hover:text-slate-900 hover:border-slate-900 focus-visible:outline-none bg-white/20" data-glide-dir=">" aria-label="next slide">
+                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                        <title>next slide</title>
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+                     </svg>
+                  </button>
+               </div>
+            </div>
+         </div>
+      </div>
       <!-- genre end -->
 
       <script src="../../node_modules/flowbite/dist/flowbite.min.js"></script>
@@ -335,10 +417,34 @@
             },
          });
 
+          var glide06 = new Glide(".glide-06", {
+            type: "slider",
+            focusAt: "center",
+            perView: 1,
+            animationDuration: 3000,
+            gap: 0,
+            classes: {
+               activeNav: "[&>*]:bg-slate-700",
+            },
+         });
+
+          var glide07 = new Glide(".glide-07", {
+            type: "slider",
+            focusAt: "center",
+            perView: 1,
+            animationDuration: 3000,
+            gap: 0,
+            classes: {
+               activeNav: "[&>*]:bg-slate-700",
+            },
+         });
+
          glide01.mount()
          glide02.mount()
          glide03.mount()
          glide04.mount()
          glide05.mount()
+         glide06.mount()
+         glide07.mount()
       </script>
    </div>
