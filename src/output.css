@@ -1553,10 +1553,6 @@ input:checked + .toggle-bg {
   height: 16rem;
 }
 
-.h-72 {
-  height: 18rem;
-}
-
 .h-8 {
   height: 2rem;
 }
@@ -1652,6 +1648,10 @@ input:checked + .toggle-bg {
 
 .w-4 {
   width: 1rem;
+}
+
+.w-40 {
+  width: 10rem;
 }
 
 .w-44 {
@@ -3031,6 +3031,11 @@ input:checked + .toggle-bg {
   background-color: rgb(240 82 82 / var(--tw-bg-opacity));
 }
 
+.bg-blue-600 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(28 100 242 / var(--tw-bg-opacity));
+}
+
 .bg-opacity-10 {
   --tw-bg-opacity: 0.1;
 }
@@ -4024,8 +4029,8 @@ input:checked + .toggle-bg {
 @media (min-width: 1024px) {
   .transisi-card {
     height: 100%;
-    width: 16rem;
-    max-width: 16rem;
+    width: 14rem;
+    max-width: 14rem;
   }
 }
 
@@ -4724,10 +4729,6 @@ input:checked + .toggle-bg {
 }
 
 @media (min-width: 1024px) {
-  .lg\:mb-5 {
-    margin-bottom: 1.25rem;
-  }
-
   .lg\:h-1\/5 {
     height: 20%;
   }
@@ -4748,8 +4749,8 @@ input:checked + .toggle-bg {
     height: 18rem;
   }
 
-  .lg\:h-96 {
-    height: 24rem;
+  .lg\:h-80 {
+    height: 20rem;
   }
 
   .lg\:w-1\/4 {
@@ -4768,8 +4769,8 @@ input:checked + .toggle-bg {
     width: 12rem;
   }
 
-  .lg\:w-64 {
-    width: 16rem;
+  .lg\:w-56 {
+    width: 14rem;
   }
 
   .lg\:w-full {
@@ -4785,19 +4786,19 @@ input:checked + .toggle-bg {
     padding-right: 9rem;
   }
 
+  .lg\:px-52 {
+    padding-left: 13rem;
+    padding-right: 13rem;
+  }
+
   .lg\:px-8 {
     padding-left: 2rem;
     padding-right: 2rem;
   }
 
-  .lg\:px-44 {
-    padding-left: 11rem;
-    padding-right: 11rem;
-  }
-
-  .lg\:px-52 {
-    padding-left: 13rem;
-    padding-right: 13rem;
+  .lg\:px-56 {
+    padding-left: 14rem;
+    padding-right: 14rem;
   }
 
   .lg\:text-xl {

@@ -119,7 +119,7 @@
                <div class="overflow-hidden" data-glide-el="track">
                   <ul class="relative w-full hidden md:flex overflow-hidden p-0 whitespace-no-wrap flex-no-wrap [backface-visibility: hidden] [transform-style: preserve-3d] [touch-action: pan-Y] [will-change: transform]">
                      <?php
-                     $chunks = array_chunk($cardRecom, 5);
+                     $chunks = array_chunk($cardRecom, 4);
                      foreach ($chunks as $chunk) { ?>
                         <li class="flex flex-wrap justify-center">
                            <?php
@@ -127,7 +127,7 @@
                               $sql_manga = "SELECT * FROM manga WHERE id = :id";
                               $param = [':id' => $x['id']];
                               $namaManga = $proses->show($sql_manga, $param); ?>
-                              <a class="mx-3 w-44 h-72 ml-5 rounded-2xl" href="direct.php?manga=<?php echo $namaManga['nama'] ?>&user=<?php echo $name ?>&page=detailManga">
+                              <a class="mx-3 lg:w-56 lg:h-80 w-28 h-40 rounded-2xl" href="direct.php?manga=<?php echo $namaManga['nama'] ?>&user=<?php echo $name ?>&page=detailManga">
                                  <img src="../img/cover-manga/<?php echo $x['cover'] ?>" alt="" class="w-full rounded-2xl h-full" />
                               </a>
                            <?php } ?>
@@ -211,7 +211,7 @@
                               $sql_manga = "SELECT * FROM manga WHERE id = :id";
                               $param = [':id' => $x['id']];
                               $namaManga = $proses->show($sql_manga, $param); ?>
-                              <a class="mx-3 w-44 h-72 ml-5 rounded-2xl" href="direct.php?manga=<?php echo $namaManga['nama'] ?>&user=<?php echo $name ?>&page=detailManga">
+                              <a class="mx-3 lg:w-56 lg:h-80 w-28 h-40 rounded-2xl" href="direct.php?manga=<?php echo $namaManga['nama'] ?>&user=<?php echo $name ?>&page=detailManga">
                                  <img src="../img/cover-manga/<?php echo $x['cover'] ?>" alt="" class="w-full rounded-2xl h-full" />
                               </a>
                            <?php } ?>

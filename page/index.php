@@ -1,8 +1,8 @@
 <?php
 require '../config/call.php';
 
-$manga = "SELECT * FROM manga";
-$listManga = $proses->list($manga);
+$mangaRecomend = "SELECT manga.* FROM manga JOIN manage_content ON manga.id = manage_content.id_manga WHERE manage_content.content = 'card_recom'";
+$listManga = $proses->list($mangaRecomend);
 
 $mangaRomance = "SELECT manga.*  FROM manga JOIN genremanga ON manga.id = genremanga.id_manga JOIN genre ON genremanga.genre = genre.id WHERE genremanga.genre = 4";
 $listRomance = $proses->list($mangaRomance);
@@ -110,9 +110,9 @@ $listRomance = $proses->list($mangaRomance);
 
     <!-- recomendation -->
     <section id="content" class="pb-36 w-full">
-        <div class="lg:px-36">
-            <div class="flex justify-between items-center md:px-20 px-10">
-                <h1 class="font-bold text-2xl md:text-4xl lg:mb-5 w-1/2 mb-2">
+        <div class="lg:px-52">
+            <div class="flex justify-between items-center">
+                <h1 class="font-bold text-2xl md:text-4xl w-1/2">
                     Our must read manga recomendation
                 </h1>
                 <a href="direct.php?user=<?php echo $name ?>&page=seeMore" class="mx-2 text-base font-semibold text-blue-600">See more</a>
@@ -128,7 +128,7 @@ $listRomance = $proses->list($mangaRomance);
                             foreach ($chunks as $chunk) { ?>
                                 <li class="flex flex-wrap justify-center">
                                     <?php foreach ($chunk as $x) { ?>
-                                        <div class="lg:w-64 lg:h-96 w-28 h-40 bg-slate-300 rounded-2xl mx-1  overflow-hidden group">
+                                        <div class="lg:w-56 lg:h-80 w-28 h-40 bg-slate-300 rounded-2xl mx-1  overflow-hidden group">
                                             <div class="transisi-card">
                                                 <div class="h-full px-5 flex flex-col justify-center">
                                                     <p class="font-bold text-lg lg:text-xl mb-3"><?php if (strlen($x['nama']) >= 19) {
@@ -154,7 +154,7 @@ $listRomance = $proses->list($mangaRomance);
                         </ul>
                     </div>
                     <!-- Controls -->
-                    <div class="absolute left-0 flex items-center justify-between w-full h-0 px-4 top-1/2"
+                    <div class="absolute flex items-center justify-between w-full h-0 px-4 top-1/2"
                         data-glide-el="controls">
                         <button
                             class="inline-flex items-center justify-center w-8 h-8 transition duration-300 border rounded-full lg:w-12 lg:h-12 text-slate-700 border-slate-700 hover:text-slate-900 hover:border-slate-900 focus-visible:outline-none bg-white/20"
@@ -242,9 +242,9 @@ $listRomance = $proses->list($mangaRomance);
 
     <!-- romance recomendation  -->
      <section id="content" class="pb-36 w-full">
-        <div class="lg:px-36">
-            <div class="flex justify-between items-center md:px-20 px-10">
-                <h1 class="font-bold text-2xl md:text-4xl lg:mb-5 w-1/2 mb-2">
+        <div class="lg:px-56">
+            <div class="flex justify-between items-center">
+                <h1 class="font-bold text-2xl md:text-4xl w-1/2">
                     Romance
                 </h1>
                 <a href="direct.php?user=<?php echo $name ?>&page=seeMore" class="mx-2 text-base font-semibold text-blue-600">See more</a>
@@ -260,7 +260,7 @@ $listRomance = $proses->list($mangaRomance);
                             foreach ($chunks as $chunk) { ?>
                                 <li class="flex flex-wrap justify-center">
                                     <?php foreach ($chunk as $x) { ?>
-                                        <div class="lg:w-64 lg:h-96 w-28 h-40 bg-slate-300 rounded-2xl mx-1  overflow-hidden group">
+                                        <div class="lg:w-56 lg:h-80 w-28 h-40 bg-slate-300 rounded-2xl mx-1  overflow-hidden group">
                                             <div class="transisi-card">
                                                 <div class="h-full px-5 flex flex-col justify-center">
                                                     <p class="font-bold text-lg lg:text-xl mb-3"><?php if (strlen($x['nama']) >= 19) {

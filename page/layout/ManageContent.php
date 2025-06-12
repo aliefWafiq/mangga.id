@@ -29,19 +29,6 @@ $list_content = $proses->list($sql_content);
 <script src="../node_modules/flowbite/dist/flowbite.min.js"></script>
 <script src="../index.js"></script>
 <script>
-    //  var glide01 = new Glide(".glide-01", {
-    //      type: "slider",
-    //      focusAt: "center",
-    //      perView: 1,
-    //      autoplay: 4000,
-    //      animationDuration: 3000,
-    //      gap: 0,
-    //      classes: {
-    //          activeNav: "[&>*]:bg-slate-700",
-    //      },
-    //  });
-
-    // glide01.mount();
 
     let manga = [<?php echo $stringManga; ?>]
 
